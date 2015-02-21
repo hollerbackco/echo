@@ -56,6 +56,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //parse test
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
+    
     //trying to start with photo
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.recordView.alpha = 0.0;

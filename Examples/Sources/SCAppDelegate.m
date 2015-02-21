@@ -6,14 +6,27 @@
 //  Copyright (c) 2013 rFlex. All rights reserved.
 //
 
+#import <Parse/Parse.h>
 #import "SCAppDelegate.h"
 #import "SCFilterGroup.h"
 #import "SCVideoPlayerView.h"
+
 
 @implementation SCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    // [Optional] Power your app with Local Datastore. For more info, go to
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"VuT77OxDrDK7AqReE5LduXZ5lBo2gqp3uPvDjgkg"
+                  clientKey:@"7e8Sie7aaH1Wbb2z75AEOOF0sXYow27YN35AAlg5"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 							
