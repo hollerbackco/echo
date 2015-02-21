@@ -389,14 +389,5 @@
     }];
 }
 
-//- (void)updateGhostImage {
-//    _ghostImageView.image = [_recorder snapshotOfLastAppendedVideoBuffer];
-//    _ghostImageView.hidden = !_ghostModeButton.selected;
-//}
-//
-//- (IBAction)switchGhostMode:(id)sender {
-//    _ghostModeButton.selected = !_ghostModeButton.selected;
-//    _ghostImageView.hidden = !_ghostModeButton.selected;
-//}
 
 @end
