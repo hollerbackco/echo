@@ -57,12 +57,11 @@
     [super viewDidLoad];
     
     //parse test
+//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+//    testObject[@"foo"] = @"bar";
+//    [testObject saveInBackground];
     
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
-    
-    //trying to start with photo
+    //start with photo
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.recordView.alpha = 0.0;
         self.retakeButton.alpha = 0.0;
@@ -109,8 +108,8 @@
     self.focusView.recorder = _recorder;
     [previewView addSubview:self.focusView];
     
-    self.focusView.outsideFocusTargetImage = [UIImage imageNamed:@"capture_flip"];
-    self.focusView.insideFocusTargetImage = [UIImage imageNamed:@"capture_flip"];
+    self.focusView.outsideFocusTargetImage = [UIImage imageNamed:@"focus_ring"];
+    self.focusView.insideFocusTargetImage = [UIImage imageNamed:@"focus_ring"];
 
     _recorder.initializeRecordSessionLazily = YES;
     [_recorder openSession:^(NSError *sessionError, NSError *audioError, NSError *videoError, NSError *photoError) {
