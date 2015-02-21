@@ -94,6 +94,86 @@
     
 }
 
+//month alert
+- (void)image:(UIImage *)image didFinishSavingMonthWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error == nil) {
+        // Create Alert and set the delegate to listen events
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nice!"
+                                                        message:@"We'll return this in a month from now :)"
+                                                       delegate:self
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:@"OK", nil];
+        // Set the tag to alert unique among the other alerts.
+        // So that you can find out later, which alert we are handling
+        alert.tag = 100;
+        [alert show];
+        
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Failed :(" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    
+}
+
+//week alert
+- (void)image:(UIImage *)image didFinishSavingWeekWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error == nil) {
+        // Create Alert and set the delegate to listen events
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nice!"
+                                                        message:@"We'll return this in a week from now :)"
+                                                       delegate:self
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:@"OK", nil];
+        // Set the tag to alert unique among the other alerts.
+        // So that you can find out later, which alert we are handling
+        alert.tag = 100;
+        [alert show];
+        
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Failed :(" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    
+}
+
+//day alert
+- (void)image:(UIImage *)image didFinishSavingDayWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error == nil) {
+        // Create Alert and set the delegate to listen events
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nice!"
+                                                        message:@"We'll return this in a day from now :)"
+                                                       delegate:self
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:@"OK", nil];
+        // Set the tag to alert unique among the other alerts.
+        // So that you can find out later, which alert we are handling
+        alert.tag = 100;
+        [alert show];
+        
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Failed :(" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    
+}
+
+//day alert
+- (void)image:(UIImage *)image didFinishSavingHourWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error == nil) {
+        // Create Alert and set the delegate to listen events
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nice!"
+                                                        message:@"We'll return this in an hour from now :)"
+                                                       delegate:self
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:@"OK", nil];
+        // Set the tag to alert unique among the other alerts.
+        // So that you can find out later, which alert we are handling
+        alert.tag = 100;
+        [alert show];
+        
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Failed :(" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    
+}
+
 //ALERT BUTTON PRESS ACTION - CAN BE SAME FOR ALL ALERTS FROM THE TIME BUTTONS - SEND BACK TO CAMERA
 
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -132,6 +212,8 @@
 
 // TIME FROM NOW BUTTONS
 
+
+//year from now button
 - (IBAction)oneYearButton:(UIButton *)sender {
     
     //sc recorder code
@@ -170,20 +252,158 @@
     //finished saving trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingYearWithError:contextInfo:), nil);
     
-
-    
 }
 
+//month from now button
 - (IBAction)oneMonthButton:(UIButton *)sender {
+    //sc recorder code
+    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
+    
+    //date adding math
+    NSDate *today = [[NSDate alloc] init];
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    
+    //WHERE YOU SET THE TIME FROM NOW IN MONTHS
+    [offsetComponents setMonth:1];
+    NSDate *aMonthFromNow = [gregorian dateByAddingComponents:offsetComponents
+                                                      toDate:today options:0];
+    
+    //converting image file
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
+    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
+    
+    
+    //uploading PFObject
+    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
+    timerImage[@"image"] = imageFile;
+    timerImage[@"comebacktime"] = aMonthFromNow;
+    timerImage[@"delayType"] = @"One Month";
+    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+    
+    //finished saving trigger alert
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingMonthWithError:contextInfo:), nil);
+
 }
 
+//week from now button
 - (IBAction)oneWeekButton:(UIButton *)sender {
+    //sc recorder code
+    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
+    
+    //date adding math
+    NSDate *today = [[NSDate alloc] init];
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    
+    //WHERE YOU SET THE TIME FROM NOW IN MONTHS
+    [offsetComponents setDay:7];
+    NSDate *aWeekFromNow = [gregorian dateByAddingComponents:offsetComponents
+                                                       toDate:today options:0];
+    
+    //converting image file
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
+    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
+    
+    
+    //uploading PFObject
+    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
+    timerImage[@"image"] = imageFile;
+    timerImage[@"comebacktime"] = aWeekFromNow;
+    timerImage[@"delayType"] = @"One Week";
+    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+    
+    //finished saving trigger alert
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWeekWithError:contextInfo:), nil);
 }
 
+//day from now button
 - (IBAction)oneDayButton:(UIButton *)sender {
+    //sc recorder code
+    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
+    
+    //date adding math
+    NSDate *today = [[NSDate alloc] init];
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    
+    //WHERE YOU SET THE TIME FROM NOW IN MONTHS
+    [offsetComponents setDay:1];
+    NSDate *aDayFromNow = [gregorian dateByAddingComponents:offsetComponents
+                                                      toDate:today options:0];
+    
+    //converting image file
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
+    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
+    
+    
+    //uploading PFObject
+    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
+    timerImage[@"image"] = imageFile;
+    timerImage[@"comebacktime"] = aDayFromNow;
+    timerImage[@"delayType"] = @"One Day";
+    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+    
+    //finished saving trigger alert
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingDayWithError:contextInfo:), nil);
 }
 
 - (IBAction)oneHourButton:(UIButton *)sender {
+    //sc recorder code
+    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
+    
+    //date adding math
+    NSDate *today = [[NSDate alloc] init];
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    
+    //WHERE YOU SET THE TIME FROM NOW IN MONTHS
+    [offsetComponents setHour:1];
+    NSDate *anHourFromNow = [gregorian dateByAddingComponents:offsetComponents
+                                                     toDate:today options:0];
+    
+    //converting image file
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
+    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
+    
+    
+    //uploading PFObject
+    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
+    timerImage[@"image"] = imageFile;
+    timerImage[@"comebacktime"] = anHourFromNow;
+    timerImage[@"delayType"] = @"One Hour";
+    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+    
+    //finished saving trigger alert
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingHourWithError:contextInfo:), nil);
     
 }
 
