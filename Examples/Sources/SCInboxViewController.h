@@ -10,6 +10,8 @@
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>
 
-@interface SCInboxViewController : PFQueryTableViewController
+@interface SCInboxViewController : PFQueryTableViewController <UITableViewDelegate>
+- (IBAction)didPressNextButton:(UIButton *)sender;
 
 @end
+
