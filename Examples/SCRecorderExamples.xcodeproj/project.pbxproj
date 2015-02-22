@@ -54,6 +54,9 @@
 		E7F2C08A1A9906EC00B8CCBF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F2C0891A9906EC00B8CCBF /* Social.framework */; };
 		E7F2C08C1A99070900B8CCBF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F2C08B1A99070900B8CCBF /* Accounts.framework */; };
 		E7F2C08F1A99344A00B8CCBF /* focus_ring@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7F2C08E1A99344A00B8CCBF /* focus_ring@2x.png */; };
+		E7F2C0A61A99453400B8CCBF /* SCInboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F2C0A51A99453400B8CCBF /* SCInboxViewController.m */; };
+		E7F2C0A91A9952B500B8CCBF /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F2C0A81A9952B500B8CCBF /* ParseUI.framework */; };
+		E7F2C0AD1A9962EE00B8CCBF /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = E7F2C0AC1A9962EE00B8CCBF /* DismissSegue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +138,12 @@
 		E7F2C0891A9906EC00B8CCBF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E7F2C08B1A99070900B8CCBF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E7F2C08E1A99344A00B8CCBF /* focus_ring@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focus_ring@2x.png"; sourceTree = "<group>"; };
+		E7F2C0A21A9944C800B8CCBF /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		E7F2C0A41A99453400B8CCBF /* SCInboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCInboxViewController.h; sourceTree = "<group>"; };
+		E7F2C0A51A99453400B8CCBF /* SCInboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCInboxViewController.m; sourceTree = "<group>"; };
+		E7F2C0A81A9952B500B8CCBF /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = Sources/ParseUI.framework; sourceTree = "<group>"; };
+		E7F2C0AB1A9962EE00B8CCBF /* DismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissSegue.h; sourceTree = "<group>"; };
+		E7F2C0AC1A9962EE00B8CCBF /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissSegue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +153,7 @@
 			files = (
 				E7F2C08C1A99070900B8CCBF /* Accounts.framework in Frameworks */,
 				E7F2C08A1A9906EC00B8CCBF /* Social.framework in Frameworks */,
+				E7F2C0A91A9952B500B8CCBF /* ParseUI.framework in Frameworks */,
 				E7F2C0881A99062C00B8CCBF /* libsqlite3.dylib in Frameworks */,
 				E7F2C0861A99062300B8CCBF /* libz.dylib in Frameworks */,
 				E7F2C0841A99061A00B8CCBF /* SystemConfiguration.framework in Frameworks */,
@@ -181,6 +191,8 @@
 		DC34A7D9199D6E6D0001BD08 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E7F2C0AB1A9962EE00B8CCBF /* DismissSegue.h */,
+				E7F2C0AC1A9962EE00B8CCBF /* DismissSegue.m */,
 				DC34A7D6199D695F0001BD08 /* SCRecordSessionManager.h */,
 				DC34A7D7199D695F0001BD08 /* SCRecordSessionManager.m */,
 			);
@@ -208,6 +220,8 @@
 		DC7F370A18FC2A0D00D54901 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7F2C0A81A9952B500B8CCBF /* ParseUI.framework */,
+				E7F2C0A21A9944C800B8CCBF /* ParseUI.framework */,
 				E7F2C08B1A99070900B8CCBF /* Accounts.framework */,
 				E7F2C0891A9906EC00B8CCBF /* Social.framework */,
 				E7F2C0711A99058A00B8CCBF /* Parse.framework */,
@@ -234,12 +248,13 @@
 		DC7F371118FC2A0D00D54901 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DCB69ABA197EE89100AF667A /* AudioVC */,
 				DC34A7D9199D6E6D0001BD08 /* Utils */,
 				DC34A7CD199D66E40001BD08 /* SessionsVC */,
-				DCB69ABD197EE8D900AF667A /* ImageVC */,
 				DCB69ABC197EE89E00AF667A /* VideoPlayerVC */,
 				DCB69ABB197EE89A00AF667A /* EditVideoVC */,
-				DCB69ABA197EE89100AF667A /* AudioVC */,
+				DCB69ABD197EE8D900AF667A /* ImageVC */,
+				E7F2C0A71A99489000B8CCBF /* Inbox */,
 				DCB69AB9197EE88300AF667A /* CameraVC */,
 				DC7F374818FC2AF700D54901 /* SCAppDelegate.m */,
 				DC7F374018FC2AEB00D54901 /* SCAppDelegate.h */,
@@ -329,6 +344,15 @@
 				DC7F374418FC2AEB00D54901 /* SCImageDisplayerViewController.h */,
 			);
 			name = ImageVC;
+			sourceTree = "<group>";
+		};
+		E7F2C0A71A99489000B8CCBF /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				E7F2C0A41A99453400B8CCBF /* SCInboxViewController.h */,
+				E7F2C0A51A99453400B8CCBF /* SCInboxViewController.m */,
+			);
+			name = Inbox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,8 +460,10 @@
 				DC7F375018FC2AF700D54901 /* SCAppDelegate.m in Sources */,
 				DC7F375618FC2AF700D54901 /* SCVideoPlayerViewController.m in Sources */,
 				DC7F375118FC2AF700D54901 /* SCAudioRecordViewController.m in Sources */,
+				E7F2C0A61A99453400B8CCBF /* SCInboxViewController.m in Sources */,
 				DC7F375518FC2AF700D54901 /* SCTouchDetector.m in Sources */,
 				DC34A7D8199D695F0001BD08 /* SCRecordSessionManager.m in Sources */,
+				E7F2C0AD1A9962EE00B8CCBF /* DismissSegue.m in Sources */,
 				DC34A7D5199D67C80001BD08 /* SCSessionTableViewCell.m in Sources */,
 				DC7F375718FC2AF700D54901 /* SCRecorderViewController.m in Sources */,
 				DC34A7D2199D66FA0001BD08 /* SCSessionListViewController.m in Sources */,
@@ -540,6 +566,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sources",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/SCRecorderExamples-Prefix.pch";
@@ -569,6 +596,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Sources",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sources/SCRecorderExamples-Prefix.pch";
