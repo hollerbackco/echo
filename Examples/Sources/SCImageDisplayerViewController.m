@@ -225,9 +225,10 @@
                              initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
     
-    //WHERE YOU SET THE TIME FROM NOW IN HOURSE
+    //WHERE YOU SET THE TIME FROM NOW IN HOURS
     [offsetComponents setHour:8760];
     //    [offsetComponents setMinute:30];
+//    [offsetComponents setSecond:5];
     NSDate *aYearFromNow = [gregorian dateByAddingComponents:offsetComponents
                                                        toDate:today options:0];
     

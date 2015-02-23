@@ -47,10 +47,17 @@
 
 - (PFQuery *)queryForTable
 {
-    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    //FOR CACHING SO YOU CAN DISPLAY OFFLINE
-//    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    //date math
+    NSDate *now = [[NSDate alloc] init];
     
+    //converting combacktime to date
+   
+    
+    //query filter
+
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    [query whereKey:@"comebacktime" lessThan:now];
+
     [query orderByDescending:@"createdAt"];
     return query;
 }
