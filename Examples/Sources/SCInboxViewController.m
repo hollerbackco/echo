@@ -19,6 +19,9 @@
     [[UIApplication sharedApplication] setStatusBarHidden:YES
                                             withAnimation:UIStatusBarAnimationFade];
     
+
+    
+    
 }
 - (BOOL)prefersStatusBarHidden {
     return YES;
@@ -49,9 +52,6 @@
 {
     //date math
     NSDate *now = [[NSDate alloc] init];
-    
-    //converting combacktime to date
-   
     
     //query filter
 

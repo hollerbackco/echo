@@ -55,11 +55,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //parse test
-//    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-//    testObject[@"foo"] = @"bar";
-//    [testObject saveInBackground];
+
     
     //start with photo
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{

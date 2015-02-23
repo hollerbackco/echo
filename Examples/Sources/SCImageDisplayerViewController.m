@@ -154,7 +154,7 @@
     
 }
 
-//day alert
+//hour alert
 - (void)image:(UIImage *)image didFinishSavingHourWithError:(NSError *)error contextInfo:(void *)contextInfo {
     if (error == nil) {
         // Create Alert and set the delegate to listen events
@@ -167,6 +167,27 @@
         // So that you can find out later, which alert we are handling
         alert.tag = 100;
         [alert show];
+        
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Failed :(" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    
+}
+
+//custom alert
+- (void)image:(UIImage *)image didFinishSavingCustomWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error == nil) {
+        // Create Alert and set the delegate to listen events
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nice!"
+                                                        message:@"We'll return this in a CUSTOM from now :)"
+                                                       delegate:self
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:@"OK", nil];
+        // Set the tag to alert unique among the other alerts.
+        // So that you can find out later, which alert we are handling
+        alert.tag = 100;
+        [alert show];
+
         
     } else {
         [[[UIAlertView alloc] initWithTitle:@"Failed :(" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
@@ -227,15 +248,12 @@
     
     //WHERE YOU SET THE TIME FROM NOW IN HOURS
     [offsetComponents setHour:8760];
-    //    [offsetComponents setMinute:30];
-//    [offsetComponents setSecond:5];
     NSDate *aYearFromNow = [gregorian dateByAddingComponents:offsetComponents
                                                        toDate:today options:0];
     
     //converting image file
     NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
     PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
-    
     
     //uploading PFObject
     PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
@@ -249,6 +267,13 @@
             // There was a problem, check error.description
         }
     }];
+    
+    //set local notification
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = aYearFromNow;
+    localNotification.alertBody = @"You have a new photo from 1 year ago";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
     //finished saving trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingYearWithError:contextInfo:), nil);
@@ -289,6 +314,13 @@
         }
     }];
     
+    //set local notification
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = aMonthFromNow;
+    localNotification.alertBody = @"You have a new photo from 1 month ago";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
     //finished saving trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingMonthWithError:contextInfo:), nil);
 
@@ -328,6 +360,13 @@
         }
     }];
     
+    //set local notification
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = aWeekFromNow;
+    localNotification.alertBody = @"You have a new photo from 1 week ago";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
     //finished saving trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWeekWithError:contextInfo:), nil);
 }
@@ -366,10 +405,18 @@
         }
     }];
     
+    //set local notification
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = aDayFromNow;
+    localNotification.alertBody = @"You have a new photo from 1 day ago";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
     //finished saving trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingDayWithError:contextInfo:), nil);
 }
 
+//hour button
 - (IBAction)oneHourButton:(UIButton *)sender {
     //sc recorder code
     UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
@@ -403,12 +450,61 @@
         }
     }];
     
+    //set local notification
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = anHourFromNow;
+    localNotification.alertBody = @"You have a new photo from 1 hour ago";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
     //finished saving trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingHourWithError:contextInfo:), nil);
     
 }
 
+//custom button  - one minute
 - (IBAction)customTimeButton:(UIButton *)sender {
+    //sc recorder code
+    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
+    
+    //date adding math
+    NSDate *today = [[NSDate alloc] init];
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    
+    //WHERE YOU SET THE TIME FROM NOW IN MONTHS
+    [offsetComponents setMinute:1];
+    NSDate *aCustomTime = [gregorian dateByAddingComponents:offsetComponents
+                                                       toDate:today options:0];
+    
+    //converting image file
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
+    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
+    
+    
+    //uploading PFObject
+    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
+    timerImage[@"image"] = imageFile;
+    timerImage[@"comebacktime"] = aCustomTime;
+    timerImage[@"delayType"] = @"Custom / 1 minute";
+    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+    
+    //set local notification
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = aCustomTime;
+    localNotification.alertBody = @"You have a new photo from 1 minute ago";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    //finished saving trigger alert
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingCustomWithError:contextInfo:), nil);
 }
 
 - (IBAction)surpriseMeButton:(UIButton *)sender {
