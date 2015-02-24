@@ -18,6 +18,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
+
     
     [self.filterSwitcherView setImageByUIImage:self.photo];
 }
@@ -25,6 +26,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     self.navigationController.navigationBarHidden = YES;
+
 }
 
 - (void)viewDidLayoutSubviews {
@@ -38,7 +40,10 @@
     [super viewDidLoad];
        NSLog(@"photo view");
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveToCameraRoll)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(saveToCameraRoll)];
+    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+
+
     
     self.filterSwitcherView.contentMode = UIViewContentModeScaleAspectFill;
     
@@ -179,7 +184,7 @@
     if (error == nil) {
         // Create Alert and set the delegate to listen events
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nice!"
-                                                        message:@"We'll return this in a CUSTOM from now :)"
+                                                        message:@"Date Picker coming soon :)"
                                                        delegate:self
                                               cancelButtonTitle:nil
                                               otherButtonTitles:@"OK", nil];
@@ -188,6 +193,27 @@
         alert.tag = 100;
         [alert show];
 
+        
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Failed :(" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+    
+}
+
+//surprise alert
+- (void)image:(UIImage *)image didFinishSavingSurpriseWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error == nil) {
+        // Create Alert and set the delegate to listen events
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nice!"
+                                                        message:@"We'll surprise you with this later :)"
+                                                       delegate:self
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:@"OK", nil];
+        // Set the tag to alert unique among the other alerts.
+        // So that you can find out later, which alert we are handling
+        alert.tag = 100;
+        [alert show];
+        
         
     } else {
         [[[UIAlertView alloc] initWithTitle:@"Failed :(" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
@@ -462,8 +488,74 @@
     
 }
 
-//custom button  - one minute
-- (IBAction)customTimeButton:(UIButton *)sender {
+
+
+//surprise button
+- (IBAction)surpriseMeButton:(UIButton *)sender {
+    //sc recorder code
+    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
+    
+    //date adding math
+    NSDate *today = [[NSDate alloc] init];
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    
+    //WHERE YOU SET THE TIME FROM NOW IN MONTHS
+    [offsetComponents setMinute:1];
+    NSDate *aSurpriseTime = [gregorian dateByAddingComponents:offsetComponents
+                                                     toDate:today options:0];
+    
+    //converting image file
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
+    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
+    
+    
+    //uploading PFObject
+    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
+    timerImage[@"image"] = imageFile;
+    timerImage[@"comebacktime"] = aSurpriseTime;
+    timerImage[@"delayType"] = @"Surprise / 1 minute";
+    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+    
+    //set local notification
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = aSurpriseTime;
+    localNotification.alertBody = @"SURPRISE!! You have a new photo from 1 minute ago.";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    //finished saving trigger alert
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingSurpriseWithError:contextInfo:), nil);
+
+}
+
+//CUSTOM DATE PICKER
+
+//upload function after date has been set
+
+    
+    
+    
+
+    
+
+    
+
+
+
+
+
+
+- (IBAction)didPressCustomButton:(id)sender {
+    
+    NSLog(@"custom button");
     //sc recorder code
     UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
     
@@ -487,7 +579,7 @@
     PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = aCustomTime;
-    timerImage[@"delayType"] = @"Custom / 1 minute";
+    timerImage[@"delayType"] = @"Surprise / 1 minute";
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -499,14 +591,12 @@
     //set local notification
     UILocalNotification* localNotification = [[UILocalNotification alloc] init];
     localNotification.fireDate = aCustomTime;
-    localNotification.alertBody = @"You have a new photo from 1 minute ago";
+    localNotification.alertBody = @"You have a new photo from your custom time";
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
     //finished saving trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingCustomWithError:contextInfo:), nil);
-}
 
-- (IBAction)surpriseMeButton:(UIButton *)sender {
 }
 @end

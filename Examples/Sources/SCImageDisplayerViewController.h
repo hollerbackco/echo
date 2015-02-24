@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <SCSwipeableFilterView.h>
 
-@interface SCImageDisplayerViewController : UIViewController
+@interface SCImageDisplayerViewController : UIViewController <UIPopoverControllerDelegate>
 
 @property (nonatomic, strong) UIImage *photo;
 @property (weak, nonatomic) IBOutlet SCSwipeableFilterView *filterSwitcherView;
@@ -20,7 +20,12 @@
 - (IBAction)oneWeekButton:(UIButton *)sender;
 - (IBAction)oneDayButton:(UIButton *)sender;
 - (IBAction)oneHourButton:(UIButton *)sender;
-- (IBAction)customTimeButton:(UIButton *)sender;
 - (IBAction)surpriseMeButton:(UIButton *)sender;
+
+
+
+- (IBAction)didPressCustomButton:(id)sender;
+
+
 
 @end

@@ -532,7 +532,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEV-qP-fJN">
-                                <rect key="frame" x="20" y="330" width="164" height="30"/>
+                                <rect key="frame" x="20" y="290" width="164" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
                                 <state key="normal" title="  one day from now">
@@ -544,7 +544,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3I-gT-Xga">
-                                <rect key="frame" x="20" y="270" width="175" height="30"/>
+                                <rect key="frame" x="20" y="220" width="175" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
                                 <state key="normal" title="  one week from now">
@@ -556,7 +556,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jC-Dv-3uw">
-                                <rect key="frame" x="20" y="150" width="164" height="30"/>
+                                <rect key="frame" x="20" y="80" width="164" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
                                 <state key="normal" title="  one year from now">
@@ -568,7 +568,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYV-bn-9BX">
-                                <rect key="frame" x="20" y="210" width="181" height="30"/>
+                                <rect key="frame" x="20" y="150" width="181" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
                                 <state key="normal" title="  one month from now">
@@ -580,7 +580,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSP-m6-G98">
-                                <rect key="frame" x="20" y="510" width="115" height="35"/>
+                                <rect key="frame" x="20" y="430" width="115" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
                                 <state key="normal" title="  surprise me">
@@ -592,19 +592,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="399-tG-JMt">
-                                <rect key="frame" x="20" y="447" width="186" height="35"/>
+                                <rect key="frame" x="20" y="500" width="186" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
-                                <state key="normal" title="  one minute from now">
+                                <state key="normal" title="  set custom below">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="customTimeButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="PGs-eJ-PZD"/>
+                                    <action selector="didPressCustomButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="60V-7Q-g8q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucO-NH-JMs">
-                                <rect key="frame" x="20" y="390" width="167" height="30"/>
+                                <rect key="frame" x="20" y="360" width="167" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
                                 <state key="normal" title="  one hour from now">
@@ -625,7 +625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4oW-9Q-aD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="831"/>
+            <point key="canvasLocation" x="620" y="813"/>
         </scene>
         <!--Session List View Controller-->
         <scene sceneID="4iu-K4-Nj3">
@@ -713,6 +713,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="bJg-WH-jph"/>
+        <segue reference="zwH-Wr-o57"/>
     </inferredMetricsTieBreakers>
 </document>
