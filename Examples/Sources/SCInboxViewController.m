@@ -18,7 +18,6 @@
     [super viewDidLoad];
     [[UIApplication sharedApplication] setStatusBarHidden:YES
                                             withAnimation:UIStatusBarAnimationFade];
-    
 
     
     
@@ -94,6 +93,20 @@
     [thumbnailImageView loadInBackground];
     
     return cell;
+}
+
+//cell height
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == 0) { //change 0 to whatever cell index you want taller
+        return 540;
+    }
+    else {
+        return 540;
+    }
+    //separator
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
 }
 
 //SNAP TO CELL

@@ -23,7 +23,6 @@
 - (IBAction)oneDayButton:(UIButton *)sender;
 - (IBAction)oneHourButton:(UIButton *)sender;
 - (IBAction)surpriseMeButton:(UIButton *)sender;
-- (IBAction)modalButton:(id)sender;
 
 
 
