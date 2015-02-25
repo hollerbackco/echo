@@ -236,7 +236,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugv-l0-Q37">
+                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugv-l0-Q37">
                                 <rect key="frame" x="0.0" y="58" width="130" height="35"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.87843137250000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
@@ -252,7 +252,7 @@
                                     <action selector="switchCameraMode:" destination="2" eventType="touchUpInside" id="1Li-ow-ynw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLr-Fl-Xe8">
+                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLr-Fl-Xe8">
                                 <rect key="frame" x="0.0" y="30" width="91" height="30"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.87843137250000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
@@ -265,7 +265,7 @@
                                     <action selector="switchFlash:" destination="2" eventType="touchUpInside" id="5te-ci-j7r"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" fixedFrame="YES" text="Recorded - 0.0 sec" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCO-VC-azk" userLabel="Time recorded Label">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" ambiguous="YES" misplaced="YES" text="Recorded - 0.0 sec" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCO-VC-azk" userLabel="Time recorded Label">
                                 <rect key="frame" x="144" y="30" width="160" height="22"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -274,7 +274,7 @@
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4R-qi-aeH">
-                                <rect key="frame" x="273" y="30" width="36" height="30"/>
+                                <rect key="frame" x="271" y="21" width="36" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -287,10 +287,10 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7i-LL-T1C">
-                                <rect key="frame" x="20" y="450" width="80" height="30"/>
+                                <rect key="frame" x="20" y="40" width="80" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="Vnn-vh-zEB"/>
+                                    <constraint firstAttribute="width" constant="80" id="MEX-2t-BMd"/>
                                 </constraints>
                                 <state key="normal" title="inbox">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -303,8 +303,10 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="CO2-79-oQ3" firstAttribute="top" secondItem="m7i-LL-T1C" secondAttribute="bottom" constant="88" id="67L-Bn-jVm"/>
-                            <constraint firstItem="m7i-LL-T1C" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="4" id="CFc-GY-KtS"/>
+                            <constraint firstItem="m7i-LL-T1C" firstAttribute="top" secondItem="Ocw-w6-kIV" secondAttribute="bottom" constant="20" id="7fB-xU-LNE"/>
+                            <constraint firstItem="m7i-LL-T1C" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="4" id="XHA-v5-vME"/>
+                            <constraint firstItem="Ugv-l0-Q37" firstAttribute="top" secondItem="m7i-LL-T1C" secondAttribute="bottom" constant="8" symbolic="YES" id="n1J-fC-sub"/>
+                            <constraint firstItem="cCO-VC-azk" firstAttribute="leading" secondItem="m7i-LL-T1C" secondAttribute="trailing" constant="44" id="wQe-Au-ytz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bvx-6l-zji"/>

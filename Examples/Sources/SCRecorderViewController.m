@@ -50,12 +50,16 @@
 	return UIStatusBarStyleLightContent;
 }
 
+
 #endif
 
 #pragma mark - Left cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:YES
+                                            withAnimation:UIStatusBarAnimationFade];
 
     
     //start with photo
@@ -105,8 +109,8 @@
     self.focusView.recorder = _recorder;
     [previewView addSubview:self.focusView];
     
-    self.focusView.outsideFocusTargetImage = [UIImage imageNamed:@"focus_ring"];
-    self.focusView.insideFocusTargetImage = [UIImage imageNamed:@"focus_ring"];
+    self.focusView.outsideFocusTargetImage = [UIImage imageNamed:@""];
+    self.focusView.insideFocusTargetImage = [UIImage imageNamed:@""];
 
     _recorder.initializeRecordSessionLazily = YES;
     [_recorder openSession:^(NSError *sessionError, NSError *audioError, NSError *videoError, NSError *photoError) {
@@ -121,6 +125,10 @@
         NSLog(@"=======================");
         [self prepareCamera];
     }];
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 - (void)recorder:(SCRecorder *)recorder didSkipVideoSampleBuffer:(SCRecordSession *)recordSession {
