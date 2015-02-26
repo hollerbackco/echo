@@ -57,7 +57,7 @@
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     [query whereKey:@"comebacktime" lessThan:now];
 
-    [query orderByDescending:@"createdAt"];
+    [query addDescendingOrder:@"comebacktime"];
     return query;
 }
 
