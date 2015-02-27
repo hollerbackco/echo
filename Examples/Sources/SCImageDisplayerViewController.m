@@ -44,6 +44,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(saveToCameraRoll)];
     [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
 
+    
 
     
     self.filterSwitcherView.contentMode = UIViewContentModeScaleAspectFill;
@@ -58,6 +59,8 @@
                                              ];
 
 	// Do any additional setup after loading the view.
+    
+
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
@@ -250,9 +253,7 @@
         // You need to compare 'buttonIndex' & 0 to other value(1,2,3) if u have more buttons.
         // Then u can check which button was pressed.
         if (buttonIndex == 0) {// 1st Other Button
-            
-            //go back to camera
-//            [self.navigationController popViewControllerAnimated:YES];
+
             NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
             addNoteText = [[alertView textFieldAtIndex:0] text];
             
@@ -320,7 +321,9 @@
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = aYearFromNow;
     timerImage[@"delayType"] = @"One Year";
-    timerImage[@"firstNote"] = addNoteText;
+    if (addNoteText.length != 0) {
+        timerImage[@"firstNote"] = addNoteText;
+    }
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -338,6 +341,9 @@
     
     //finished saving trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingYearWithError:contextInfo:), nil);
+    
+    //clear note
+    addNoteText = @"";
     
 }
 
@@ -367,7 +373,9 @@
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = aMonthFromNow;
     timerImage[@"delayType"] = @"One Month";
-    timerImage[@"firstNote"] = addNoteText;
+    if (addNoteText.length != 0) {
+        timerImage[@"firstNote"] = addNoteText;
+    }
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -385,6 +393,9 @@
     
     //finished saving trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingMonthWithError:contextInfo:), nil);
+    
+    //clear note
+    addNoteText = @"";
 
 }
 
@@ -414,7 +425,9 @@
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = aWeekFromNow;
     timerImage[@"delayType"] = @"One Week";
-    timerImage[@"firstNote"] = addNoteText;
+    if (addNoteText.length != 0) {
+        timerImage[@"firstNote"] = addNoteText;
+    }
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -432,6 +445,9 @@
     
     //finished saving trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWeekWithError:contextInfo:), nil);
+    
+    //clear note
+    addNoteText = @"";
 }
 
 //day from now button
@@ -460,7 +476,9 @@
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = aDayFromNow;
     timerImage[@"delayType"] = @"One Day";
-    timerImage[@"firstNote"] = addNoteText;
+    if (addNoteText.length != 0) {
+        timerImage[@"firstNote"] = addNoteText;
+    }
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -478,6 +496,9 @@
     
     //finished saving trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingDayWithError:contextInfo:), nil);
+    
+    //clear note
+    addNoteText = @"";
 }
 
 //hour button
@@ -506,7 +527,9 @@
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = anHourFromNow;
     timerImage[@"delayType"] = @"One Hour";
-    timerImage[@"firstNote"] = addNoteText;
+    if (addNoteText.length != 0) {
+        timerImage[@"firstNote"] = addNoteText;
+    }
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -524,6 +547,9 @@
     
     //finished saving trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingHourWithError:contextInfo:), nil);
+    
+    //clear note
+    addNoteText = @"";
     
 }
 
@@ -555,7 +581,9 @@
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = aSurpriseTime;
     timerImage[@"delayType"] = @"Surprise / 1 minute";
+    if (addNoteText.length != 0) {
     timerImage[@"firstNote"] = addNoteText;
+    }
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -573,6 +601,9 @@
     
     //finished saving trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingSurpriseWithError:contextInfo:), nil);
+    
+    //clear note
+    addNoteText = @"";
 
 }
 
