@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <SCSwipeableFilterView.h>
 
+NSString *addNoteText;
 
 @interface SCImageDisplayerViewController : UIViewController <UIPopoverControllerDelegate>
 
@@ -24,9 +25,10 @@
 - (IBAction)oneHourButton:(UIButton *)sender;
 - (IBAction)surpriseMeButton:(UIButton *)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *addNoteLabel;
 
 
-- (IBAction)didPressCustomButton:(id)sender;
+- (IBAction)didPressAddNoteButton:(id)sender;
 
 
 

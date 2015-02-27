@@ -85,6 +85,25 @@
     UILabel *returnAtLabel = (UILabel*) [cell viewWithTag:102];
     returnAtLabel.text = [dfdf stringFromDate:returnAtDate];
     
+    //ui label for note
+
+    
+    
+    NSString *note = [object objectForKey:@"firstNote"];
+    if (note.length == 0) {
+        UILabel *noteLabel = (UILabel*) [cell viewWithTag:103];
+        noteLabel.text = @"";
+        noteLabel.alpha = 0;
+    }
+    else {
+        NSString *notePadded = [NSString stringWithFormat:@" %@", note];
+        UILabel *noteLabel = (UILabel*) [cell viewWithTag:103];
+        noteLabel.text = notePadded;
+        noteLabel.numberOfLines = 0; //will wrap text in new line
+        noteLabel.preferredMaxLayoutWidth = 300.0;
+        [noteLabel sizeToFit];
+    }
+    
     //image
     PFFile *thumbnail = [object objectForKey:@"image"];
     PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
@@ -151,11 +170,11 @@ NSIndexPath *currentSelection;
 
 - (IBAction)didPressNextButton:(UIButton *)sender {
     //Remember to check boundaries before just setting an indexpath or your app will crash!
-    if(currentSelection){
-        currentSelection = [NSIndexPath indexPathForRow:currentSelection.row+1 inSection:currentSelection.section];
-    }else{
-        currentSelection = [NSIndexPath indexPathForRow:0 inSection:0];
-    }
+//    if(currentSelection){
+//        currentSelection = [NSIndexPath indexPathForRow:currentSelection.row+1 inSection:currentSelection.section];
+//    }else{
+      currentSelection = [NSIndexPath indexPathForRow:currentSelection.row+1 inSection:0];
+//    }
     
     [self.tableView selectRowAtIndexPath:currentSelection animated:NO scrollPosition: UITableViewScrollPositionTop];
 

@@ -243,6 +243,35 @@
         }
         
     }
+    
+    else if (alertView.tag == 200) {
+        //Yes
+        
+        // You need to compare 'buttonIndex' & 0 to other value(1,2,3) if u have more buttons.
+        // Then u can check which button was pressed.
+        if (buttonIndex == 0) {// 1st Other Button
+            
+            //go back to camera
+//            [self.navigationController popViewControllerAnimated:YES];
+            NSLog(@"Entered: %@",[[alertView textFieldAtIndex:0] text]);
+            addNoteText = [[alertView textFieldAtIndex:0] text];
+            
+            if (addNoteText.length != 0){
+                _addNoteLabel.numberOfLines = 0; // allows label to have as many lines as needed
+                _addNoteLabel.text = [NSString stringWithFormat:@"%@", addNoteText];
+                _addNoteLabel.preferredMaxLayoutWidth = 300.0;
+                
+            
+            }
+            else {
+            self.addNoteLabel.text = @"Add a Note";
+            }
+        }
+        else if (buttonIndex == 1) {// 2nd Other Button
+            
+        }
+        
+    }
     else {
         //No
         // Other Alert View
@@ -282,11 +311,16 @@
     NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
     PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
     
+    //trying to grab text
+    NSLog(@"Entered: %@", addNoteText);
+    
+    
     //uploading PFObject
     PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = aYearFromNow;
     timerImage[@"delayType"] = @"One Year";
+    timerImage[@"firstNote"] = addNoteText;
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -333,6 +367,7 @@
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = aMonthFromNow;
     timerImage[@"delayType"] = @"One Month";
+    timerImage[@"firstNote"] = addNoteText;
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -379,6 +414,7 @@
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = aWeekFromNow;
     timerImage[@"delayType"] = @"One Week";
+    timerImage[@"firstNote"] = addNoteText;
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -424,6 +460,7 @@
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = aDayFromNow;
     timerImage[@"delayType"] = @"One Day";
+    timerImage[@"firstNote"] = addNoteText;
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -469,6 +506,7 @@
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = anHourFromNow;
     timerImage[@"delayType"] = @"One Hour";
+    timerImage[@"firstNote"] = addNoteText;
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -517,6 +555,7 @@
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = aSurpriseTime;
     timerImage[@"delayType"] = @"Surprise / 1 minute";
+    timerImage[@"firstNote"] = addNoteText;
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -542,63 +581,16 @@
 
 //upload function after date has been set
 
-    
-    
-    
-
-    
-
-    
 
 
-
-
-
-
-- (IBAction)didPressCustomButton:(id)sender {
-    
-    NSLog(@"custom button");
-    //sc recorder code
-    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
-    
-    //date adding math
-    NSDate *today = [[NSDate alloc] init];
-    NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-    
-    //WHERE YOU SET THE TIME FROM NOW IN MONTHS
-    [offsetComponents setMinute:1];
-    NSDate *aCustomTime = [gregorian dateByAddingComponents:offsetComponents
-                                                       toDate:today options:0];
-    
-    //converting image file
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
-    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
-    
-    
-    //uploading PFObject
-    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
-    timerImage[@"image"] = imageFile;
-    timerImage[@"comebacktime"] = aCustomTime;
-    timerImage[@"delayType"] = @"Surprise / 1 minute";
-    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            // The object has been saved.
-        } else {
-            // There was a problem, check error.description
-        }
-    }];
-    
-    //set local notification
-    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-    localNotification.fireDate = aCustomTime;
-    localNotification.alertBody = @"You have a new photo from your custom time";
-    localNotification.timeZone = [NSTimeZone defaultTimeZone];
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    
-    //finished saving trigger alert
-    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingCustomWithError:contextInfo:), nil);
-
+//add note
+- (IBAction)didPressAddNoteButton:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Add a note to this photo" message:@"" delegate:self cancelButtonTitle:@"Done" otherButtonTitles:nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    alert.tag = 200;
+    [alert show];
 }
+
+
+
 @end

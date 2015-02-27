@@ -118,6 +118,15 @@
                                             <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="shadowOffset" width="0.0" height="1"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="note" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0og-dB-4cz">
+                                            <rect key="frame" x="140" y="261" width="40" height="25"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="0.0" height="1"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="fBm-A7-fdL" firstAttribute="centerX" secondItem="zLQ-kX-CV6" secondAttribute="centerX" id="01i-Qa-5bZ"/>
@@ -133,9 +142,11 @@
                                         <constraint firstItem="zLQ-kX-CV6" firstAttribute="centerX" secondItem="Aly-db-vqU" secondAttribute="centerX" id="QPs-ZA-bh6"/>
                                         <constraint firstItem="4eZ-po-QNh" firstAttribute="leading" secondItem="qHQ-5i-LhH" secondAttribute="leading" id="T3o-V5-z8Q"/>
                                         <constraint firstItem="4eZ-po-QNh" firstAttribute="top" secondItem="ua5-Go-uzy" secondAttribute="top" id="UZU-jZ-MjW"/>
+                                        <constraint firstAttribute="centerX" secondItem="0og-dB-4cz" secondAttribute="centerX" id="W8s-yw-XGA"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Aly-db-vqU" secondAttribute="bottom" constant="-40" id="ZxD-ct-syq"/>
                                         <constraint firstItem="ua5-Go-uzy" firstAttribute="leading" secondItem="Wf9-uw-RbX" secondAttribute="leadingMargin" constant="99" id="bLg-w3-Ea2"/>
                                         <constraint firstItem="Aly-db-vqU" firstAttribute="leading" secondItem="Wf9-uw-RbX" secondAttribute="leading" id="cve-M1-qFB"/>
+                                        <constraint firstItem="0og-dB-4cz" firstAttribute="centerY" secondItem="Wf9-uw-RbX" secondAttribute="centerY" id="jSg-lr-tL7"/>
                                         <constraint firstItem="QN3-h8-Lu0" firstAttribute="trailing" secondItem="fBm-A7-fdL" secondAttribute="trailing" id="knV-JI-7FQ"/>
                                         <constraint firstAttribute="trailing" secondItem="Aly-db-vqU" secondAttribute="trailing" id="pXd-v7-Ym4"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="qHQ-5i-LhH" secondAttribute="bottom" constant="-7" id="uTi-2E-MeZ"/>
@@ -529,13 +540,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="krI-1R-E4Z" customClass="SCSwipeableFilterView">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="krI-1R-E4Z" customClass="SCSwipeableFilterView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm4-cx-Ydh">
+                                <rect key="frame" x="0.0" y="510" width="320" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="20" maxY="0.0"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressAddNoteButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="hqR-2v-WZk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Note" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-ki-C0W">
+                                <rect key="frame" x="124" y="529" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEV-qP-fJN">
-                                <rect key="frame" x="20" y="290" width="164" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="290" width="164" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0035220397639137424" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
                                 <state key="normal" title="  one day from now">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -546,8 +576,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3I-gT-Xga">
-                                <rect key="frame" x="20" y="220" width="175" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="220" width="175" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0035220397639137424" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
                                 <state key="normal" title="  one week from now">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -558,8 +588,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jC-Dv-3uw">
-                                <rect key="frame" x="20" y="80" width="164" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="80" width="164" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0035220397639137424" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
                                 <state key="normal" title="  one year from now">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -570,8 +600,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYV-bn-9BX">
-                                <rect key="frame" x="20" y="150" width="181" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="150" width="181" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0035220397639137424" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
                                 <state key="normal" title="  one month from now">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -582,8 +612,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSP-m6-G98">
-                                <rect key="frame" x="20" y="430" width="115" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="430" width="115" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0035220397639137424" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
                                 <state key="normal" title="  surprise me">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -593,21 +623,9 @@
                                     <action selector="surpriseMeButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="OkM-zx-bN3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="399-tG-JMt">
-                                <rect key="frame" x="20" y="500" width="186" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
-                                <state key="normal" title="  set custom below">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressCustomButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="60V-7Q-g8q"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucO-NH-JMs">
-                                <rect key="frame" x="20" y="360" width="167" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.31" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="360" width="167" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0035220397639137424" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
                                 <state key="normal" title="  one hour from now">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -619,9 +637,21 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="leading" secondItem="krI-1R-E4Z" secondAttribute="leading" id="E3B-EM-hPI"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Wm4-cx-Ydh" secondAttribute="bottom" constant="-2" id="PmI-nN-7bg"/>
+                            <constraint firstAttribute="centerX" secondItem="Djo-ki-C0W" secondAttribute="centerX" id="eYa-GF-p7W"/>
+                            <constraint firstAttribute="trailing" secondItem="Wm4-cx-Ydh" secondAttribute="trailing" id="h7c-D6-snC"/>
+                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="top" secondItem="6sY-Dg-LS2" secondAttribute="top" constant="510" id="rlt-s6-Gwt"/>
+                            <constraint firstItem="bgh-6A-yO5" firstAttribute="top" secondItem="Djo-ki-C0W" secondAttribute="bottom" constant="18" id="sZl-un-j8P"/>
+                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="trailing" secondItem="krI-1R-E4Z" secondAttribute="trailing" id="vYs-fd-owM"/>
+                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="leading" secondItem="6sY-Dg-LS2" secondAttribute="leading" id="vuH-FO-RvM"/>
+                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="top" secondItem="krI-1R-E4Z" secondAttribute="top" constant="510" id="xcH-cA-WkJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hOj-oO-IGn"/>
                     <connections>
+                        <outlet property="addNoteLabel" destination="Djo-ki-C0W" id="SaG-df-Rka"/>
                         <outlet property="filterSwitcherView" destination="krI-1R-E4Z" id="Spr-wD-hYN"/>
                     </connections>
                 </viewController>
