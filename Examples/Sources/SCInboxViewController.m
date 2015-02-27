@@ -71,6 +71,8 @@
         cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
+    
+    
     //ui label for createdAt
     NSDate *createdAtDate = [object createdAt];
     NSDateFormatter *df = [NSDateFormatter new];
@@ -86,9 +88,6 @@
     returnAtLabel.text = [dfdf stringFromDate:returnAtDate];
     
     //ui label for note
-
-    
-    
     NSString *note = [object objectForKey:@"firstNote"];
     if (note.length == 0) {
         UILabel *noteLabel = (UILabel*) [cell viewWithTag:103];
@@ -96,7 +95,7 @@
         noteLabel.alpha = 0;
     }
     else {
-        NSString *notePadded = [NSString stringWithFormat:@" %@", note];
+        NSString *notePadded = [NSString stringWithFormat:@" %@ ", note];
         UILabel *noteLabel = (UILabel*) [cell viewWithTag:103];
         noteLabel.text = notePadded;
         noteLabel.numberOfLines = 0; //will wrap text in new line
@@ -112,6 +111,8 @@
     [thumbnailImageView loadInBackground];
     
     return cell;
+    
+
 }
 
 //cell height
@@ -125,6 +126,8 @@
     }
     //separator
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+
 
 }
 
@@ -144,12 +147,6 @@
 }
 
 
-//trying to go next cell
-NSIndexPath *currentSelection;
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    currentSelection = indexPath;
-}
 
 
 
@@ -168,17 +165,26 @@ NSIndexPath *currentSelection;
  }
  */
 
-- (IBAction)didPressNextButton:(UIButton *)sender {
-    //Remember to check boundaries before just setting an indexpath or your app will crash!
-//    if(currentSelection){
-//        currentSelection = [NSIndexPath indexPathForRow:currentSelection.row+1 inSection:currentSelection.section];
-//    }else{
-      currentSelection = [NSIndexPath indexPathForRow:currentSelection.row+1 inSection:0];
-//    }
+
+//NEXT CELL BUTTON SET UP
+NSIndexPath *indexPathForSelectedRow;
+
+- (void)selectRowAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated scrollPosition:(UITableViewScrollPosition)scrollPosition {
     
-    [self.tableView selectRowAtIndexPath:currentSelection animated:NO scrollPosition: UITableViewScrollPositionTop];
+}
+
+//next cell button
+- (IBAction)didPressNextButton:(UIButton *)sender {
+    
+    NSLog(@"didPressNextButton");
+  
+    NSIndexPath * actualIndexPath = self.tableView.indexPathForSelectedRow;
+    NSIndexPath * newIndexPath = [NSIndexPath  indexPathForRow:actualIndexPath.row+1 inSection:actualIndexPath.section];
+    [self.tableView selectRowAtIndexPath:newIndexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+    
 
 }
+
 
 
 @end
