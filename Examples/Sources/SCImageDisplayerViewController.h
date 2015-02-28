@@ -15,6 +15,7 @@ NSString *dateString;
 @interface SCImageDisplayerViewController : UIViewController <UIPopoverControllerDelegate>
 
 
+@property (weak, nonatomic) IBOutlet UIImageView *addNoteTIcon;
 @property (nonatomic, strong) UIImage *photo;
 @property (weak, nonatomic) IBOutlet SCSwipeableFilterView *filterSwitcherView;
 

@@ -279,10 +279,13 @@
                 _addNoteLabel.preferredMaxLayoutWidth = 300.0;
                 [_addNoteLabel sizeToFit];
                 
+                self.addNoteTIcon.alpha = 0;
+                
             
             }
             else {
-            self.addNoteLabel.text = @"Add Note";
+            self.addNoteLabel.text = @"";
+            self.addNoteTIcon.alpha = 1;
             }
         }
         else if (buttonIndex == 1) {// 2nd Other Button

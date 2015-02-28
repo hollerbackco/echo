@@ -544,6 +544,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="addNoteButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="uxo-Dy-dMh">
+                                <rect key="frame" x="274" y="20" width="26" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="X0E-gZ-yHb"/>
+                                    <constraint firstAttribute="width" constant="26" id="ogF-ov-3Pp"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm4-cx-Ydh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -629,7 +636,7 @@
                                     <action selector="oneHourButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="M27-yl-2F3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add Note" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-ki-C0W">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-ki-C0W">
                                 <rect key="frame" x="10" y="10" width="300" height="62"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -657,6 +664,7 @@
                             <constraint firstAttribute="bottomMargin" secondItem="Wm4-cx-Ydh" secondAttribute="bottom" constant="-2" id="PmI-nN-7bg"/>
                             <constraint firstAttribute="trailing" secondItem="Wm4-cx-Ydh" secondAttribute="trailing" id="h7c-D6-snC"/>
                             <constraint firstItem="Wm4-cx-Ydh" firstAttribute="top" secondItem="6sY-Dg-LS2" secondAttribute="top" id="rlt-s6-Gwt"/>
+                            <constraint firstAttribute="trailing" secondItem="uxo-Dy-dMh" secondAttribute="trailing" constant="20" id="srS-hi-rl5"/>
                             <constraint firstItem="Wm4-cx-Ydh" firstAttribute="trailing" secondItem="krI-1R-E4Z" secondAttribute="trailing" id="vYs-fd-owM"/>
                             <constraint firstItem="Wm4-cx-Ydh" firstAttribute="leading" secondItem="6sY-Dg-LS2" secondAttribute="leading" id="vuH-FO-RvM"/>
                             <constraint firstItem="Wm4-cx-Ydh" firstAttribute="top" secondItem="krI-1R-E4Z" secondAttribute="top" id="xcH-cA-WkJ"/>
@@ -666,6 +674,7 @@
                     <navigationItem key="navigationItem" id="hOj-oO-IGn"/>
                     <connections>
                         <outlet property="addNoteLabel" destination="Djo-ki-C0W" id="SaG-df-Rka"/>
+                        <outlet property="addNoteTIcon" destination="uxo-Dy-dMh" id="irm-NP-d8Y"/>
                         <outlet property="filterSwitcherView" destination="krI-1R-E4Z" id="Spr-wD-hYN"/>
                     </connections>
                 </viewController>
@@ -751,6 +760,7 @@
         <image name="Record-Normal-icon.png" width="256" height="256"/>
         <image name="Record-Pressed-icon.png" width="256" height="256"/>
         <image name="Stop-Normal-Red-icon.png" width="256" height="256"/>
+        <image name="addNoteButton.png" width="43" height="44"/>
         <image name="capture_flip.png" width="36" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
