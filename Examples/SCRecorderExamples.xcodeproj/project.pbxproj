@@ -43,6 +43,7 @@
 		E75258EA1AA22FA50022AA9E /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75258E91AA22FA50022AA9E /* RMDateSelectionViewController.m */; };
 		E75258EE1AA23A210022AA9E /* addNoteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258ED1AA23A210022AA9E /* addNoteButton.png */; };
 		E75258F01AA243A80022AA9E /* addNoteButtonSmaller.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258EF1AA243A80022AA9E /* addNoteButtonSmaller.png */; };
+		E75258F21AA256010022AA9E /* gradient-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258F11AA256010022AA9E /* gradient-bg.png */; };
 		E7E1FD651A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD5F1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m */; };
 		E7E1FD661A9C1EFF00A4B8A6 /* TDDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD611A9C1EFF00A4B8A6 /* TDDatePickerController.m */; };
 		E7E1FD671A9C1EFF00A4B8A6 /* TDDatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E1FD621A9C1EFF00A4B8A6 /* TDDatePickerController.xib */; };
@@ -136,6 +137,7 @@
 		E75258E91AA22FA50022AA9E /* RMDateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDateSelectionViewController.m; sourceTree = "<group>"; };
 		E75258ED1AA23A210022AA9E /* addNoteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addNoteButton.png; sourceTree = "<group>"; };
 		E75258EF1AA243A80022AA9E /* addNoteButtonSmaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addNoteButtonSmaller.png; sourceTree = "<group>"; };
+		E75258F11AA256010022AA9E /* gradient-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient-bg.png"; sourceTree = "<group>"; };
 		E7E1FD5D1A9C1EFF00A4B8A6 /* TDSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSemiModal.h; sourceTree = "<group>"; };
 		E7E1FD5E1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TDSemiModalExtension.h"; sourceTree = "<group>"; };
 		E7E1FD5F1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TDSemiModalExtension.m"; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 		DC7F371218FC2A0D00D54901 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E75258F11AA256010022AA9E /* gradient-bg.png */,
 				E75258EF1AA243A80022AA9E /* addNoteButtonSmaller.png */,
 				E75258ED1AA23A210022AA9E /* addNoteButton.png */,
 				E7F2C08E1A99344A00B8CCBF /* focus_ring@2x.png */,
@@ -498,6 +501,7 @@
 				DC7F376C18FC2B0300D54901 /* Play-Pressed-icon.png in Resources */,
 				DC7F376918FC2B0300D54901 /* Default@2x.png in Resources */,
 				DC7F376A18FC2B0300D54901 /* Pause-Normal-icon.png in Resources */,
+				E75258F21AA256010022AA9E /* gradient-bg.png in Resources */,
 				DCBF83CF19DE1560006547EE /* a_filter.cisf in Resources */,
 				DC7F376618FC2B0300D54901 /* capture_onion_onion@2x.png in Resources */,
 				E7E1FD671A9C1EFF00A4B8A6 /* TDDatePickerController.xib in Resources */,
