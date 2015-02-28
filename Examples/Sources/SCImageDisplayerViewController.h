@@ -10,6 +10,7 @@
 #import <SCSwipeableFilterView.h>
 
 NSString *addNoteText;
+NSString *dateString;
 
 @interface SCImageDisplayerViewController : UIViewController <UIPopoverControllerDelegate>
 

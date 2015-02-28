@@ -199,7 +199,7 @@
     if (error == nil) {
         // Create Alert and set the delegate to listen events
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nice!"
-                                                        message:@"Date Picker coming soon :)"
+                                                        message:[NSString stringWithFormat:@"We'll return this to you at %@", dateString]
                                                        delegate:self
                                               cancelButtonTitle:nil
                                               otherButtonTitles:@"OK", nil];
@@ -235,6 +235,8 @@
     }
     
 }
+
+
 
 //ALERT BUTTON PRESS ACTION - CAN BE SAME FOR ALL ALERTS FROM THE TIME BUTTONS - SEND BACK TO CAMERA
 
@@ -643,6 +645,52 @@
 - (void)dateSelectionViewController:(RMDateSelectionViewController *)vc didSelectDate:(NSDate *)aDate {
     //Do something
     NSLog(@"pressed select with date: %@", aDate);
+    
+    //sc recorder code
+    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
+    
+    
+    //converting image file
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
+    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
+    
+    
+    //uploading PFObject
+    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
+    timerImage[@"image"] = imageFile;
+    timerImage[@"comebacktime"] = aDate;
+    timerImage[@"delayType"] = @"Custom";
+    if (addNoteText.length != 0) {
+        timerImage[@"firstNote"] = addNoteText;
+    }
+    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+    
+    //convert date to string
+    dateString = [NSDateFormatter localizedStringFromDate:aDate
+                                                          dateStyle:NSDateFormatterShortStyle
+                                                          timeStyle:NSDateFormatterFullStyle];
+    NSLog(@"this is the date in string: %@", dateString);
+    
+    //set local notification
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = aDate;
+    localNotification.alertBody = [NSString stringWithFormat:@"Your photo set to return at %@ is here",dateString];
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    //save to photo album and trigger alert
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingCustomWithError:contextInfo:), nil);
+    
+    //clear note
+    NSLog(@"before custom note clear: %@", addNoteText);
+    addNoteText = @"";
+    NSLog(@"after custom note clear: %@", addNoteText);
 }
 
 - (void)dateSelectionViewControllerDidCancel:(RMDateSelectionViewController *)vc {
