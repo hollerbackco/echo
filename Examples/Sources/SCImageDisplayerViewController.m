@@ -339,11 +339,13 @@
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
-    //finished saving trigger alert
+    //save to photo album and trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingYearWithError:contextInfo:), nil);
     
     //clear note
+    NSLog(@"before year note clear: %@", addNoteText);
     addNoteText = @"";
+    NSLog(@"after year note clear: %@", addNoteText);
     
 }
 
@@ -391,11 +393,13 @@
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
-    //finished saving trigger alert
+    //save to photo album and trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingMonthWithError:contextInfo:), nil);
     
     //clear note
+    NSLog(@"before month note clear: %@", addNoteText);
     addNoteText = @"";
+    NSLog(@"after month note clear: %@", addNoteText);
 
 }
 
@@ -443,11 +447,13 @@
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
-    //finished saving trigger alert
+    //save to photo album and trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWeekWithError:contextInfo:), nil);
     
     //clear note
+    NSLog(@"before week note clear: %@", addNoteText);
     addNoteText = @"";
+    NSLog(@"after week note clear: %@", addNoteText);
 }
 
 //day from now button
@@ -494,11 +500,13 @@
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
-    //finished saving trigger alert
+    //save to photo album and trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingDayWithError:contextInfo:), nil);
     
     //clear note
+    NSLog(@"before day note clear: %@", addNoteText);
     addNoteText = @"";
+    NSLog(@"after day note clear: %@", addNoteText);
 }
 
 //hour button
@@ -545,11 +553,13 @@
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
-    //finished saving trigger alert
+    //save to photo album and trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingHourWithError:contextInfo:), nil);
     
     //clear note
+    NSLog(@"before hour note clear: %@", addNoteText);
     addNoteText = @"";
+    NSLog(@"after hour note clear: %@", addNoteText);
     
 }
 
@@ -599,11 +609,13 @@
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
-    //finished saving trigger alert
+    //save to photo album and trigger alert
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingSurpriseWithError:contextInfo:), nil);
     
     //clear note
+    NSLog(@"before surprise note clear: %@", addNoteText);
     addNoteText = @"";
+    NSLog(@"after surprise note clear: %@", addNoteText);
 
 }
 
