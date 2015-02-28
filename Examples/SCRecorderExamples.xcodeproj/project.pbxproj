@@ -40,6 +40,9 @@
 		DCB0416D19253FB800D945D2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB0416C19253FB800D945D2 /* GLKit.framework */; };
 		DCB69AB5197EE31300AF667A /* SCEditVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB69AB4197EE31300AF667A /* SCEditVideoViewController.m */; };
 		DCBF83CF19DE1560006547EE /* a_filter.cisf in Resources */ = {isa = PBXBuildFile; fileRef = DCBF83CE19DE1560006547EE /* a_filter.cisf */; };
+		E75258EA1AA22FA50022AA9E /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75258E91AA22FA50022AA9E /* RMDateSelectionViewController.m */; };
+		E75258EE1AA23A210022AA9E /* addNoteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258ED1AA23A210022AA9E /* addNoteButton.png */; };
+		E75258F01AA243A80022AA9E /* addNoteButtonSmaller.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258EF1AA243A80022AA9E /* addNoteButtonSmaller.png */; };
 		E7E1FD651A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD5F1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m */; };
 		E7E1FD661A9C1EFF00A4B8A6 /* TDDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD611A9C1EFF00A4B8A6 /* TDDatePickerController.m */; };
 		E7E1FD671A9C1EFF00A4B8A6 /* TDDatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E1FD621A9C1EFF00A4B8A6 /* TDDatePickerController.xib */; };
@@ -129,6 +132,10 @@
 		DCB69AB3197EE31300AF667A /* SCEditVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEditVideoViewController.h; sourceTree = "<group>"; };
 		DCB69AB4197EE31300AF667A /* SCEditVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEditVideoViewController.m; sourceTree = "<group>"; };
 		DCBF83CE19DE1560006547EE /* a_filter.cisf */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = a_filter.cisf; sourceTree = "<group>"; };
+		E75258E81AA22FA50022AA9E /* RMDateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDateSelectionViewController.h; sourceTree = "<group>"; };
+		E75258E91AA22FA50022AA9E /* RMDateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDateSelectionViewController.m; sourceTree = "<group>"; };
+		E75258ED1AA23A210022AA9E /* addNoteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addNoteButton.png; sourceTree = "<group>"; };
+		E75258EF1AA243A80022AA9E /* addNoteButtonSmaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addNoteButtonSmaller.png; sourceTree = "<group>"; };
 		E7E1FD5D1A9C1EFF00A4B8A6 /* TDSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSemiModal.h; sourceTree = "<group>"; };
 		E7E1FD5E1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TDSemiModalExtension.h"; sourceTree = "<group>"; };
 		E7E1FD5F1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TDSemiModalExtension.m"; sourceTree = "<group>"; };
@@ -267,6 +274,7 @@
 		DC7F371118FC2A0D00D54901 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E75258E71AA22FA50022AA9E /* RMDateSelectionViewController */,
 				E7E1FD691A9C1F0B00A4B8A6 /* modal shizz */,
 				DCB69ABA197EE89100AF667A /* AudioVC */,
 				DC34A7D9199D6E6D0001BD08 /* Utils */,
@@ -287,6 +295,8 @@
 		DC7F371218FC2A0D00D54901 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E75258EF1AA243A80022AA9E /* addNoteButtonSmaller.png */,
+				E75258ED1AA23A210022AA9E /* addNoteButton.png */,
 				E7F2C08E1A99344A00B8CCBF /* focus_ring@2x.png */,
 				DCBF83CE19DE1560006547EE /* a_filter.cisf */,
 				DC1C8E9E18FD24C9005A342D /* Main.storyboard */,
@@ -364,6 +374,15 @@
 				DC7F374418FC2AEB00D54901 /* SCImageDisplayerViewController.h */,
 			);
 			name = ImageVC;
+			sourceTree = "<group>";
+		};
+		E75258E71AA22FA50022AA9E /* RMDateSelectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E75258E81AA22FA50022AA9E /* RMDateSelectionViewController.h */,
+				E75258E91AA22FA50022AA9E /* RMDateSelectionViewController.m */,
+			);
+			path = RMDateSelectionViewController;
 			sourceTree = "<group>";
 		};
 		E7E1FD691A9C1F0B00A4B8A6 /* modal shizz */ = {
@@ -484,6 +503,7 @@
 				E7E1FD671A9C1EFF00A4B8A6 /* TDDatePickerController.xib in Resources */,
 				DC7F376E18FC2B0300D54901 /* Record-Pressed-icon.png in Resources */,
 				E7F2C08F1A99344A00B8CCBF /* focus_ring@2x.png in Resources */,
+				E75258EE1AA23A210022AA9E /* addNoteButton.png in Resources */,
 				DC7F376518FC2B0300D54901 /* capture_onion_selected@2x.png in Resources */,
 				DC1C8E9F18FD24C9005A342D /* Main.storyboard in Resources */,
 				DC7F376418FC2B0300D54901 /* capture_flip@2x.png in Resources */,
@@ -493,6 +513,7 @@
 				DC7F376B18FC2B0300D54901 /* Play-Normal-icon.png in Resources */,
 				DC7F371618FC2A0D00D54901 /* InfoPlist.strings in Resources */,
 				DC7F376718FC2B0300D54901 /* Default-568h@2x.png in Resources */,
+				E75258F01AA243A80022AA9E /* addNoteButtonSmaller.png in Resources */,
 				DC7F376F18FC2B0300D54901 /* Stop-Normal-Red-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +570,7 @@
 				DC34A7D5199D67C80001BD08 /* SCSessionTableViewCell.m in Sources */,
 				E7E1FD651A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m in Sources */,
 				DC7F375718FC2AF700D54901 /* SCRecorderViewController.m in Sources */,
+				E75258EA1AA22FA50022AA9E /* RMDateSelectionViewController.m in Sources */,
 				DC34A7D2199D66FA0001BD08 /* SCSessionListViewController.m in Sources */,
 				DCB69AB5197EE31300AF667A /* SCEditVideoViewController.m in Sources */,
 				DC7F375418FC2AF700D54901 /* SCImageDisplayerViewController.m in Sources */,
@@ -606,6 +628,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -637,8 +660,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -646,6 +671,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF5E8CEF07570049574E0CFE /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Will Dennis (CD856775Q2)";
@@ -663,12 +689,14 @@
 				);
 				INFOPLIST_FILE = "Sources/SCRecorderExamples-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -677,6 +705,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC44345A483F1AE7AE1B64E2 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Will Dennis (CD856775Q2)";
@@ -694,12 +723,14 @@
 				);
 				INFOPLIST_FILE = "Sources/SCRecorderExamples-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

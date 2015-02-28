@@ -8,9 +8,9 @@
 
 #import <Parse/Parse.h>
 #import "SCImageDisplayerViewController.h"
-#import "TDDatePickerController.h"
+#import "RMDateSelectionViewController.h"
 
-@interface SCImageDisplayerViewController () {
+@interface SCImageDisplayerViewController () <RMDateSelectionViewControllerDelegate> {
 }
 @end
 
@@ -36,15 +36,21 @@
     [self.filterSwitcherView setNeedsDisplay];
 }
 
+
 - (void)viewDidLoad
 {
+    
+
     [super viewDidLoad];
        NSLog(@"photo view");
 
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(saveToCameraRoll)];
+    //status bar and buttons
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"                          " style:UIBarButtonItemStylePlain target:self action:@selector(didPressAddNoteButton:)];
     [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+//    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+    [[UIApplication sharedApplication] setStatusBarHidden:YES
+                                            withAnimation:UIStatusBarAnimationFade];
 
-    
 
     
     self.filterSwitcherView.contentMode = UIViewContentModeScaleAspectFill;
@@ -70,6 +76,11 @@
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
 
 }
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 
 //ALERTS
 
@@ -258,14 +269,18 @@
             addNoteText = [[alertView textFieldAtIndex:0] text];
             
             if (addNoteText.length != 0){
+                
+                // 20 point top and left margin. Sized to leave 20 pt at right.
+
                 _addNoteLabel.numberOfLines = 0; // allows label to have as many lines as needed
                 _addNoteLabel.text = [NSString stringWithFormat:@"%@", addNoteText];
                 _addNoteLabel.preferredMaxLayoutWidth = 300.0;
+                [_addNoteLabel sizeToFit];
                 
             
             }
             else {
-            self.addNoteLabel.text = @"Add a Note";
+            self.addNoteLabel.text = @"Add Note";
             }
         }
         else if (buttonIndex == 1) {// 2nd Other Button
@@ -282,9 +297,9 @@
 }
 
 - (void)saveToCameraRoll {
-    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
-    
-    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+//    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
+//    
+//    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
 
 
@@ -623,6 +638,28 @@
 //CUSTOM DATE PICKER
 
 //upload function after date has been set
+
+#pragma mark - RMDateSelectionViewController Delegates
+- (void)dateSelectionViewController:(RMDateSelectionViewController *)vc didSelectDate:(NSDate *)aDate {
+    //Do something
+    NSLog(@"pressed select with date: %@", aDate);
+}
+
+- (void)dateSelectionViewControllerDidCancel:(RMDateSelectionViewController *)vc {
+    //Do something else
+        NSLog(@"pressed cancel");
+}
+
+
+- (IBAction)customButton:(id)sender {
+    NSLog(@"pressed custom button");
+    RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController dateSelectionController];
+    dateSelectionVC.delegate = self;
+    
+    [dateSelectionVC show];
+
+}
+
 
 
 

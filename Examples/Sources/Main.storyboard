@@ -545,8 +545,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm4-cx-Ydh">
-                                <rect key="frame" x="0.0" y="510" width="320" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="20" maxY="0.0"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal">
@@ -557,12 +557,6 @@
                                     <action selector="didPressAddNoteButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="hqR-2v-WZk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Note" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-ki-C0W">
-                                <rect key="frame" x="124" y="529" width="73" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEV-qP-fJN">
                                 <rect key="frame" x="0.0" y="290" width="164" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0035220397639137424" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
@@ -635,18 +629,38 @@
                                     <action selector="oneHourButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="M27-yl-2F3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add Note" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-ki-C0W">
+                                <rect key="frame" x="10" y="10" width="300" height="62"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U51-fH-pZ7">
+                                <rect key="frame" x="0.0" y="500" width="86" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0035220397639999998" blue="1" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="19"/>
+                                <state key="normal" title="  custom">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="customButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="VpT-Mz-64B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Djo-ki-C0W" firstAttribute="top" secondItem="Wm4-cx-Ydh" secondAttribute="bottom" constant="-560" id="Bz5-sx-P6E"/>
                             <constraint firstItem="Wm4-cx-Ydh" firstAttribute="leading" secondItem="krI-1R-E4Z" secondAttribute="leading" id="E3B-EM-hPI"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Wm4-cx-Ydh" secondAttribute="bottom" constant="-2" id="PmI-nN-7bg"/>
-                            <constraint firstAttribute="centerX" secondItem="Djo-ki-C0W" secondAttribute="centerX" id="eYa-GF-p7W"/>
                             <constraint firstAttribute="trailing" secondItem="Wm4-cx-Ydh" secondAttribute="trailing" id="h7c-D6-snC"/>
-                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="top" secondItem="6sY-Dg-LS2" secondAttribute="top" constant="510" id="rlt-s6-Gwt"/>
-                            <constraint firstItem="bgh-6A-yO5" firstAttribute="top" secondItem="Djo-ki-C0W" secondAttribute="bottom" constant="18" id="sZl-un-j8P"/>
+                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="top" secondItem="6sY-Dg-LS2" secondAttribute="top" id="rlt-s6-Gwt"/>
                             <constraint firstItem="Wm4-cx-Ydh" firstAttribute="trailing" secondItem="krI-1R-E4Z" secondAttribute="trailing" id="vYs-fd-owM"/>
                             <constraint firstItem="Wm4-cx-Ydh" firstAttribute="leading" secondItem="6sY-Dg-LS2" secondAttribute="leading" id="vuH-FO-RvM"/>
-                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="top" secondItem="krI-1R-E4Z" secondAttribute="top" constant="510" id="xcH-cA-WkJ"/>
+                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="top" secondItem="krI-1R-E4Z" secondAttribute="top" id="xcH-cA-WkJ"/>
+                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="leading" secondItem="Djo-ki-C0W" secondAttribute="trailing" constant="-310" id="zFH-Jq-Vr5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hOj-oO-IGn"/>
@@ -657,7 +671,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4oW-9Q-aD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="620" y="813"/>
+            <point key="canvasLocation" x="600" y="813"/>
         </scene>
         <!--Session List View Controller-->
         <scene sceneID="4iu-K4-Nj3">

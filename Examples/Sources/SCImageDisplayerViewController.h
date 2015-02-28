@@ -24,9 +24,11 @@ NSString *addNoteText;
 - (IBAction)oneDayButton:(UIButton *)sender;
 - (IBAction)oneHourButton:(UIButton *)sender;
 - (IBAction)surpriseMeButton:(UIButton *)sender;
+- (IBAction)customButton:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *addNoteLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *addNoteIcon;
 
 - (IBAction)didPressAddNoteButton:(id)sender;
 
