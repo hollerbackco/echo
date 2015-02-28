@@ -125,6 +125,8 @@
         NSLog(@"=======================");
         [self prepareCamera];
     }];
+    
+
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -396,12 +398,18 @@
 
 - (IBAction)capturePhoto:(id)sender {
     [_recorder capturePhoto:^(NSError *error, UIImage *image) {
+        
+        //clear note
+        NSLog(@"before photo take note clear: %@", addNoteText);
+        addNoteText = @"";
+        NSLog(@"after photo take note clear: %@", addNoteText);
         if (image != nil) {
             [self showPhoto:image];
         } else {
             [self showAlertViewWithTitle:@"Failed to capture photo" message:error.localizedDescription];
         }
     }];
+
 }
 
 

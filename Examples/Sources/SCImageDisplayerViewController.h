@@ -28,7 +28,6 @@ NSString *addNoteText;
 
 @property (weak, nonatomic) IBOutlet UILabel *addNoteLabel;
 
-@property (weak, nonatomic) IBOutlet UIButton *addNoteIcon;
 
 - (IBAction)didPressAddNoteButton:(id)sender;
 
