@@ -40,10 +40,15 @@
 		DCB0416D19253FB800D945D2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB0416C19253FB800D945D2 /* GLKit.framework */; };
 		DCB69AB5197EE31300AF667A /* SCEditVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB69AB4197EE31300AF667A /* SCEditVideoViewController.m */; };
 		DCBF83CF19DE1560006547EE /* a_filter.cisf in Resources */ = {isa = PBXBuildFile; fileRef = DCBF83CE19DE1560006547EE /* a_filter.cisf */; };
+		E74D23A91AA2716C00525FC6 /* InboxItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = E74D23A81AA2716C00525FC6 /* InboxItemView.m */; };
 		E75258EA1AA22FA50022AA9E /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75258E91AA22FA50022AA9E /* RMDateSelectionViewController.m */; };
 		E75258EE1AA23A210022AA9E /* addNoteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258ED1AA23A210022AA9E /* addNoteButton.png */; };
 		E75258F01AA243A80022AA9E /* addNoteButtonSmaller.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258EF1AA243A80022AA9E /* addNoteButtonSmaller.png */; };
 		E75258F21AA256010022AA9E /* gradient-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258F11AA256010022AA9E /* gradient-bg.png */; };
+		E75258F41AA25EA50022AA9E /* dotdotdot action button.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258F31AA25EA50022AA9E /* dotdotdot action button.png */; };
+		E75258F61AA25F030022AA9E /* dotdotdotbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258F51AA25F030022AA9E /* dotdotdotbutton.png */; };
+		E75258F81AA25FAA0022AA9E /* dotbuttonsmaller.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258F71AA25FAA0022AA9E /* dotbuttonsmaller.png */; };
+		E79973CF1AA2727E009BCA30 /* InboxItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79973CE1AA2727E009BCA30 /* InboxItemViewController.m */; };
 		E7E1FD651A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD5F1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m */; };
 		E7E1FD661A9C1EFF00A4B8A6 /* TDDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD611A9C1EFF00A4B8A6 /* TDDatePickerController.m */; };
 		E7E1FD671A9C1EFF00A4B8A6 /* TDDatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E1FD621A9C1EFF00A4B8A6 /* TDDatePickerController.xib */; };
@@ -94,7 +99,7 @@
 		DC34A7D4199D67C80001BD08 /* SCSessionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSessionTableViewCell.m; sourceTree = "<group>"; };
 		DC34A7D6199D695F0001BD08 /* SCRecordSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRecordSessionManager.h; sourceTree = "<group>"; };
 		DC34A7D7199D695F0001BD08 /* SCRecordSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRecordSessionManager.m; sourceTree = "<group>"; };
-		DC7F370818FC2A0D00D54901 /* echo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = echo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC7F370818FC2A0D00D54901 /* dot dot dot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dot dot dot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7F370B18FC2A0D00D54901 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DC7F370D18FC2A0D00D54901 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DC7F370F18FC2A0D00D54901 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -133,11 +138,18 @@
 		DCB69AB3197EE31300AF667A /* SCEditVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEditVideoViewController.h; sourceTree = "<group>"; };
 		DCB69AB4197EE31300AF667A /* SCEditVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEditVideoViewController.m; sourceTree = "<group>"; };
 		DCBF83CE19DE1560006547EE /* a_filter.cisf */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = a_filter.cisf; sourceTree = "<group>"; };
+		E74D23A71AA2716C00525FC6 /* InboxItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxItemView.h; sourceTree = "<group>"; };
+		E74D23A81AA2716C00525FC6 /* InboxItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxItemView.m; sourceTree = "<group>"; };
 		E75258E81AA22FA50022AA9E /* RMDateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDateSelectionViewController.h; sourceTree = "<group>"; };
 		E75258E91AA22FA50022AA9E /* RMDateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDateSelectionViewController.m; sourceTree = "<group>"; };
 		E75258ED1AA23A210022AA9E /* addNoteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addNoteButton.png; sourceTree = "<group>"; };
 		E75258EF1AA243A80022AA9E /* addNoteButtonSmaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addNoteButtonSmaller.png; sourceTree = "<group>"; };
 		E75258F11AA256010022AA9E /* gradient-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient-bg.png"; sourceTree = "<group>"; };
+		E75258F31AA25EA50022AA9E /* dotdotdot action button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dotdotdot action button.png"; sourceTree = "<group>"; };
+		E75258F51AA25F030022AA9E /* dotdotdotbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotdotdotbutton.png; sourceTree = "<group>"; };
+		E75258F71AA25FAA0022AA9E /* dotbuttonsmaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotbuttonsmaller.png; sourceTree = "<group>"; };
+		E79973CD1AA2727E009BCA30 /* InboxItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxItemViewController.h; sourceTree = "<group>"; };
+		E79973CE1AA2727E009BCA30 /* InboxItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxItemViewController.m; sourceTree = "<group>"; };
 		E7E1FD5D1A9C1EFF00A4B8A6 /* TDSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSemiModal.h; sourceTree = "<group>"; };
 		E7E1FD5E1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TDSemiModalExtension.h"; sourceTree = "<group>"; };
 		E7E1FD5F1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TDSemiModalExtension.m"; sourceTree = "<group>"; };
@@ -239,7 +251,7 @@
 		DC7F370918FC2A0D00D54901 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DC7F370818FC2A0D00D54901 /* echo.app */,
+				DC7F370818FC2A0D00D54901 /* dot dot dot.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -297,6 +309,9 @@
 		DC7F371218FC2A0D00D54901 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E75258F71AA25FAA0022AA9E /* dotbuttonsmaller.png */,
+				E75258F31AA25EA50022AA9E /* dotdotdot action button.png */,
+				E75258F51AA25F030022AA9E /* dotdotdotbutton.png */,
 				E75258F11AA256010022AA9E /* gradient-bg.png */,
 				E75258EF1AA243A80022AA9E /* addNoteButtonSmaller.png */,
 				E75258ED1AA23A210022AA9E /* addNoteButton.png */,
@@ -408,6 +423,10 @@
 			children = (
 				E7F2C0A41A99453400B8CCBF /* SCInboxViewController.h */,
 				E7F2C0A51A99453400B8CCBF /* SCInboxViewController.m */,
+				E79973CD1AA2727E009BCA30 /* InboxItemViewController.h */,
+				E79973CE1AA2727E009BCA30 /* InboxItemViewController.m */,
+				E74D23A71AA2716C00525FC6 /* InboxItemView.h */,
+				E74D23A81AA2716C00525FC6 /* InboxItemView.m */,
 			);
 			name = Inbox;
 			sourceTree = "<group>";
@@ -424,9 +443,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DC7F370718FC2A0D00D54901 /* echo */ = {
+		DC7F370718FC2A0D00D54901 /* dot dot dot */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC7F373A18FC2A0D00D54901 /* Build configuration list for PBXNativeTarget "echo" */;
+			buildConfigurationList = DC7F373A18FC2A0D00D54901 /* Build configuration list for PBXNativeTarget "dot dot dot" */;
 			buildPhases = (
 				27B34F89FF52F6B3295CEA69 /* Check Pods Manifest.lock */,
 				DC7F370418FC2A0D00D54901 /* Sources */,
@@ -438,9 +457,9 @@
 			);
 			dependencies = (
 			);
-			name = echo;
+			name = "dot dot dot";
 			productName = SCRecorderExamples;
-			productReference = DC7F370818FC2A0D00D54901 /* echo.app */;
+			productReference = DC7F370818FC2A0D00D54901 /* dot dot dot.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -471,7 +490,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				DC7F370718FC2A0D00D54901 /* echo */,
+				DC7F370718FC2A0D00D54901 /* dot dot dot */,
 			);
 		};
 /* End PBXProject section */
@@ -507,6 +526,8 @@
 				E7E1FD671A9C1EFF00A4B8A6 /* TDDatePickerController.xib in Resources */,
 				DC7F376E18FC2B0300D54901 /* Record-Pressed-icon.png in Resources */,
 				E7F2C08F1A99344A00B8CCBF /* focus_ring@2x.png in Resources */,
+				E75258F41AA25EA50022AA9E /* dotdotdot action button.png in Resources */,
+				E75258F81AA25FAA0022AA9E /* dotbuttonsmaller.png in Resources */,
 				E75258EE1AA23A210022AA9E /* addNoteButton.png in Resources */,
 				DC7F376518FC2B0300D54901 /* capture_onion_selected@2x.png in Resources */,
 				DC1C8E9F18FD24C9005A342D /* Main.storyboard in Resources */,
@@ -519,6 +540,7 @@
 				DC7F376718FC2B0300D54901 /* Default-568h@2x.png in Resources */,
 				E75258F01AA243A80022AA9E /* addNoteButtonSmaller.png in Resources */,
 				DC7F376F18FC2B0300D54901 /* Stop-Normal-Red-icon.png in Resources */,
+				E75258F61AA25F030022AA9E /* dotdotdotbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,9 +593,11 @@
 				E7F2C0AD1A9962EE00B8CCBF /* DismissSegue.m in Sources */,
 				E7E1FD661A9C1EFF00A4B8A6 /* TDDatePickerController.m in Sources */,
 				E7E1FD681A9C1EFF00A4B8A6 /* TDSemiModalViewController.m in Sources */,
+				E79973CF1AA2727E009BCA30 /* InboxItemViewController.m in Sources */,
 				DC34A7D5199D67C80001BD08 /* SCSessionTableViewCell.m in Sources */,
 				E7E1FD651A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m in Sources */,
 				DC7F375718FC2AF700D54901 /* SCRecorderViewController.m in Sources */,
+				E74D23A91AA2716C00525FC6 /* InboxItemView.m in Sources */,
 				E75258EA1AA22FA50022AA9E /* RMDateSelectionViewController.m in Sources */,
 				DC34A7D2199D66FA0001BD08 /* SCSessionListViewController.m in Sources */,
 				DCB69AB5197EE31300AF667A /* SCEditVideoViewController.m in Sources */,
@@ -697,6 +721,7 @@
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
+					"$(OTHER_LDFLAGS)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -731,6 +756,7 @@
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
+					"$(OTHER_LDFLAGS)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -751,7 +777,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC7F373A18FC2A0D00D54901 /* Build configuration list for PBXNativeTarget "echo" */ = {
+		DC7F373A18FC2A0D00D54901 /* Build configuration list for PBXNativeTarget "dot dot dot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC7F373B18FC2A0D00D54901 /* Debug */,

@@ -25,6 +25,25 @@
             </objects>
             <point key="canvasLocation" x="-303" y="188"/>
         </scene>
+        <!--Inbox Item View Controller-->
+        <scene sceneID="NoM-22-SbA">
+            <objects>
+                <viewController id="ML1-6q-Io7" customClass="InboxItemViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c5x-uV-Wib"/>
+                        <viewControllerLayoutGuide type="bottom" id="fRj-Y4-AdG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dlV-vY-tEI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9jf-d9-obu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qB1-GG-MNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-303" y="-484"/>
+        </scene>
         <!--Inbox View Controller-->
         <scene sceneID="LtQ-bw-okh">
             <objects>
@@ -175,7 +194,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iw9-cB-Pni" userLabel="Preview View">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iw9-cB-Pni" userLabel="Preview View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdr-8e-oyR" userLabel="LoadingView">
@@ -190,7 +209,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dDr-zv-xXt" userLabel="DownBar">
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dDr-zv-xXt" userLabel="DownBar">
                                 <rect key="frame" x="0.0" y="477" width="320" height="91"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jaS-8J-FB6" userLabel="Record View">
@@ -231,9 +250,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiJ-TG-pdG">
                                         <rect key="frame" x="0.0" y="28" width="320" height="63"/>
-                                        <color key="backgroundColor" red="0.3294117647" green="0.87843137250000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.3294117647" green="0.87843137250000003" blue="0.51372549020000002" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Return this moment in a...">
+                                        <state key="normal" backgroundImage="dotbuttonsmaller.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -247,9 +266,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugv-l0-Q37">
-                                <rect key="frame" x="0.0" y="58" width="130" height="35"/>
+                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugv-l0-Q37">
+                                <rect key="frame" x="0.0" y="78" width="130" height="35"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.87843137250000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="UYs-QD-ZEs"/>
+                                    <constraint firstAttribute="height" constant="35" id="aSl-NZ-vgT"/>
+                                </constraints>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Switch Photo">
@@ -263,8 +286,8 @@
                                     <action selector="switchCameraMode:" destination="2" eventType="touchUpInside" id="1Li-ow-ynw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLr-Fl-Xe8">
-                                <rect key="frame" x="0.0" y="30" width="91" height="30"/>
+                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLr-Fl-Xe8">
+                                <rect key="frame" x="0.0" y="30" width="72" height="30"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.87843137250000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -276,7 +299,7 @@
                                     <action selector="switchFlash:" destination="2" eventType="touchUpInside" id="5te-ci-j7r"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" ambiguous="YES" misplaced="YES" text="Recorded - 0.0 sec" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCO-VC-azk" userLabel="Time recorded Label">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" text="Recorded - 0.0 sec" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCO-VC-azk" userLabel="Time recorded Label">
                                 <rect key="frame" x="144" y="30" width="160" height="22"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -311,12 +334,35 @@
                                     <segue destination="TiE-GI-g9j" kind="modal" id="xkB-ss-mQ4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FH-je-NSv">
+                                <rect key="frame" x="20" y="83" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Yzz-sk-Lda"/>
+                                </constraints>
+                                <state key="normal" title="inbox cards">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ML1-6q-Io7" kind="push" id="mNt-k0-CFc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
+                            <constraint firstItem="cCO-VC-azk" firstAttribute="top" secondItem="uLr-Fl-Xe8" secondAttribute="top" id="3gf-2W-Tht"/>
                             <constraint firstItem="m7i-LL-T1C" firstAttribute="top" secondItem="Ocw-w6-kIV" secondAttribute="bottom" constant="20" id="7fB-xU-LNE"/>
+                            <constraint firstItem="Ugv-l0-Q37" firstAttribute="leading" secondItem="dDr-zv-xXt" secondAttribute="leading" id="A4x-sZ-cIA"/>
+                            <constraint firstItem="Ugv-l0-Q37" firstAttribute="leading" secondItem="1FH-je-NSv" secondAttribute="trailing" constant="-100" id="Btj-rL-2ZC"/>
+                            <constraint firstItem="1FH-je-NSv" firstAttribute="top" secondItem="m7i-LL-T1C" secondAttribute="bottom" constant="13" id="NFH-Jt-QK9"/>
+                            <constraint firstItem="cCO-VC-azk" firstAttribute="trailing" secondItem="3" secondAttribute="trailingMargin" id="OdQ-DC-tdP"/>
+                            <constraint firstItem="Ugv-l0-Q37" firstAttribute="leading" secondItem="uLr-Fl-Xe8" secondAttribute="leading" id="PGi-Yc-Lj7"/>
+                            <constraint firstItem="Ugv-l0-Q37" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="U7t-xM-eF4"/>
                             <constraint firstItem="m7i-LL-T1C" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="4" id="XHA-v5-vME"/>
+                            <constraint firstItem="Ugv-l0-Q37" firstAttribute="leading" secondItem="iw9-cB-Pni" secondAttribute="leading" id="kQY-eB-Kus"/>
                             <constraint firstItem="Ugv-l0-Q37" firstAttribute="top" secondItem="m7i-LL-T1C" secondAttribute="bottom" constant="8" symbolic="YES" id="n1J-fC-sub"/>
+                            <constraint firstItem="cCO-VC-azk" firstAttribute="top" secondItem="Ocw-w6-kIV" secondAttribute="bottom" constant="10" id="ryW-Yb-I7M"/>
                             <constraint firstItem="cCO-VC-azk" firstAttribute="leading" secondItem="m7i-LL-T1C" secondAttribute="trailing" constant="44" id="wQe-Au-ytz"/>
                         </constraints>
                     </view>
@@ -568,10 +614,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEV-qP-fJN">
-                                <rect key="frame" x="0.0" y="290" width="164" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="  ...day">
+                                <rect key="frame" x="0.0" y="290" width="69" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <state key="normal" title="  day...">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -580,10 +626,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3I-gT-Xga">
-                                <rect key="frame" x="0.0" y="220" width="175" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="  ...week">
+                                <rect key="frame" x="0.0" y="220" width="81" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <state key="normal" title="  week...">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -592,10 +638,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jC-Dv-3uw">
-                                <rect key="frame" x="0.0" y="80" width="164" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="  ...year">
+                                <rect key="frame" x="0.0" y="80" width="75" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <state key="normal" title="  year...">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -604,10 +650,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYV-bn-9BX">
-                                <rect key="frame" x="0.0" y="150" width="181" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="  ...month">
+                                <rect key="frame" x="0.0" y="150" width="92" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <state key="normal" title="  month...">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -616,10 +662,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSP-m6-G98">
-                                <rect key="frame" x="0.0" y="430" width="124" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="  ...surprise me">
+                                <rect key="frame" x="0.0" y="430" width="133" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <state key="normal" title="  surprise me...">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -628,10 +674,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucO-NH-JMs">
-                                <rect key="frame" x="0.0" y="360" width="167" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="  ...hour">
+                                <rect key="frame" x="0.0" y="360" width="75" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <state key="normal" title="  hour...">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -648,10 +694,10 @@
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U51-fH-pZ7">
-                                <rect key="frame" x="0.0" y="500" width="107" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="  ...set time...">
+                                <rect key="frame" x="0.0" y="500" width="101" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
+                                <state key="normal" title="  set time...">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -769,6 +815,7 @@
         <image name="Stop-Normal-Red-icon.png" width="256" height="256"/>
         <image name="addNoteButton.png" width="43" height="44"/>
         <image name="capture_flip.png" width="36" height="30"/>
+        <image name="dotbuttonsmaller.png" width="960" height="189"/>
         <image name="gradient-bg.png" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
