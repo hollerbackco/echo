@@ -222,7 +222,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiJ-TG-pdG">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="63"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
                                         <color key="backgroundColor" red="0.3294117647" green="0.87843137250000003" blue="0.51372549020000002" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" backgroundImage="dotbuttonsmaller.png">
@@ -778,23 +778,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aff-Lb-YCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1098" y="831"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="vvp-ZB-BtL">
-            <objects>
-                <viewController id="CFb-m4-LZg" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LyO-su-XM1"/>
-                        <viewControllerLayoutGuide type="bottom" id="NHv-6r-XLx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UYF-ed-FiB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RDA-ip-O1t" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>
