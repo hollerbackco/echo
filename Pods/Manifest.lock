@@ -1,12 +1,15 @@
 PODS:
+  - DateTools (1.5.0)
   - MDCSwipeToChoose (0.2.2)
   - Shimmer (1.0.2)
 
 DEPENDENCIES:
+  - DateTools
   - MDCSwipeToChoose
   - Shimmer
 
 SPEC CHECKSUMS:
+  DateTools: 7df78f0c4719eb28cfd2d58a90fafd036e73156c
   MDCSwipeToChoose: b14f3becc0011634d2f0a37f488b768b824a643d
   Shimmer: 057fcfe9c1c978d69d50b64fce93a61080cd08ec
 

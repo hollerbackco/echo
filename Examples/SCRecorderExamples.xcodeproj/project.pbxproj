@@ -53,6 +53,7 @@
 		E7E1FD661A9C1EFF00A4B8A6 /* TDDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD611A9C1EFF00A4B8A6 /* TDDatePickerController.m */; };
 		E7E1FD671A9C1EFF00A4B8A6 /* TDDatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E1FD621A9C1EFF00A4B8A6 /* TDDatePickerController.xib */; };
 		E7E1FD681A9C1EFF00A4B8A6 /* TDSemiModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD641A9C1EFF00A4B8A6 /* TDSemiModalViewController.m */; };
+		E7EFC2DC1AA2AD8B00B1E999 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7EFC2DB1AA2AD8B00B1E999 /* close@2x.png */; };
 		E7F2C0731A99058A00B8CCBF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F2C0711A99058A00B8CCBF /* Parse.framework */; };
 		E7F2C0741A99058A00B8CCBF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F2C0721A99058A00B8CCBF /* Bolts.framework */; };
 		E7F2C0761A99059F00B8CCBF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F2C0751A99059F00B8CCBF /* AudioToolbox.framework */; };
@@ -158,6 +159,7 @@
 		E7E1FD621A9C1EFF00A4B8A6 /* TDDatePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDDatePickerController.xib; sourceTree = "<group>"; };
 		E7E1FD631A9C1EFF00A4B8A6 /* TDSemiModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSemiModalViewController.h; sourceTree = "<group>"; };
 		E7E1FD641A9C1EFF00A4B8A6 /* TDSemiModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSemiModalViewController.m; sourceTree = "<group>"; };
+		E7EFC2DB1AA2AD8B00B1E999 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		E7F2C0711A99058A00B8CCBF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E7F2C0721A99058A00B8CCBF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E7F2C0751A99059F00B8CCBF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -309,6 +311,8 @@
 		DC7F371218FC2A0D00D54901 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DC1C8E9E18FD24C9005A342D /* Main.storyboard */,
+				E7EFC2DB1AA2AD8B00B1E999 /* close@2x.png */,
 				E75258F71AA25FAA0022AA9E /* dotbuttonsmaller.png */,
 				E75258F31AA25EA50022AA9E /* dotdotdot action button.png */,
 				E75258F51AA25F030022AA9E /* dotdotdotbutton.png */,
@@ -317,7 +321,6 @@
 				E75258ED1AA23A210022AA9E /* addNoteButton.png */,
 				E7F2C08E1A99344A00B8CCBF /* focus_ring@2x.png */,
 				DCBF83CE19DE1560006547EE /* a_filter.cisf */,
-				DC1C8E9E18FD24C9005A342D /* Main.storyboard */,
 				DC7F375818FC2B0300D54901 /* capture_flip@2x.png */,
 				DC7F375918FC2B0300D54901 /* capture_onion_selected@2x.png */,
 				DC7F375A18FC2B0300D54901 /* capture_onion_onion@2x.png */,
@@ -403,6 +406,17 @@
 			path = RMDateSelectionViewController;
 			sourceTree = "<group>";
 		};
+		E78A0BA91AA2A766008A64C0 /* card inbox */ = {
+			isa = PBXGroup;
+			children = (
+				E79973CD1AA2727E009BCA30 /* InboxItemViewController.h */,
+				E79973CE1AA2727E009BCA30 /* InboxItemViewController.m */,
+				E74D23A71AA2716C00525FC6 /* InboxItemView.h */,
+				E74D23A81AA2716C00525FC6 /* InboxItemView.m */,
+			);
+			name = "card inbox";
+			sourceTree = "<group>";
+		};
 		E7E1FD691A9C1F0B00A4B8A6 /* modal shizz */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,10 +437,7 @@
 			children = (
 				E7F2C0A41A99453400B8CCBF /* SCInboxViewController.h */,
 				E7F2C0A51A99453400B8CCBF /* SCInboxViewController.m */,
-				E79973CD1AA2727E009BCA30 /* InboxItemViewController.h */,
-				E79973CE1AA2727E009BCA30 /* InboxItemViewController.m */,
-				E74D23A71AA2716C00525FC6 /* InboxItemView.h */,
-				E74D23A81AA2716C00525FC6 /* InboxItemView.m */,
+				E78A0BA91AA2A766008A64C0 /* card inbox */,
 			);
 			name = Inbox;
 			sourceTree = "<group>";
@@ -517,6 +528,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7EFC2DC1AA2AD8B00B1E999 /* close@2x.png in Resources */,
 				DC7F376C18FC2B0300D54901 /* Play-Pressed-icon.png in Resources */,
 				DC7F376918FC2B0300D54901 /* Default@2x.png in Resources */,
 				DC7F376A18FC2B0300D54901 /* Pause-Normal-icon.png in Resources */,

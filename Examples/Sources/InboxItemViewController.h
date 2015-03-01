@@ -10,10 +10,13 @@
 #import "InboxItemView.h"
 #import <ParseUI/ParseUI.h>
 
+UIImage *queryImage;
+
 @interface InboxItemViewController : UIViewController <MDCSwipeToChooseDelegate>
 
 //@property (nonatomic, strong) Person *currentPerson;
 @property (nonatomic, strong) InboxItemView *frontCardView;
 @property (nonatomic, strong) InboxItemView *backCardView;
+
 
 @end

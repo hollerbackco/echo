@@ -7,6 +7,7 @@
 //
 
 #import "SCInboxViewController.h"
+#import "DateTools.h"
 
 @interface SCInboxViewController ()
 
@@ -87,6 +88,11 @@
     UILabel *returnAtLabel = (UILabel*) [cell viewWithTag:102];
     returnAtLabel.text = [dfdf stringFromDate:returnAtDate];
     
+    //ui label for time ago
+    UILabel *timeAgoLabel = (UILabel*) [cell viewWithTag:105];
+    NSDate *timeAgoDate = [object createdAt];
+    timeAgoLabel.text = timeAgoDate.timeAgoSinceNow;
+    
     //ui label for note
     NSString *note = [object objectForKey:@"firstNote"];
     if (note.length == 0) {
@@ -95,11 +101,12 @@
         noteLabel.alpha = 0;
     }
     else {
-        NSString *notePadded = [NSString stringWithFormat:@" %@ ", note];
+        NSString *notePadded = [NSString stringWithFormat:@"%@", note];
         UILabel *noteLabel = (UILabel*) [cell viewWithTag:103];
         noteLabel.text = notePadded;
         noteLabel.numberOfLines = 0; //will wrap text in new line
         noteLabel.preferredMaxLayoutWidth = 300.0;
+        noteLabel.alpha = 1;
         [noteLabel sizeToFit];
     }
     

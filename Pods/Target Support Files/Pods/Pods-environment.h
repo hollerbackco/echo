@@ -6,6 +6,12 @@
 // project.
 
 
+// DateTools
+#define COCOAPODS_POD_AVAILABLE_DateTools
+#define COCOAPODS_VERSION_MAJOR_DateTools 1
+#define COCOAPODS_VERSION_MINOR_DateTools 5
+#define COCOAPODS_VERSION_PATCH_DateTools 0
+
 // MDCSwipeToChoose
 #define COCOAPODS_POD_AVAILABLE_MDCSwipeToChoose
 #define COCOAPODS_VERSION_MAJOR_MDCSwipeToChoose 0

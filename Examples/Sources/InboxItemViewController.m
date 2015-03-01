@@ -20,6 +20,72 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //set up card
+    MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
+    options.delegate = self;
+    options.likedText = @"Keep";
+    options.likedColor = [UIColor blueColor];
+    options.nopeText = @"Delete";
+    options.onPan = ^(MDCPanState *state){
+        if (state.thresholdRatio == 1.f && state.direction == MDCSwipeDirectionLeft) {
+            NSLog(@"Let go now to delete the photo!");
+        }
+    };
+    
+    
+    MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.view.bounds
+                                                                     options:options];
+    
+    
+    
+    // Do any additional setup after loading the view.
+    // You can customize MDCSwipeToChooseView using MDCSwipeToChooseViewOptions.
+    //date math
+    NSDate *now = [[NSDate alloc] init];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"TimerImage"];
+    [query whereKey:@"comebacktime" lessThan:now];
+    [query addDescendingOrder:@"comebacktime"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            
+            NSLog(@"Successfully retrieved %d photos.", objects.count);
+            
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+                
+                //image
+                PFFile *thumbnail = [object objectForKey:@"image"];
+                [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    if (!error) {
+                        queryImage = [UIImage imageWithData:data];
+                        view.imageView.image = queryImage;
+                        [self.view addSubview:view];
+                        NSLog(@"queryImage set");
+                        // image can now be set on a UIImageView
+                        
+                    }
+                }];
+            
+            }
+            
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        
+    }];
+
+    
+
+}
+
+- (void)loadCardView {
+    
+    
+    NSLog(@"load card view");
     // Do any additional setup after loading the view.
     // You can customize MDCSwipeToChooseView using MDCSwipeToChooseViewOptions.
     MDCSwipeToChooseViewOptions *options = [MDCSwipeToChooseViewOptions new];
@@ -36,45 +102,10 @@
     MDCSwipeToChooseView *view = [[MDCSwipeToChooseView alloc] initWithFrame:self.view.bounds
                                                                      options:options];
     
-    
-    //date math
-    NSDate *now = [[NSDate alloc] init];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"TimerImage"];
-    [query whereKey:@"comebacktime" lessThan:now];
-    [query addDescendingOrder:@"comebacktime"];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d photos.", objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-                
-                //image
-                
-                PFFile *thumbnail = [object objectForKey:@"image"];
-                [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                    if (!error) {
-                        UIImage *image = [UIImage imageWithData:data];
-                        // image can now be set on a UIImageView
-                        view.imageView.image = image;
-                        [self.view addSubview:view];
-                    }
-                }];
-            }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-    
-
-    
-
-
+    view.imageView.image = queryImage;
+    [self.view addSubview:view];
 }
+
 
 
 
@@ -103,7 +134,8 @@
 - (void)view:(UIView *)view wasChosenWithDirection:(MDCSwipeDirection)direction {
     if (direction == MDCSwipeDirectionLeft) {
         NSLog(@"Photo deleted!");
-    } else {
+        [self loadCardView];
+          } else {
         NSLog(@"Photo saved!");
     }
 }
