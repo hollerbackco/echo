@@ -10,7 +10,7 @@
 #import "SCRecorder.h"
 #import <Parse/Parse.h>
 
-@interface SCRecorderViewController : UIViewController<SCRecorderDelegate, UIImagePickerControllerDelegate>
+@interface SCRecorderViewController : UIViewController<SCRecorderDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *recordView;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
@@ -24,6 +24,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *flashModeButton;
 @property (weak, nonatomic) IBOutlet UIButton *capturePhotoButton;
 //@property (weak, nonatomic) IBOutlet UIButton *ghostModeButton;
+
+- (IBAction)didPressUploadButton:(UIButton *)sender;
+
 
 - (IBAction)switchCameraMode:(id)sender;
 - (IBAction)switchFlash:(id)sender;

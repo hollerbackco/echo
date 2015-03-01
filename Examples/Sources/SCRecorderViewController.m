@@ -80,14 +80,7 @@
     
 //    self.capturePhotoButton.alpha = 0.0;
     
-//    _ghostImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-//    _ghostImageView.contentMode = UIViewContentModeScaleAspectFill;
-//    _ghostImageView.alpha = 0.2;
-//    _ghostImageView.userInteractionEnabled = NO;
-//    _ghostImageView.hidden = YES;
     
-    [self.view insertSubview:_ghostImageView aboveSubview:self.previewView];
-
     _recorder = [SCRecorder recorder];
     _recorder.sessionPreset = [SCRecorderTools bestSessionPresetCompatibleWithAllDevices];
     _recorder.maxRecordDuration = CMTimeMake(5, 1);
@@ -223,16 +216,7 @@
 	[_recorder switchCaptureDevices];
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    NSURL *url = info[UIImagePickerControllerMediaURL];
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    
-    [_recorder.recordSession addSegment:url];
-    _recordSession = [SCRecordSession recordSession];
-    [_recordSession addSegment:url];
-    
-    [self showVideo];
-}
+
 - (void) handleStopButtonTapped:(id)sender {
     [_recorder pause:^{
         [self saveAndShowSession:_recorder.recordSession];        
@@ -263,6 +247,39 @@
 	[self prepareCamera];
     [self updateTimeRecordedLabel];
 }
+
+
+//UPLOAD PHOTO
+
+- (IBAction)didPressUploadButton:(UIButton *)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = NO;
+    picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    NSLog(@"did finish picking");
+    UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+    if (chosenImage != nil) {
+        [self showPhoto:chosenImage];
+    }
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+
+
 
 - (IBAction)switchCameraMode:(id)sender {
     if ([_recorder.sessionPreset isEqualToString:AVCaptureSessionPresetPhoto]) {

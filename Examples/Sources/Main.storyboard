@@ -189,10 +189,10 @@
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dDr-zv-xXt" userLabel="DownBar">
                                 <rect key="frame" x="0.0" y="477" width="320" height="91"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jaS-8J-FB6" userLabel="Record View">
+                                    <view alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jaS-8J-FB6" userLabel="Record View">
                                         <rect key="frame" x="0.0" y="0.0" width="162" height="91"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Tap to record" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wH-Xf-d6S">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" fixedFrame="YES" text="Tap to record" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wH-Xf-d6S">
                                                 <rect key="frame" x="34" y="35" width="102" height="21"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -201,7 +201,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gb-yz-quo">
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gb-yz-quo">
                                         <rect key="frame" x="247" y="0.0" width="73" height="92"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
@@ -213,7 +213,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9d-q2-oZh">
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9d-q2-oZh">
                                         <rect key="frame" x="162" y="0.0" width="85" height="92"/>
                                         <color key="backgroundColor" red="0.3803921569" green="0.68235294120000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
@@ -297,6 +297,20 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEx-SW-RAC" userLabel="upload photo">
+                                <rect key="frame" x="250" y="530" width="60" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="98F-iz-cs0"/>
+                                </constraints>
+                                <state key="normal" title="upload">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressUploadButton:" destination="2" eventType="touchUpInside" id="u5k-Wl-IZJ"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7i-LL-T1C">
                                 <rect key="frame" x="10" y="530" width="60" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
@@ -334,9 +348,11 @@
                             <constraint firstItem="cCO-VC-azk" firstAttribute="trailing" secondItem="3" secondAttribute="trailingMargin" id="OdQ-DC-tdP"/>
                             <constraint firstItem="CO2-79-oQ3" firstAttribute="top" secondItem="m7i-LL-T1C" secondAttribute="bottom" constant="8" id="P7b-og-yFq"/>
                             <constraint firstItem="Ugv-l0-Q37" firstAttribute="leading" secondItem="uLr-Fl-Xe8" secondAttribute="leading" id="PGi-Yc-Lj7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GEx-SW-RAC" secondAttribute="trailing" constant="-6" id="TsQ-Yo-A4d"/>
                             <constraint firstItem="Ugv-l0-Q37" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="U7t-xM-eF4"/>
                             <constraint firstItem="m7i-LL-T1C" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="-6" id="XHA-v5-vME"/>
                             <constraint firstItem="Ugv-l0-Q37" firstAttribute="leading" secondItem="iw9-cB-Pni" secondAttribute="leading" id="kQY-eB-Kus"/>
+                            <constraint firstItem="GEx-SW-RAC" firstAttribute="baseline" secondItem="m7i-LL-T1C" secondAttribute="baseline" id="rH2-VZ-eM0"/>
                             <constraint firstItem="cCO-VC-azk" firstAttribute="top" secondItem="Ocw-w6-kIV" secondAttribute="bottom" constant="10" id="ryW-Yb-I7M"/>
                         </constraints>
                     </view>
