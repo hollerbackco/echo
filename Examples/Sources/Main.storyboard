@@ -222,7 +222,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiJ-TG-pdG">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+                                        <rect key="frame" x="0.0" y="-15" width="320" height="63"/>
                                         <color key="backgroundColor" red="0.3294117647" green="0.87843137250000003" blue="0.51372549020000002" alpha="0.0" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" backgroundImage="dotbuttonsmaller.png">
@@ -239,7 +239,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugv-l0-Q37">
+                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugv-l0-Q37">
                                 <rect key="frame" x="0.0" y="78" width="130" height="35"/>
                                 <color key="backgroundColor" red="0.3294117647" green="0.87843137250000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -272,7 +272,7 @@
                                     <action selector="switchFlash:" destination="2" eventType="touchUpInside" id="5te-ci-j7r"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" text="Recorded - 0.0 sec" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCO-VC-azk" userLabel="Time recorded Label">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" misplaced="YES" text="Recorded - 0.0 sec" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCO-VC-azk" userLabel="Time recorded Label">
                                 <rect key="frame" x="144" y="30" width="160" height="22"/>
                                 <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -294,10 +294,10 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7i-LL-T1C">
-                                <rect key="frame" x="20" y="40" width="80" height="30"/>
+                                <rect key="frame" x="10" y="530" width="60" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="MEX-2t-BMd"/>
+                                    <constraint firstAttribute="width" constant="60" id="MEX-2t-BMd"/>
                                 </constraints>
                                 <state key="normal" title="inbox">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -307,7 +307,7 @@
                                     <segue destination="TiE-GI-g9j" kind="modal" id="xkB-ss-mQ4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FH-je-NSv">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FH-je-NSv">
                                 <rect key="frame" x="20" y="83" width="80" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -325,18 +325,15 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="cCO-VC-azk" firstAttribute="top" secondItem="uLr-Fl-Xe8" secondAttribute="top" id="3gf-2W-Tht"/>
-                            <constraint firstItem="m7i-LL-T1C" firstAttribute="top" secondItem="Ocw-w6-kIV" secondAttribute="bottom" constant="20" id="7fB-xU-LNE"/>
                             <constraint firstItem="Ugv-l0-Q37" firstAttribute="leading" secondItem="dDr-zv-xXt" secondAttribute="leading" id="A4x-sZ-cIA"/>
                             <constraint firstItem="Ugv-l0-Q37" firstAttribute="leading" secondItem="1FH-je-NSv" secondAttribute="trailing" constant="-100" id="Btj-rL-2ZC"/>
-                            <constraint firstItem="1FH-je-NSv" firstAttribute="top" secondItem="m7i-LL-T1C" secondAttribute="bottom" constant="13" id="NFH-Jt-QK9"/>
                             <constraint firstItem="cCO-VC-azk" firstAttribute="trailing" secondItem="3" secondAttribute="trailingMargin" id="OdQ-DC-tdP"/>
+                            <constraint firstItem="CO2-79-oQ3" firstAttribute="top" secondItem="m7i-LL-T1C" secondAttribute="bottom" constant="8" id="P7b-og-yFq"/>
                             <constraint firstItem="Ugv-l0-Q37" firstAttribute="leading" secondItem="uLr-Fl-Xe8" secondAttribute="leading" id="PGi-Yc-Lj7"/>
                             <constraint firstItem="Ugv-l0-Q37" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="U7t-xM-eF4"/>
-                            <constraint firstItem="m7i-LL-T1C" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="4" id="XHA-v5-vME"/>
+                            <constraint firstItem="m7i-LL-T1C" firstAttribute="leading" secondItem="3" secondAttribute="leadingMargin" constant="-6" id="XHA-v5-vME"/>
                             <constraint firstItem="Ugv-l0-Q37" firstAttribute="leading" secondItem="iw9-cB-Pni" secondAttribute="leading" id="kQY-eB-Kus"/>
-                            <constraint firstItem="Ugv-l0-Q37" firstAttribute="top" secondItem="m7i-LL-T1C" secondAttribute="bottom" constant="8" symbolic="YES" id="n1J-fC-sub"/>
                             <constraint firstItem="cCO-VC-azk" firstAttribute="top" secondItem="Ocw-w6-kIV" secondAttribute="bottom" constant="10" id="ryW-Yb-I7M"/>
-                            <constraint firstItem="cCO-VC-azk" firstAttribute="leading" secondItem="m7i-LL-T1C" secondAttribute="trailing" constant="44" id="wQe-Au-ytz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bvx-6l-zji"/>
