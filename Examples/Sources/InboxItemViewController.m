@@ -10,26 +10,12 @@
 #import <Parse/Parse.h>
 
 
-static const CGFloat ChoosePersonButtonHorizontalPadding = 80.f;
-static const CGFloat ChoosePersonButtonVerticalPadding = 20.f;
-
 @interface InboxItemViewController ()
-@property (nonatomic, strong) NSMutableArray *people;
 @end
 
 @implementation InboxItemViewController
 
-#pragma mark - Object Lifecycle
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        // This view controller maintains a list of ChoosePersonView
-        // instances to display.
-        _people = [[self defaultPeople] mutableCopy];
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
