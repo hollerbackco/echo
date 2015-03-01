@@ -78,8 +78,13 @@
                                                 <action selector="didPressNextButton:" destination="TiE-GI-g9j" eventType="touchUpInside" id="of4-Ss-5Nd"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHQ-5i-LhH">
-                                            <rect key="frame" x="269" y="1" width="50" height="50"/>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHQ-5i-LhH">
+                                            <rect key="frame" x="240" y="1" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="Ckf-BO-tzG"/>
+                                                <constraint firstAttribute="width" constant="80" id="rBu-7S-52U"/>
+                                            </constraints>
+                                            <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="20" maxY="0.0"/>
                                             <size key="titleShadowOffset" width="0.0" height="1"/>
                                             <state key="normal" image="close.png">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -139,10 +144,9 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="dmB-MR-g8K" secondAttribute="bottom" constant="-60" id="mHO-8l-8ap"/>
                                         <constraint firstItem="qHQ-5i-LhH" firstAttribute="top" secondItem="Wf9-uw-RbX" secondAttribute="topMargin" constant="-7" id="oSL-SK-btQ"/>
                                         <constraint firstItem="uL0-eB-P5M" firstAttribute="leading" secondItem="Wf9-uw-RbX" secondAttribute="leadingMargin" constant="12" id="oc5-VW-Ddz"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="qHQ-5i-LhH" secondAttribute="trailing" id="pSf-VF-y4o"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qHQ-5i-LhH" secondAttribute="trailing" constant="-7" id="pSf-VF-y4o"/>
                                         <constraint firstAttribute="trailing" secondItem="Aly-db-vqU" secondAttribute="trailing" id="pXd-v7-Ym4"/>
                                         <constraint firstItem="dmB-MR-g8K" firstAttribute="top" secondItem="Wf9-uw-RbX" secondAttribute="topMargin" constant="-30" id="rr2-nn-DVK"/>
-                                        <constraint firstItem="qHQ-5i-LhH" firstAttribute="leading" secondItem="uL0-eB-P5M" secondAttribute="trailing" constant="6" id="tEh-2a-SFc"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="dmB-MR-g8K" secondAttribute="trailing" constant="-8" id="u8T-pj-wB9"/>
                                     </constraints>
                                 </tableViewCellContentView>
