@@ -466,6 +466,7 @@
         <!--Add Friends View Controller-->
         <scene sceneID="7yj-Uq-gQ5">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p0r-kW-SIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="J3d-wu-D5p" customClass="AddFriendsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fhd-gg-Z8h"/>
@@ -474,13 +475,38 @@
                     <view key="view" contentMode="scaleToFill" id="TaB-WU-MQr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="you're signed up. send to fucking friends." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jr4-sh-1oX">
+                                <rect key="frame" x="9" y="137" width="318" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwB-Oc-JiQ">
+                                <rect key="frame" x="9" y="5" width="35" height="30"/>
+                                <state key="normal" title="done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="n4i-ZU-lEg" kind="custom" customClass="DismissSegue" id="evN-2n-9Vf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNi-Lw-5zs">
+                                <rect key="frame" x="137" y="199" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressLogOutButton:" destination="J3d-wu-D5p" eventType="touchUpInside" id="oxA-OG-3hn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="cKX-oG-ULh"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p0r-kW-SIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="828"/>
+            <point key="canvasLocation" x="89" y="986"/>
         </scene>
         <!--Image Displayer View Controller-->
         <scene sceneID="Tj9-NG-6ch">
@@ -501,22 +527,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient-bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="XTq-2u-U9s">
                                 <rect key="frame" x="0.0" y="-30" width="250" height="628"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios7-people.png" translatesAutoresizingMaskIntoConstraints="NO" id="LH6-X6-Gm4">
-                                <rect key="frame" x="241" y="482" width="63" height="66"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="6Bg-MN-gct"/>
-                                    <constraint firstAttribute="width" constant="63" id="jYU-TG-GEz"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7O-Pv-den">
-                                <rect key="frame" x="249" y="505" width="50" height="50"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="J3d-wu-D5p" kind="push" id="26b-QX-ZH5"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="addNoteButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="uxo-Dy-dMh">
                                 <rect key="frame" x="274" y="20" width="26" height="26"/>
                                 <constraints>
@@ -524,7 +534,7 @@
                                     <constraint firstAttribute="width" constant="26" id="ogF-ov-3Pp"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm4-cx-Ydh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm4-cx-Ydh" userLabel="addNoteButton">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="20" maxY="0.0"/>
@@ -535,6 +545,22 @@
                                 </state>
                                 <connections>
                                     <action selector="didPressAddNoteButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="hqR-2v-WZk"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios7-people.png" translatesAutoresizingMaskIntoConstraints="NO" id="LH6-X6-Gm4">
+                                <rect key="frame" x="260" y="520" width="40" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="6Bg-MN-gct"/>
+                                    <constraint firstAttribute="width" constant="40" id="jYU-TG-GEz"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7O-Pv-den" userLabel="addFriendsButton">
+                                <rect key="frame" x="249" y="505" width="50" height="50"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressAddFriendsButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="8vm-3C-4iM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEV-qP-fJN">
@@ -632,14 +658,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="LH6-X6-Gm4" secondAttribute="bottom" constant="20" symbolic="YES" id="05r-i1-hiG"/>
+                            <constraint firstAttribute="bottom" secondItem="LH6-X6-Gm4" secondAttribute="bottom" constant="22" id="05r-i1-hiG"/>
                             <constraint firstItem="Djo-ki-C0W" firstAttribute="top" secondItem="Wm4-cx-Ydh" secondAttribute="bottom" constant="-560" id="Bz5-sx-P6E"/>
                             <constraint firstItem="XTq-2u-U9s" firstAttribute="top" secondItem="6sY-Dg-LS2" secondAttribute="top" constant="-30" id="Cut-tT-J18"/>
                             <constraint firstItem="Wm4-cx-Ydh" firstAttribute="leading" secondItem="krI-1R-E4Z" secondAttribute="leading" id="E3B-EM-hPI"/>
                             <constraint firstAttribute="bottom" secondItem="XTq-2u-U9s" secondAttribute="bottom" constant="-30" id="P5K-3x-PIw"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Wm4-cx-Ydh" secondAttribute="bottom" constant="-2" id="PmI-nN-7bg"/>
                             <constraint firstAttribute="trailing" secondItem="XTq-2u-U9s" secondAttribute="trailing" constant="70" id="S4G-ZP-XUv"/>
-                            <constraint firstItem="LH6-X6-Gm4" firstAttribute="trailing" secondItem="6sY-Dg-LS2" secondAttribute="trailingMargin" id="b2y-hm-Qo2"/>
+                            <constraint firstItem="LH6-X6-Gm4" firstAttribute="trailing" secondItem="6sY-Dg-LS2" secondAttribute="trailingMargin" constant="-4" id="b2y-hm-Qo2"/>
                             <constraint firstAttribute="trailing" secondItem="Wm4-cx-Ydh" secondAttribute="trailing" id="h7c-D6-snC"/>
                             <constraint firstItem="XTq-2u-U9s" firstAttribute="leading" secondItem="6sY-Dg-LS2" secondAttribute="leading" id="qO3-tW-jzl"/>
                             <constraint firstItem="Wm4-cx-Ydh" firstAttribute="top" secondItem="6sY-Dg-LS2" secondAttribute="top" id="rlt-s6-Gwt"/>
@@ -655,11 +681,88 @@
                         <outlet property="addNoteLabel" destination="Djo-ki-C0W" id="SaG-df-Rka"/>
                         <outlet property="addNoteTIcon" destination="uxo-Dy-dMh" id="irm-NP-d8Y"/>
                         <outlet property="filterSwitcherView" destination="krI-1R-E4Z" id="Spr-wD-hYN"/>
+                        <segue destination="J3d-wu-D5p" kind="modal" identifier="addFriendsSegue" id="hvw-hc-T8r"/>
+                        <segue destination="tnp-v1-Ujl" kind="modal" identifier="signUpSegue" id="CLB-6B-gX5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4oW-9Q-aD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="600" y="813"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="seT-ob-Bh9">
+            <objects>
+                <viewController id="tnp-v1-Ujl" customClass="SignUpViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f44-LR-hnm"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qjb-K2-hSc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h7a-D1-MES">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acA-Kb-Cp7" userLabel="Full Name">
+                                <rect key="frame" x="22" y="74" width="276" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="fullNameFinishEdit:" destination="tnp-v1-Ujl" eventType="editingDidEndOnExit" id="XuE-gc-ozA"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c0p-GD-9QG" userLabel="Email">
+                                <rect key="frame" x="22" y="112" width="276" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="emailFinishEdit:" destination="tnp-v1-Ujl" eventType="editingDidEndOnExit" id="vtE-7d-2xw"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Obe-Bq-1pM" userLabel="Phone Number">
+                                <rect key="frame" x="22" y="150" width="276" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="phoneNumberFinishEdit:" destination="tnp-v1-Ujl" eventType="editingDidEndOnExit" id="BCX-PR-27u"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S03-z5-LHt" userLabel="Password">
+                                <rect key="frame" x="22" y="188" width="276" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="passwordFinishEdit:" destination="tnp-v1-Ujl" eventType="editingDidEndOnExit" id="YPM-0q-Csz"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vf7-eR-vO1">
+                                <rect key="frame" x="22" y="234" width="55" height="30"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressSignUpButton:" destination="tnp-v1-Ujl" eventType="touchUpInside" id="CvF-oT-54S"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign up to send to friends" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcb-AM-puc">
+                                <rect key="frame" x="4" y="20" width="312" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UY5-Fs-q3X"/>
+                    <connections>
+                        <outlet property="userEmail" destination="c0p-GD-9QG" id="Iym-CH-Dbz"/>
+                        <outlet property="userFullName" destination="acA-Kb-Cp7" id="Gjm-yA-2AV"/>
+                        <outlet property="userPassword" destination="S03-z5-LHt" id="cQo-Pl-ZNi"/>
+                        <outlet property="userPhoneNumber" destination="Obe-Bq-1pM" id="jo0-8L-Syl"/>
+                        <segue destination="n4i-ZU-lEg" kind="custom" identifier="dismissSignUp" customClass="DismissSegue" id="gwB-ev-pb3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eeW-Y8-FBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="729" y="1572"/>
         </scene>
     </scenes>
     <resources>
@@ -677,5 +780,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="bJg-WH-jph"/>
+        <segue reference="gwB-ev-pb3"/>
     </inferredMetricsTieBreakers>
 </document>

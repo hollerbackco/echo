@@ -42,6 +42,7 @@
 		DCBF83CF19DE1560006547EE /* a_filter.cisf in Resources */ = {isa = PBXBuildFile; fileRef = DCBF83CE19DE1560006547EE /* a_filter.cisf */; };
 		E7339D411AA4323400A63258 /* ios7-people.png in Resources */ = {isa = PBXBuildFile; fileRef = E7339D401AA4323400A63258 /* ios7-people.png */; };
 		E7339D461AA4332400A63258 /* AddFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7339D451AA4332400A63258 /* AddFriendsViewController.m */; };
+		E7339D4D1AA4A6BD00A63258 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7339D4C1AA4A6BD00A63258 /* SignUpViewController.m */; };
 		E74D23A91AA2716C00525FC6 /* InboxItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = E74D23A81AA2716C00525FC6 /* InboxItemView.m */; };
 		E75258EA1AA22FA50022AA9E /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75258E91AA22FA50022AA9E /* RMDateSelectionViewController.m */; };
 		E75258EE1AA23A210022AA9E /* addNoteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258ED1AA23A210022AA9E /* addNoteButton.png */; };
@@ -144,6 +145,8 @@
 		E7339D401AA4323400A63258 /* ios7-people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios7-people.png"; sourceTree = "<group>"; };
 		E7339D441AA4332400A63258 /* AddFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendsViewController.h; sourceTree = "<group>"; };
 		E7339D451AA4332400A63258 /* AddFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendsViewController.m; sourceTree = "<group>"; };
+		E7339D4B1AA4A6BD00A63258 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		E7339D4C1AA4A6BD00A63258 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		E74D23A71AA2716C00525FC6 /* InboxItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxItemView.h; sourceTree = "<group>"; };
 		E74D23A81AA2716C00525FC6 /* InboxItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxItemView.m; sourceTree = "<group>"; };
 		E75258E81AA22FA50022AA9E /* RMDateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDateSelectionViewController.h; sourceTree = "<group>"; };
@@ -377,6 +380,8 @@
 			children = (
 				E7339D441AA4332400A63258 /* AddFriendsViewController.h */,
 				E7339D451AA4332400A63258 /* AddFriendsViewController.m */,
+				E7339D4B1AA4A6BD00A63258 /* SignUpViewController.h */,
+				E7339D4C1AA4A6BD00A63258 /* SignUpViewController.m */,
 			);
 			name = "Add Friends";
 			sourceTree = "<group>";
@@ -642,6 +647,7 @@
 				DC7F375118FC2AF700D54901 /* SCAudioRecordViewController.m in Sources */,
 				E7F2C0A61A99453400B8CCBF /* SCInboxViewController.m in Sources */,
 				DC7F375518FC2AF700D54901 /* SCTouchDetector.m in Sources */,
+				E7339D4D1AA4A6BD00A63258 /* SignUpViewController.m in Sources */,
 				DC34A7D8199D695F0001BD08 /* SCRecordSessionManager.m in Sources */,
 				E7F2C0AD1A9962EE00B8CCBF /* DismissSegue.m in Sources */,
 				E7E1FD661A9C1EFF00A4B8A6 /* TDDatePickerController.m in Sources */,

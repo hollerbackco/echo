@@ -18,6 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [[UIApplication sharedApplication] setStatusBarHidden:YES
+                                            withAnimation:UIStatusBarAnimationFade];
+
+
+}
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,25 +32,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-- (void)signUp {
-    PFUser *user = [PFUser user];
-    user.username = @"my name";
-    user.password = @"my pass";
-    user.email = @"email@example.com";
-    
-    // other fields can be set just like with PFObject
-    user[@"phone"] = @"415-392-0202";
-    
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            // Hooray! Let them use the app now.
-        } else {
-            NSString *errorString = [error userInfo][@"error"];
-            // Show the errorString somewhere and let the user try again.
-        }
-    }];
+- (IBAction)didPressLogOutButton:(id)sender {
+    [PFUser logOut];
+    PFUser *currentUser = [PFUser currentUser]; //should be nil now
 }
-
 @end

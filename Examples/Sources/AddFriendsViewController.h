@@ -11,5 +11,6 @@
 #import <Parse/Parse.h>
 
 @interface AddFriendsViewController : UIViewController
+- (IBAction)didPressLogOutButton:(id)sender;
 
 @end

@@ -74,7 +74,12 @@
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
-
+    
+    // pull up date selector automatically
+//    RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController dateSelectionController];
+//    dateSelectionVC.delegate = self;
+//    
+//    [dateSelectionVC show];
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -713,6 +718,26 @@
 
 
 
+
+//friends button
+- (IBAction)didPressAddFriendsButton:(id)sender {
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        // do stuff with the user
+        NSLog(@"there is a user with username %@", currentUser);
+        [self performSegueWithIdentifier:@"addFriendsSegue" sender:sender];
+
+    } else {
+        // show the signup or login screen
+        [self performSegueWithIdentifier:@"signUpSegue" sender:sender];
+    }
+    
+//    if ([self.email isEqualToString:@"O"] && [self.password isEqualToString:@"O"]){
+//        [self performSegueWithIdentifier:@"LoginSegue" sender:sender];
+//    }else{
+//        [passwordText setText:@""];
+//    }
+}
 
 //add note
 - (IBAction)didPressAddNoteButton:(id)sender {

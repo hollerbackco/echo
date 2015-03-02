@@ -30,6 +30,7 @@ NSString *dateString;
 
 @property (weak, nonatomic) IBOutlet UILabel *addNoteLabel;
 
+- (IBAction)didPressAddFriendsButton:(id)sender;
 
 - (IBAction)didPressAddNoteButton:(id)sender;
 
