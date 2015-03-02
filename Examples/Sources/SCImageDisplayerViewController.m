@@ -349,6 +349,13 @@
     if (addNoteText.length != 0) {
         timerImage[@"firstNote"] = addNoteText;
     }
+    
+    //uploading user info to photo
+    PFUser *currentUser = [PFUser currentUser];
+    timerImage[@"user"] = currentUser;
+    timerImage[@"username"] = currentUser.username;
+    NSLog(@"currentUser = %@", currentUser);
+    
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -403,6 +410,13 @@
     if (addNoteText.length != 0) {
         timerImage[@"firstNote"] = addNoteText;
     }
+    
+    //uploading user info to photo
+    PFUser *currentUser = [PFUser currentUser];
+    timerImage[@"user"] = currentUser;
+    timerImage[@"username"] = currentUser.username;
+    NSLog(@"currentUser = %@", currentUser);
+    
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -457,6 +471,13 @@
     if (addNoteText.length != 0) {
         timerImage[@"firstNote"] = addNoteText;
     }
+    
+    //uploading user info to photo
+    PFUser *currentUser = [PFUser currentUser];
+    timerImage[@"user"] = currentUser;
+    timerImage[@"username"] = currentUser.username;
+    NSLog(@"currentUser = %@", currentUser);
+    
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -510,6 +531,13 @@
     if (addNoteText.length != 0) {
         timerImage[@"firstNote"] = addNoteText;
     }
+    
+    //uploading user info to photo
+    PFUser *currentUser = [PFUser currentUser];
+    timerImage[@"user"] = currentUser;
+    timerImage[@"username"] = currentUser.username;
+    NSLog(@"currentUser = %@", currentUser);
+    
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -612,7 +640,7 @@
     
     
     //uploading PFObject
-    PFUser *currentUser = [PFUser currentUser];
+    
     PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = aSurpriseTime;
@@ -620,9 +648,11 @@
     if (addNoteText.length != 0) {
     timerImage[@"firstNote"] = addNoteText;
     }
+    
+    //uploading user info to photo
+    PFUser *currentUser = [PFUser currentUser];
     timerImage[@"user"] = currentUser;
     timerImage[@"username"] = currentUser.username;
-    
     NSLog(@"currentUser = %@", currentUser);
     
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -677,6 +707,13 @@
     if (addNoteText.length != 0) {
         timerImage[@"firstNote"] = addNoteText;
     }
+    
+    //uploading user info to photo
+    PFUser *currentUser = [PFUser currentUser];
+    timerImage[@"user"] = currentUser;
+    timerImage[@"username"] = currentUser.username;
+    NSLog(@"currentUser = %@", currentUser);
+    
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
