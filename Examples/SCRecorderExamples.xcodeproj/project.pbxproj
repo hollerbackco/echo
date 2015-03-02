@@ -40,6 +40,8 @@
 		DCB0416D19253FB800D945D2 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB0416C19253FB800D945D2 /* GLKit.framework */; };
 		DCB69AB5197EE31300AF667A /* SCEditVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB69AB4197EE31300AF667A /* SCEditVideoViewController.m */; };
 		DCBF83CF19DE1560006547EE /* a_filter.cisf in Resources */ = {isa = PBXBuildFile; fileRef = DCBF83CE19DE1560006547EE /* a_filter.cisf */; };
+		E7339D411AA4323400A63258 /* ios7-people.png in Resources */ = {isa = PBXBuildFile; fileRef = E7339D401AA4323400A63258 /* ios7-people.png */; };
+		E7339D461AA4332400A63258 /* AddFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7339D451AA4332400A63258 /* AddFriendsViewController.m */; };
 		E74D23A91AA2716C00525FC6 /* InboxItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = E74D23A81AA2716C00525FC6 /* InboxItemView.m */; };
 		E75258EA1AA22FA50022AA9E /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75258E91AA22FA50022AA9E /* RMDateSelectionViewController.m */; };
 		E75258EE1AA23A210022AA9E /* addNoteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258ED1AA23A210022AA9E /* addNoteButton.png */; };
@@ -139,6 +141,9 @@
 		DCB69AB3197EE31300AF667A /* SCEditVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCEditVideoViewController.h; sourceTree = "<group>"; };
 		DCB69AB4197EE31300AF667A /* SCEditVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCEditVideoViewController.m; sourceTree = "<group>"; };
 		DCBF83CE19DE1560006547EE /* a_filter.cisf */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = a_filter.cisf; sourceTree = "<group>"; };
+		E7339D401AA4323400A63258 /* ios7-people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios7-people.png"; sourceTree = "<group>"; };
+		E7339D441AA4332400A63258 /* AddFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendsViewController.h; sourceTree = "<group>"; };
+		E7339D451AA4332400A63258 /* AddFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendsViewController.m; sourceTree = "<group>"; };
 		E74D23A71AA2716C00525FC6 /* InboxItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxItemView.h; sourceTree = "<group>"; };
 		E74D23A81AA2716C00525FC6 /* InboxItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxItemView.m; sourceTree = "<group>"; };
 		E75258E81AA22FA50022AA9E /* RMDateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDateSelectionViewController.h; sourceTree = "<group>"; };
@@ -290,16 +295,11 @@
 		DC7F371118FC2A0D00D54901 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E75258E71AA22FA50022AA9E /* RMDateSelectionViewController */,
-				E7E1FD691A9C1F0B00A4B8A6 /* modal shizz */,
-				DCB69ABA197EE89100AF667A /* AudioVC */,
-				DC34A7D9199D6E6D0001BD08 /* Utils */,
-				DC34A7CD199D66E40001BD08 /* SessionsVC */,
-				DCB69ABC197EE89E00AF667A /* VideoPlayerVC */,
-				DCB69ABB197EE89A00AF667A /* EditVideoVC */,
-				DCB69ABD197EE8D900AF667A /* ImageVC */,
+				E7339D481AA433DD00A63258 /* Other */,
+				DCB69ABD197EE8D900AF667A /* Timer */,
 				E7F2C0A71A99489000B8CCBF /* Inbox */,
-				DCB69AB9197EE88300AF667A /* CameraVC */,
+				E7339D471AA433BB00A63258 /* Add Friends */,
+				DCB69AB9197EE88300AF667A /* Camera */,
 				DC7F374818FC2AF700D54901 /* SCAppDelegate.m */,
 				DC7F374018FC2AEB00D54901 /* SCAppDelegate.h */,
 				DC7F372318FC2A0D00D54901 /* Images.xcassets */,
@@ -312,31 +312,8 @@
 			isa = PBXGroup;
 			children = (
 				DC1C8E9E18FD24C9005A342D /* Main.storyboard */,
-				E7EFC2DB1AA2AD8B00B1E999 /* close@2x.png */,
-				E75258F71AA25FAA0022AA9E /* dotbuttonsmaller.png */,
-				E75258F31AA25EA50022AA9E /* dotdotdot action button.png */,
-				E75258F51AA25F030022AA9E /* dotdotdotbutton.png */,
-				E75258F11AA256010022AA9E /* gradient-bg.png */,
-				E75258EF1AA243A80022AA9E /* addNoteButtonSmaller.png */,
-				E75258ED1AA23A210022AA9E /* addNoteButton.png */,
-				E7F2C08E1A99344A00B8CCBF /* focus_ring@2x.png */,
-				DCBF83CE19DE1560006547EE /* a_filter.cisf */,
-				DC7F375818FC2B0300D54901 /* capture_flip@2x.png */,
-				DC7F375918FC2B0300D54901 /* capture_onion_selected@2x.png */,
-				DC7F375A18FC2B0300D54901 /* capture_onion_onion@2x.png */,
-				DC7F375B18FC2B0300D54901 /* Default-568h@2x.png */,
-				DC7F375C18FC2B0300D54901 /* Default.png */,
-				DC7F375D18FC2B0300D54901 /* Default@2x.png */,
-				DC7F375E18FC2B0300D54901 /* Pause-Normal-icon.png */,
-				DC7F375F18FC2B0300D54901 /* Play-Normal-icon.png */,
-				DC7F376018FC2B0300D54901 /* Play-Pressed-icon.png */,
-				DC7F376118FC2B0300D54901 /* Record-Normal-icon.png */,
-				DC7F376218FC2B0300D54901 /* Record-Pressed-icon.png */,
-				DC7F376318FC2B0300D54901 /* Stop-Normal-Red-icon.png */,
-				DC7F371318FC2A0D00D54901 /* SCRecorderExamples-Info.plist */,
-				DC7F371418FC2A0D00D54901 /* InfoPlist.strings */,
-				DC7F371718FC2A0D00D54901 /* main.m */,
-				DC7F371918FC2A0D00D54901 /* SCRecorderExamples-Prefix.pch */,
+				E7339D491AA4340C00A63258 /* pngs */,
+				E7339D4A1AA4341900A63258 /* misc */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -350,15 +327,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DCB69AB9197EE88300AF667A /* CameraVC */ = {
+		DCB69AB9197EE88300AF667A /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				DC7F374D18FC2AF700D54901 /* SCTouchDetector.m */,
-				DC7F374518FC2AEB00D54901 /* SCTouchDetector.h */,
 				DC7F374F18FC2AF700D54901 /* SCRecorderViewController.m */,
 				DC7F374718FC2AEB00D54901 /* SCRecorderViewController.h */,
 			);
-			name = CameraVC;
+			name = Camera;
 			sourceTree = "<group>";
 		};
 		DCB69ABA197EE89100AF667A /* AudioVC */ = {
@@ -388,13 +363,78 @@
 			name = VideoPlayerVC;
 			sourceTree = "<group>";
 		};
-		DCB69ABD197EE8D900AF667A /* ImageVC */ = {
+		DCB69ABD197EE8D900AF667A /* Timer */ = {
 			isa = PBXGroup;
 			children = (
 				DC7F374C18FC2AF700D54901 /* SCImageDisplayerViewController.m */,
 				DC7F374418FC2AEB00D54901 /* SCImageDisplayerViewController.h */,
 			);
-			name = ImageVC;
+			name = Timer;
+			sourceTree = "<group>";
+		};
+		E7339D471AA433BB00A63258 /* Add Friends */ = {
+			isa = PBXGroup;
+			children = (
+				E7339D441AA4332400A63258 /* AddFriendsViewController.h */,
+				E7339D451AA4332400A63258 /* AddFriendsViewController.m */,
+			);
+			name = "Add Friends";
+			sourceTree = "<group>";
+		};
+		E7339D481AA433DD00A63258 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				DC7F374D18FC2AF700D54901 /* SCTouchDetector.m */,
+				DC7F374518FC2AEB00D54901 /* SCTouchDetector.h */,
+				E75258E71AA22FA50022AA9E /* RMDateSelectionViewController */,
+				E7E1FD691A9C1F0B00A4B8A6 /* modal shizz */,
+				DCB69ABA197EE89100AF667A /* AudioVC */,
+				DC34A7D9199D6E6D0001BD08 /* Utils */,
+				DC34A7CD199D66E40001BD08 /* SessionsVC */,
+				DCB69ABC197EE89E00AF667A /* VideoPlayerVC */,
+				DCB69ABB197EE89A00AF667A /* EditVideoVC */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		E7339D491AA4340C00A63258 /* pngs */ = {
+			isa = PBXGroup;
+			children = (
+				E7339D401AA4323400A63258 /* ios7-people.png */,
+				E7EFC2DB1AA2AD8B00B1E999 /* close@2x.png */,
+				E75258F71AA25FAA0022AA9E /* dotbuttonsmaller.png */,
+				E75258F31AA25EA50022AA9E /* dotdotdot action button.png */,
+				E75258F51AA25F030022AA9E /* dotdotdotbutton.png */,
+				E75258F11AA256010022AA9E /* gradient-bg.png */,
+				E75258EF1AA243A80022AA9E /* addNoteButtonSmaller.png */,
+				E75258ED1AA23A210022AA9E /* addNoteButton.png */,
+				E7F2C08E1A99344A00B8CCBF /* focus_ring@2x.png */,
+				DC7F375818FC2B0300D54901 /* capture_flip@2x.png */,
+				DC7F375918FC2B0300D54901 /* capture_onion_selected@2x.png */,
+				DC7F375A18FC2B0300D54901 /* capture_onion_onion@2x.png */,
+				DC7F375B18FC2B0300D54901 /* Default-568h@2x.png */,
+				DC7F375C18FC2B0300D54901 /* Default.png */,
+				DC7F375D18FC2B0300D54901 /* Default@2x.png */,
+				DC7F375E18FC2B0300D54901 /* Pause-Normal-icon.png */,
+				DC7F375F18FC2B0300D54901 /* Play-Normal-icon.png */,
+				DC7F376018FC2B0300D54901 /* Play-Pressed-icon.png */,
+				DC7F376118FC2B0300D54901 /* Record-Normal-icon.png */,
+				DC7F376218FC2B0300D54901 /* Record-Pressed-icon.png */,
+				DC7F376318FC2B0300D54901 /* Stop-Normal-Red-icon.png */,
+			);
+			name = pngs;
+			sourceTree = "<group>";
+		};
+		E7339D4A1AA4341900A63258 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				DC7F371318FC2A0D00D54901 /* SCRecorderExamples-Info.plist */,
+				DCBF83CE19DE1560006547EE /* a_filter.cisf */,
+				DC7F371418FC2A0D00D54901 /* InfoPlist.strings */,
+				DC7F371718FC2A0D00D54901 /* main.m */,
+				DC7F371918FC2A0D00D54901 /* SCRecorderExamples-Prefix.pch */,
+			);
+			name = misc;
 			sourceTree = "<group>";
 		};
 		E75258E71AA22FA50022AA9E /* RMDateSelectionViewController */ = {
@@ -530,6 +570,7 @@
 			files = (
 				E7EFC2DC1AA2AD8B00B1E999 /* close@2x.png in Resources */,
 				DC7F376C18FC2B0300D54901 /* Play-Pressed-icon.png in Resources */,
+				E7339D411AA4323400A63258 /* ios7-people.png in Resources */,
 				DC7F376918FC2B0300D54901 /* Default@2x.png in Resources */,
 				DC7F376A18FC2B0300D54901 /* Pause-Normal-icon.png in Resources */,
 				E75258F21AA256010022AA9E /* gradient-bg.png in Resources */,
@@ -604,6 +645,7 @@
 				DC34A7D8199D695F0001BD08 /* SCRecordSessionManager.m in Sources */,
 				E7F2C0AD1A9962EE00B8CCBF /* DismissSegue.m in Sources */,
 				E7E1FD661A9C1EFF00A4B8A6 /* TDDatePickerController.m in Sources */,
+				E7339D461AA4332400A63258 /* AddFriendsViewController.m in Sources */,
 				E7E1FD681A9C1EFF00A4B8A6 /* TDSemiModalViewController.m in Sources */,
 				E79973CF1AA2727E009BCA30 /* InboxItemViewController.m in Sources */,
 				DC34A7D5199D67C80001BD08 /* SCSessionTableViewCell.m in Sources */,

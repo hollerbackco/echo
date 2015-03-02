@@ -463,106 +463,24 @@
             </objects>
             <point key="canvasLocation" x="1100" y="166"/>
         </scene>
-        <!--Audio Record View Controller-->
-        <scene sceneID="4ds-US-klh">
+        <!--Add Friends View Controller-->
+        <scene sceneID="7yj-Uq-gQ5">
             <objects>
-                <viewController id="BNR-hx-qTK" customClass="SCAudioRecordViewController" sceneMemberID="viewController">
+                <viewController id="J3d-wu-D5p" customClass="AddFriendsViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yD3-Jl-H9e"/>
-                        <viewControllerLayoutGuide type="bottom" id="iqa-lJ-nHg"/>
+                        <viewControllerLayoutGuide type="top" id="fhd-gg-Z8h"/>
+                        <viewControllerLayoutGuide type="bottom" id="VRa-JY-YVX"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cjZ-hL-QjL">
+                    <view key="view" contentMode="scaleToFill" id="TaB-WU-MQr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbY-mU-PLt" userLabel="RecordButton">
-                                <rect key="frame" x="110" y="152" width="100" height="100"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="Record-Normal-icon.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected" backgroundImage="Record-Pressed-icon.png"/>
-                                <connections>
-                                    <action selector="recordPressed:" destination="BNR-hx-qTK" eventType="touchUpInside" id="5vT-0u-VAg"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWO-Ob-TmG">
-                                <rect key="frame" x="56" y="245" width="208" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rii-ZM-oqE" userLabel="StopButton">
-                                <rect key="frame" x="125" y="279" width="70" height="70"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" backgroundImage="Stop-Normal-Red-icon.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopRecordPressed:" destination="BNR-hx-qTK" eventType="touchUpInside" id="0MN-GT-boS"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stop recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrC-tL-b3t">
-                                <rect key="frame" x="84" y="357" width="153" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Bc-N7-E6R" userLabel="PlayView">
-                                <rect key="frame" x="0.0" y="475" width="325" height="93"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ4-mN-djs" userLabel="PlayButton">
-                                        <rect key="frame" x="272" y="8" width="33" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" backgroundImage="Play-Normal-icon.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected" backgroundImage="Pause-Normal-icon.png"/>
-                                        <connections>
-                                            <action selector="playButtonPressed:" destination="BNR-hx-qTK" eventType="touchUpInside" id="2E1-S4-xzh"/>
-                                        </connections>
-                                    </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFA-ym-LqG" userLabel="PlaySlider">
-                                        <rect key="frame" x="18" y="8" width="248" height="34"/>
-                                        <connections>
-                                            <action selector="playSliderValueChanged:" destination="BNR-hx-qTK" eventType="valueChanged" id="tve-OK-jaX"/>
-                                        </connections>
-                                    </slider>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YD-sK-fFB">
-                                        <rect key="frame" x="103" y="57" width="119" height="30"/>
-                                        <state key="normal" title="Delete">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="deletePressed:" destination="BNR-hx-qTK" eventType="touchUpInside" id="Pds-tw-Cmo"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtN-pS-vcr">
-                                        <rect key="frame" x="250" y="49" width="55" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lV4-0t-cb3"/>
-                    <connections>
-                        <outlet property="deleteButton" destination="6YD-sK-fFB" id="gzO-XA-Sl2"/>
-                        <outlet property="playButton" destination="cZ4-mN-djs" id="GZH-cX-kXT"/>
-                        <outlet property="playLabel" destination="KtN-pS-vcr" id="cf5-x8-dvi"/>
-                        <outlet property="playSlider" destination="RFA-ym-LqG" id="fQD-ZN-0zp"/>
-                        <outlet property="playView" destination="5Bc-N7-E6R" id="gzv-PN-Aj6"/>
-                        <outlet property="recordButton" destination="sbY-mU-PLt" id="vaE-hi-rpL"/>
-                        <outlet property="recordTimeLabel" destination="gWO-Ob-TmG" id="7zS-JO-pIp"/>
-                        <outlet property="stopRecordingButton" destination="rii-ZM-oqE" id="nFR-XC-4di"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="cKX-oG-ULh"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4qo-Mv-Wcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p0r-kW-SIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-90" y="856"/>
+            <point key="canvasLocation" x="135" y="828"/>
         </scene>
         <!--Image Displayer View Controller-->
         <scene sceneID="Tj9-NG-6ch">
@@ -583,6 +501,22 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient-bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="XTq-2u-U9s">
                                 <rect key="frame" x="0.0" y="-30" width="250" height="628"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios7-people.png" translatesAutoresizingMaskIntoConstraints="NO" id="LH6-X6-Gm4">
+                                <rect key="frame" x="241" y="482" width="63" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="6Bg-MN-gct"/>
+                                    <constraint firstAttribute="width" constant="63" id="jYU-TG-GEz"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7O-Pv-den">
+                                <rect key="frame" x="249" y="505" width="50" height="50"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="J3d-wu-D5p" kind="push" id="26b-QX-ZH5"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="addNoteButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="uxo-Dy-dMh">
                                 <rect key="frame" x="274" y="20" width="26" height="26"/>
                                 <constraints>
@@ -698,12 +632,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="LH6-X6-Gm4" secondAttribute="bottom" constant="20" symbolic="YES" id="05r-i1-hiG"/>
                             <constraint firstItem="Djo-ki-C0W" firstAttribute="top" secondItem="Wm4-cx-Ydh" secondAttribute="bottom" constant="-560" id="Bz5-sx-P6E"/>
                             <constraint firstItem="XTq-2u-U9s" firstAttribute="top" secondItem="6sY-Dg-LS2" secondAttribute="top" constant="-30" id="Cut-tT-J18"/>
                             <constraint firstItem="Wm4-cx-Ydh" firstAttribute="leading" secondItem="krI-1R-E4Z" secondAttribute="leading" id="E3B-EM-hPI"/>
                             <constraint firstAttribute="bottom" secondItem="XTq-2u-U9s" secondAttribute="bottom" constant="-30" id="P5K-3x-PIw"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Wm4-cx-Ydh" secondAttribute="bottom" constant="-2" id="PmI-nN-7bg"/>
                             <constraint firstAttribute="trailing" secondItem="XTq-2u-U9s" secondAttribute="trailing" constant="70" id="S4G-ZP-XUv"/>
+                            <constraint firstItem="LH6-X6-Gm4" firstAttribute="trailing" secondItem="6sY-Dg-LS2" secondAttribute="trailingMargin" id="b2y-hm-Qo2"/>
                             <constraint firstAttribute="trailing" secondItem="Wm4-cx-Ydh" secondAttribute="trailing" id="h7c-D6-snC"/>
                             <constraint firstItem="XTq-2u-U9s" firstAttribute="leading" secondItem="6sY-Dg-LS2" secondAttribute="leading" id="qO3-tW-jzl"/>
                             <constraint firstItem="Wm4-cx-Ydh" firstAttribute="top" secondItem="6sY-Dg-LS2" secondAttribute="top" id="rlt-s6-Gwt"/>
@@ -725,89 +661,14 @@
             </objects>
             <point key="canvasLocation" x="600" y="813"/>
         </scene>
-        <!--Session List View Controller-->
-        <scene sceneID="4iu-K4-Nj3">
-            <objects>
-                <viewController id="Osx-D0-1od" customClass="SCSessionListViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TJ1-pi-PgW"/>
-                        <viewControllerLayoutGuide type="bottom" id="6zx-Eo-OtS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5C7-1O-ym8">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="W0W-hT-ddI">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Session" rowHeight="110" id="1e5-TJ-WrJ" customClass="SCSessionTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="110"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1e5-TJ-WrJ" id="SgC-eN-iOE">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pLj-V1-dTH" customClass="SCVideoPlayerView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="109"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                </view>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15/05/2014 - 17:31" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrc-G6-B0a">
-                                                    <rect key="frame" x="118" y="20" width="182" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="17 segments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GES-TX-Vfp">
-                                                    <rect key="frame" x="118" y="48" width="182" height="21"/>
-                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5.7s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi4-hl-Q54">
-                                                    <rect key="frame" x="118" y="77" width="182" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="dateLabel" destination="zrc-G6-B0a" id="MdW-DL-6yK"/>
-                                            <outlet property="durationLabel" destination="Bi4-hl-Q54" id="0bX-Ku-qNR"/>
-                                            <outlet property="segmentsCountLabel" destination="GES-TX-Vfp" id="QF6-sT-Mjl"/>
-                                            <outlet property="videoPlayerView" destination="pLj-V1-dTH" id="rZ2-gS-Se9"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Osx-D0-1od" id="DJt-X1-UbC"/>
-                                    <outlet property="delegate" destination="Osx-D0-1od" id="hXQ-Nm-iDv"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="nxU-4u-nPf"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <connections>
-                        <outlet property="tableView" destination="W0W-hT-ddI" id="6IW-Hv-58E"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Aff-Lb-YCW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1098" y="831"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="Pause-Normal-icon.png" width="256" height="256"/>
-        <image name="Play-Normal-icon.png" width="256" height="256"/>
-        <image name="Record-Normal-icon.png" width="256" height="256"/>
-        <image name="Record-Pressed-icon.png" width="256" height="256"/>
-        <image name="Stop-Normal-Red-icon.png" width="256" height="256"/>
         <image name="addNoteButton.png" width="43" height="44"/>
         <image name="capture_flip.png" width="36" height="30"/>
         <image name="close.png" width="30" height="30"/>
         <image name="dotbuttonsmaller.png" width="960" height="189"/>
         <image name="gradient-bg.png" width="640" height="1136"/>
+        <image name="ios7-people.png" width="120" height="78"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
