@@ -119,6 +119,13 @@
         [self prepareCamera];
     }];
     
+    //checking if user is anonymous
+    if ([PFAnonymousUtils isLinkedWithUser:[PFUser currentUser]]) {
+        NSLog(@"user is anonymous");
+    } else {
+        NSLog(@"this is an existing user");
+    }
+    
 
 }
 

@@ -44,6 +44,8 @@
         application.applicationIconBadgeNumber = 0;
     }
     
+    //anonymous users
+    [PFUser enableAutomaticUser];
     
     
     return YES;

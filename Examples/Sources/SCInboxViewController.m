@@ -57,7 +57,7 @@
 
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     [query whereKey:@"comebacktime" lessThan:now];
-
+    [query whereKey:@"user" equalTo:[PFUser currentUser]];
     [query addDescendingOrder:@"comebacktime"];
     return query;
 }
@@ -70,9 +70,8 @@
     PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        
     }
-    
-    
     
     //ui label for createdAt
     NSDate *createdAtDate = [object createdAt];
@@ -187,9 +186,19 @@ NSIndexPath *indexPathForSelectedRow;
   
     NSIndexPath * actualIndexPath = self.tableView.indexPathForSelectedRow;
     NSIndexPath * newIndexPath = [NSIndexPath  indexPathForRow:actualIndexPath.row+1 inSection:actualIndexPath.section];
-    [self.tableView selectRowAtIndexPath:newIndexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
     
-
+    //make sure cell at next index path exists
+    if ([self.tableView cellForRowAtIndexPath:newIndexPath] != nil) {
+    [self.tableView selectRowAtIndexPath:newIndexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+    } else {
+        NSLog(@"end of table");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"You've reached the end"
+                                                        message:@"You have no more photos."
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 

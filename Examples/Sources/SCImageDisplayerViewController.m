@@ -612,6 +612,7 @@
     
     
     //uploading PFObject
+    PFUser *currentUser = [PFUser currentUser];
     PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
     timerImage[@"image"] = imageFile;
     timerImage[@"comebacktime"] = aSurpriseTime;
@@ -619,6 +620,11 @@
     if (addNoteText.length != 0) {
     timerImage[@"firstNote"] = addNoteText;
     }
+    timerImage[@"user"] = currentUser;
+    timerImage[@"username"] = currentUser.username;
+    
+    NSLog(@"currentUser = %@", currentUser);
+    
     [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // The object has been saved.
@@ -722,21 +728,20 @@
 //friends button
 - (IBAction)didPressAddFriendsButton:(id)sender {
     PFUser *currentUser = [PFUser currentUser];
+    
+    //see if it's a user and anonymous
     if (currentUser) {
-        // do stuff with the user
-        NSLog(@"there is a user with username %@", currentUser);
-        [self performSegueWithIdentifier:@"addFriendsSegue" sender:sender];
-
+        if ([PFAnonymousUtils isLinkedWithUser:[PFUser currentUser]]) {
+            NSLog(@"user is anonymous so make them sign up");
+            [self performSegueWithIdentifier:@"signUpSegue" sender:sender];
+        } else {
+            NSLog(@"there is a user with username %@", currentUser);
+            [self performSegueWithIdentifier:@"addFriendsSegue" sender:sender];
+        }
     } else {
         // show the signup or login screen
         [self performSegueWithIdentifier:@"signUpSegue" sender:sender];
     }
-    
-//    if ([self.email isEqualToString:@"O"] && [self.password isEqualToString:@"O"]){
-//        [self performSegueWithIdentifier:@"LoginSegue" sender:sender];
-//    }else{
-//        [passwordText setText:@""];
-//    }
 }
 
 //add note
