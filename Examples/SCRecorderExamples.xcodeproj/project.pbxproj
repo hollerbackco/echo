@@ -52,6 +52,8 @@
 		E75258F61AA25F030022AA9E /* dotdotdotbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258F51AA25F030022AA9E /* dotdotdotbutton.png */; };
 		E75258F81AA25FAA0022AA9E /* dotbuttonsmaller.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258F71AA25FAA0022AA9E /* dotbuttonsmaller.png */; };
 		E79973CF1AA2727E009BCA30 /* InboxItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79973CE1AA2727E009BCA30 /* InboxItemViewController.m */; };
+		E7A3D7451AA51A130092505F /* gradient-vert.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A3D7441AA51A130092505F /* gradient-vert.png */; };
+		E7A3D7491AA51A9B0092505F /* gradient-darker-vert.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A3D7481AA51A9B0092505F /* gradient-darker-vert.png */; };
 		E7E1FD651A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD5F1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m */; };
 		E7E1FD661A9C1EFF00A4B8A6 /* TDDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD611A9C1EFF00A4B8A6 /* TDDatePickerController.m */; };
 		E7E1FD671A9C1EFF00A4B8A6 /* TDDatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E1FD621A9C1EFF00A4B8A6 /* TDDatePickerController.xib */; };
@@ -159,6 +161,8 @@
 		E75258F71AA25FAA0022AA9E /* dotbuttonsmaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotbuttonsmaller.png; sourceTree = "<group>"; };
 		E79973CD1AA2727E009BCA30 /* InboxItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxItemViewController.h; sourceTree = "<group>"; };
 		E79973CE1AA2727E009BCA30 /* InboxItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxItemViewController.m; sourceTree = "<group>"; };
+		E7A3D7441AA51A130092505F /* gradient-vert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient-vert.png"; sourceTree = "<group>"; };
+		E7A3D7481AA51A9B0092505F /* gradient-darker-vert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient-darker-vert.png"; sourceTree = "<group>"; };
 		E7E1FD5D1A9C1EFF00A4B8A6 /* TDSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSemiModal.h; sourceTree = "<group>"; };
 		E7E1FD5E1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TDSemiModalExtension.h"; sourceTree = "<group>"; };
 		E7E1FD5F1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TDSemiModalExtension.m"; sourceTree = "<group>"; };
@@ -405,6 +409,8 @@
 		E7339D491AA4340C00A63258 /* pngs */ = {
 			isa = PBXGroup;
 			children = (
+				E7A3D7441AA51A130092505F /* gradient-vert.png */,
+				E7A3D7481AA51A9B0092505F /* gradient-darker-vert.png */,
 				E7339D401AA4323400A63258 /* ios7-people.png */,
 				E7EFC2DB1AA2AD8B00B1E999 /* close@2x.png */,
 				E75258F71AA25FAA0022AA9E /* dotbuttonsmaller.png */,
@@ -582,6 +588,7 @@
 				DCBF83CF19DE1560006547EE /* a_filter.cisf in Resources */,
 				DC7F376618FC2B0300D54901 /* capture_onion_onion@2x.png in Resources */,
 				E7E1FD671A9C1EFF00A4B8A6 /* TDDatePickerController.xib in Resources */,
+				E7A3D7451AA51A130092505F /* gradient-vert.png in Resources */,
 				DC7F376E18FC2B0300D54901 /* Record-Pressed-icon.png in Resources */,
 				E7F2C08F1A99344A00B8CCBF /* focus_ring@2x.png in Resources */,
 				E75258F41AA25EA50022AA9E /* dotdotdot action button.png in Resources */,
@@ -593,6 +600,7 @@
 				DC7F372418FC2A0D00D54901 /* Images.xcassets in Resources */,
 				DC7F376818FC2B0300D54901 /* Default.png in Resources */,
 				DC7F376D18FC2B0300D54901 /* Record-Normal-icon.png in Resources */,
+				E7A3D7491AA51A9B0092505F /* gradient-darker-vert.png in Resources */,
 				DC7F376B18FC2B0300D54901 /* Play-Normal-icon.png in Resources */,
 				DC7F371618FC2A0D00D54901 /* InfoPlist.strings in Resources */,
 				DC7F376718FC2B0300D54901 /* Default-568h@2x.png in Resources */,

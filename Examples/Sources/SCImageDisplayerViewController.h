@@ -11,6 +11,7 @@
 
 NSString *addNoteText;
 NSString *dateString;
+NSDate *datePicked;
 
 @interface SCImageDisplayerViewController : UIViewController <UIPopoverControllerDelegate>
 
@@ -33,6 +34,7 @@ NSString *dateString;
 - (IBAction)didPressAddFriendsButton:(id)sender;
 
 - (IBAction)didPressAddNoteButton:(id)sender;
+- (IBAction)didPressSendToFutureButton:(id)sender;
 
 
 

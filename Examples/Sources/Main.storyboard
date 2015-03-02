@@ -466,7 +466,6 @@
         <!--Add Friends View Controller-->
         <scene sceneID="7yj-Uq-gQ5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p0r-kW-SIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="J3d-wu-D5p" customClass="AddFriendsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fhd-gg-Z8h"/>
@@ -505,6 +504,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cKX-oG-ULh"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p0r-kW-SIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="89" y="986"/>
         </scene>
@@ -520,22 +520,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="krI-1R-E4Z" customClass="SCSwipeableFilterView">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="krI-1R-E4Z" customClass="SCSwipeableFilterView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient-bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="XTq-2u-U9s">
-                                <rect key="frame" x="0.0" y="-30" width="250" height="628"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient-darker-vert.png" translatesAutoresizingMaskIntoConstraints="NO" id="XTq-2u-U9s">
+                                <rect key="frame" x="0.0" y="-30" width="320" height="628"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="addNoteButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="uxo-Dy-dMh">
-                                <rect key="frame" x="274" y="20" width="26" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="X0E-gZ-yHb"/>
-                                    <constraint firstAttribute="width" constant="26" id="ogF-ov-3Pp"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm4-cx-Ydh" userLabel="addNoteButton">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm4-cx-Ydh" userLabel="addNoteButton">
+                                <rect key="frame" x="0.0" y="60" width="320" height="276"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="20" maxX="20" maxY="0.0"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -547,23 +540,21 @@
                                     <action selector="didPressAddNoteButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="hqR-2v-WZk"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addNoteButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="uxo-Dy-dMh">
+                                <rect key="frame" x="150" y="199" width="26" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="X0E-gZ-yHb"/>
+                                    <constraint firstAttribute="width" constant="26" id="ogF-ov-3Pp"/>
+                                </constraints>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios7-people.png" translatesAutoresizingMaskIntoConstraints="NO" id="LH6-X6-Gm4">
-                                <rect key="frame" x="260" y="520" width="40" height="26"/>
+                                <rect key="frame" x="264" y="20" width="40" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="6Bg-MN-gct"/>
                                     <constraint firstAttribute="width" constant="40" id="jYU-TG-GEz"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7O-Pv-den" userLabel="addFriendsButton">
-                                <rect key="frame" x="249" y="505" width="50" height="50"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressAddFriendsButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="8vm-3C-4iM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEV-qP-fJN">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEV-qP-fJN">
                                 <rect key="frame" x="0.0" y="290" width="69" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
@@ -575,7 +566,7 @@
                                     <action selector="oneDayButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="ezo-T3-MaI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3I-gT-Xga">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3I-gT-Xga">
                                 <rect key="frame" x="0.0" y="220" width="81" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
@@ -587,7 +578,7 @@
                                     <action selector="oneWeekButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="9zT-Y7-QyW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jC-Dv-3uw">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jC-Dv-3uw">
                                 <rect key="frame" x="0.0" y="80" width="75" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
@@ -599,7 +590,7 @@
                                     <action selector="oneYearButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="1CS-Kv-2uf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYV-bn-9BX">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYV-bn-9BX">
                                 <rect key="frame" x="0.0" y="150" width="92" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
@@ -611,7 +602,7 @@
                                     <action selector="oneMonthButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="pWh-Vp-efp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSP-m6-G98">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSP-m6-G98">
                                 <rect key="frame" x="0.0" y="430" width="133" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
@@ -623,7 +614,7 @@
                                     <action selector="surpriseMeButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="OkM-zx-bN3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucO-NH-JMs">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucO-NH-JMs">
                                 <rect key="frame" x="0.0" y="360" width="75" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
@@ -635,15 +626,15 @@
                                     <action selector="oneHourButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="M27-yl-2F3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-ki-C0W">
-                                <rect key="frame" x="10" y="10" width="300" height="62"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-ki-C0W" userLabel="note label">
+                                <rect key="frame" x="10" y="189" width="300" height="62"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U51-fH-pZ7">
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U51-fH-pZ7">
                                 <rect key="frame" x="0.0" y="500" width="101" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="18"/>
@@ -655,25 +646,43 @@
                                     <action selector="customButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="VpT-Mz-64B"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRT-yC-Zly">
+                                <rect key="frame" x="0.0" y="520" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Send to Future Self">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressSendToFutureButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="KUc-pv-hgT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v7O-Pv-den" userLabel="addFriendsButton">
+                                <rect key="frame" x="254" y="20" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="4Lg-9e-CWb"/>
+                                    <constraint firstAttribute="height" constant="50" id="RUW-DO-HPc"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressAddFriendsButton:" destination="n4i-ZU-lEg" eventType="touchUpInside" id="8vm-3C-4iM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="LH6-X6-Gm4" secondAttribute="bottom" constant="22" id="05r-i1-hiG"/>
-                            <constraint firstItem="Djo-ki-C0W" firstAttribute="top" secondItem="Wm4-cx-Ydh" secondAttribute="bottom" constant="-560" id="Bz5-sx-P6E"/>
+                            <constraint firstAttribute="bottom" secondItem="LH6-X6-Gm4" secondAttribute="bottom" constant="522" id="05r-i1-hiG"/>
+                            <constraint firstItem="v7O-Pv-den" firstAttribute="top" secondItem="LH6-X6-Gm4" secondAttribute="top" id="A0F-5x-7tF"/>
                             <constraint firstItem="XTq-2u-U9s" firstAttribute="top" secondItem="6sY-Dg-LS2" secondAttribute="top" constant="-30" id="Cut-tT-J18"/>
-                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="leading" secondItem="krI-1R-E4Z" secondAttribute="leading" id="E3B-EM-hPI"/>
                             <constraint firstAttribute="bottom" secondItem="XTq-2u-U9s" secondAttribute="bottom" constant="-30" id="P5K-3x-PIw"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Wm4-cx-Ydh" secondAttribute="bottom" constant="-2" id="PmI-nN-7bg"/>
-                            <constraint firstAttribute="trailing" secondItem="XTq-2u-U9s" secondAttribute="trailing" constant="70" id="S4G-ZP-XUv"/>
-                            <constraint firstItem="LH6-X6-Gm4" firstAttribute="trailing" secondItem="6sY-Dg-LS2" secondAttribute="trailingMargin" constant="-4" id="b2y-hm-Qo2"/>
-                            <constraint firstAttribute="trailing" secondItem="Wm4-cx-Ydh" secondAttribute="trailing" id="h7c-D6-snC"/>
+                            <constraint firstAttribute="trailing" secondItem="XTq-2u-U9s" secondAttribute="trailing" id="S4G-ZP-XUv"/>
+                            <constraint firstItem="LH6-X6-Gm4" firstAttribute="trailing" secondItem="6sY-Dg-LS2" secondAttribute="trailingMargin" id="b2y-hm-Qo2"/>
+                            <constraint firstItem="v7O-Pv-den" firstAttribute="trailing" secondItem="LH6-X6-Gm4" secondAttribute="trailing" id="m7x-cd-KHE"/>
                             <constraint firstItem="XTq-2u-U9s" firstAttribute="leading" secondItem="6sY-Dg-LS2" secondAttribute="leading" id="qO3-tW-jzl"/>
-                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="top" secondItem="6sY-Dg-LS2" secondAttribute="top" id="rlt-s6-Gwt"/>
-                            <constraint firstAttribute="trailing" secondItem="uxo-Dy-dMh" secondAttribute="trailing" constant="20" id="srS-hi-rl5"/>
-                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="trailing" secondItem="krI-1R-E4Z" secondAttribute="trailing" id="vYs-fd-owM"/>
-                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="leading" secondItem="6sY-Dg-LS2" secondAttribute="leading" id="vuH-FO-RvM"/>
-                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="top" secondItem="krI-1R-E4Z" secondAttribute="top" id="xcH-cA-WkJ"/>
-                            <constraint firstItem="Wm4-cx-Ydh" firstAttribute="leading" secondItem="Djo-ki-C0W" secondAttribute="trailing" constant="-310" id="zFH-Jq-Vr5"/>
+                            <constraint firstAttribute="trailing" secondItem="uxo-Dy-dMh" secondAttribute="trailing" constant="144" id="srS-hi-rl5"/>
+                            <constraint firstItem="uxo-Dy-dMh" firstAttribute="top" secondItem="exJ-fx-jIz" secondAttribute="bottom" constant="179" id="tN9-ju-g80"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hOj-oO-IGn"/>
@@ -748,6 +757,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFU-WH-kKu">
+                                <rect key="frame" x="37" y="518" width="246" height="30"/>
+                                <state key="normal" title="i'm lame and i don't want to sign up">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="n4i-ZU-lEg" kind="custom" customClass="DismissSegue" id="nDb-wp-vZv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -771,6 +789,7 @@
         <image name="close.png" width="30" height="30"/>
         <image name="dotbuttonsmaller.png" width="960" height="189"/>
         <image name="gradient-bg.png" width="640" height="1136"/>
+        <image name="gradient-darker-vert.png" width="640" height="568"/>
         <image name="ios7-people.png" width="120" height="78"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

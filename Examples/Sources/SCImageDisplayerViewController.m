@@ -11,7 +11,12 @@
 #import "RMDateSelectionViewController.h"
 
 @interface SCImageDisplayerViewController () <RMDateSelectionViewControllerDelegate> {
+    
+
 }
+
+@property (nonatomic, weak) IBOutlet UISwitch *blackSwitch;
+
 @end
 
 @implementation SCImageDisplayerViewController
@@ -45,7 +50,7 @@
        NSLog(@"photo view");
 
     //status bar and buttons
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"                          " style:UIBarButtonItemStylePlain target:self action:@selector(didPressAddNoteButton:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"                          " style:UIBarButtonItemStylePlain target:self action:@selector(didPressAddFriendsButton:)];
     [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
 //    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
     [[UIApplication sharedApplication] setStatusBarHidden:YES
@@ -76,10 +81,9 @@
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     
     // pull up date selector automatically
-//    RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController dateSelectionController];
-//    dateSelectionVC.delegate = self;
-//    
-//    [dateSelectionVC show];
+    [self triggerDatePicker];
+    
+
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -290,7 +294,7 @@
             }
             else {
             self.addNoteLabel.text = @"";
-            self.addNoteTIcon.alpha = 1;
+            self.addNoteTIcon.alpha = 0;
             }
         }
         else if (buttonIndex == 1) {// 2nd Other Button
@@ -686,84 +690,104 @@
 //upload function after date has been set
 
 #pragma mark - RMDateSelectionViewController Delegates
-- (void)dateSelectionViewController:(RMDateSelectionViewController *)vc didSelectDate:(NSDate *)aDate {
-    //Do something
-    NSLog(@"pressed select with date: %@", aDate);
-    
-    //sc recorder code
-    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
-    
-    
-    //converting image file
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
-    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
-    
-    
-    //uploading PFObject
-    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
-    timerImage[@"image"] = imageFile;
-    timerImage[@"comebacktime"] = aDate;
-    timerImage[@"delayType"] = @"Custom";
-    if (addNoteText.length != 0) {
-        timerImage[@"firstNote"] = addNoteText;
-    }
-    
-    //uploading user info to photo
-    PFUser *currentUser = [PFUser currentUser];
-    timerImage[@"user"] = currentUser;
-    timerImage[@"username"] = currentUser.username;
-    NSLog(@"currentUser = %@", currentUser);
-    
-    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            // The object has been saved.
-        } else {
-            // There was a problem, check error.description
-        }
-    }];
-    
-    //convert date to string
-    dateString = [NSDateFormatter localizedStringFromDate:aDate
-                                                          dateStyle:NSDateFormatterShortStyle
-                                                          timeStyle:NSDateFormatterFullStyle];
-    NSLog(@"this is the date in string: %@", dateString);
-    
-    //set local notification
-    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-    localNotification.fireDate = aDate;
-    localNotification.alertBody = [NSString stringWithFormat:@"Your photo set to return at %@ is here",dateString];
-    localNotification.timeZone = [NSTimeZone defaultTimeZone];
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    
-    //save to photo album and trigger alert
-    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingCustomWithError:contextInfo:), nil);
-    
-    //clear note
-    NSLog(@"before custom note clear: %@", addNoteText);
-    addNoteText = @"";
-    NSLog(@"after custom note clear: %@", addNoteText);
-}
+
 
 - (void)dateSelectionViewControllerDidCancel:(RMDateSelectionViewController *)vc {
     //Do something else
         NSLog(@"pressed cancel");
 }
 
+//CUSTOM DATE PICKER
 
-- (IBAction)customButton:(id)sender {
+-(void)triggerDatePicker {
     NSLog(@"pressed custom button");
-    RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController dateSelectionController];
-    dateSelectionVC.delegate = self;
     
-    [dateSelectionVC show];
+    if ([self.view viewWithTag:9]) {
+        return;
+    }
+    CGRect toolbarTargetFrame = CGRectMake(0, self.view.bounds.size.height-216-44-50, 320, 44);
+    CGRect datePickerTargetFrame = CGRectMake(0, self.view.bounds.size.height-216-50, 320, 216);
+    
+    UIView *darkView = [[UIView alloc] initWithFrame:self.view.bounds];
+    darkView.alpha = 0;
+    darkView.backgroundColor = [UIColor blackColor];
+    darkView.tag = 9;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissDatePicker:)];
+    [darkView addGestureRecognizer:tapGesture];
+    [self.view addSubview:darkView];
+    
+    UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height+44, 320, 216)];
+    datePicker.tag = 10;
+    [datePicker addTarget:self action:@selector(changeDate:) forControlEvents:UIControlEventValueChanged];
+    datePicker.date =
+    [[ NSDate alloc ] initWithTimeIntervalSinceNow: (NSTimeInterval) 2 ];
+    datePicker.minimumDate =
+    [[ NSDate alloc ] initWithTimeIntervalSinceNow: (NSTimeInterval) 0 ];
+    
+    [self.view addSubview:datePicker];
+    
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height, 320, 44)];
+    toolBar.tag = 11;
+    toolBar.alpha = 0;
+    toolBar.barStyle = UIBarStyleBlackTranslucent;
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissDatePicker:)];
+    [toolBar setItems:[NSArray arrayWithObjects:spacer, doneButton, nil]];
+    [self.view addSubview:toolBar];
+    
+    
+    [UIView beginAnimations:@"MoveIn" context:nil];
+    toolBar.frame = toolbarTargetFrame;
+    datePicker.frame = datePickerTargetFrame;
+    darkView.alpha = 0;
+    [UIView commitAnimations];
+    
+    
+    
+    [datePicker setValue:[UIColor whiteColor] forKeyPath:@"textColor"];
+    
+    SEL selector = NSSelectorFromString(@"setHighlightsToday:");
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDatePicker instanceMethodSignatureForSelector:selector]];
+    BOOL no = NO;
+    [invocation setSelector:selector];
+    [invocation setArgument:&no atIndex:2];
+    [invocation invokeWithTarget:datePicker];
+    
+
+}
+
+//not using
+- (IBAction)customButton:(id)sender {
+    
 
 }
 
 
 
+- (void)changeDate:(UIDatePicker *)sender {
+    NSLog(@"New Date: %@", sender.date);
+    
+    datePicked = sender.date;
+    
+}
+
+- (void)removeViews:(id)object {
+    [[self.view viewWithTag:9] removeFromSuperview];
+    [[self.view viewWithTag:10] removeFromSuperview];
+    [[self.view viewWithTag:11] removeFromSuperview];
+}
+
+//legacy from uidatepicker
+- (void)dismissDatePicker:(id)sender {
+
+}
+
+
 
 //friends button
 - (IBAction)didPressAddFriendsButton:(id)sender {
+    
+    NSLog(@"pressed friends button");
     PFUser *currentUser = [PFUser currentUser];
     
     //see if it's a user and anonymous
@@ -788,6 +812,77 @@
     alert.tag = 200;
     [alert show];
 }
+
+- (IBAction)didPressSendToFutureButton:(id)sender {
+    //Do something
+    NSLog(@"pressed select with date: %@", datePicked);
+    
+    //sc recorder code
+    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
+    
+    
+    //converting image file
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
+    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
+    
+    //convert date to string
+    dateString = [NSDateFormatter localizedStringFromDate:datePicked
+                                                dateStyle:NSDateFormatterShortStyle
+                                                timeStyle:NSDateFormatterFullStyle];
+    NSLog(@"this is the date in string: %@", dateString);
+    
+    //uploading PFObject
+    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
+    timerImage[@"image"] = imageFile;
+    timerImage[@"comebacktime"] = datePicked;
+    timerImage[@"delayType"] = @"Custom";
+    if (addNoteText.length != 0) {
+        timerImage[@"firstNote"] = addNoteText;
+    }
+    
+    //uploading user info to photo
+    PFUser *currentUser = [PFUser currentUser];
+    timerImage[@"user"] = currentUser;
+    timerImage[@"username"] = currentUser.username;
+    NSLog(@"currentUser = %@", currentUser);
+    
+    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
+    
+
+    
+    //set local notification
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = datePicked;
+    localNotification.alertBody = [NSString stringWithFormat:@"Your photo set to return at %@ is here",dateString];
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    //save to photo album and trigger alert
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingCustomWithError:contextInfo:), nil);
+    
+    //clear note
+    NSLog(@"before custom note clear: %@", addNoteText);
+    addNoteText = @"";
+    NSLog(@"after custom note clear: %@", addNoteText);
+    
+    //animate
+    CGRect toolbarTargetFrame = CGRectMake(0, self.view.bounds.size.height, 320, 44);
+    CGRect datePickerTargetFrame = CGRectMake(0, self.view.bounds.size.height+44, 320, 216);
+    [UIView beginAnimations:@"MoveOut" context:nil];
+    [self.view viewWithTag:9].alpha = 0;
+    [self.view viewWithTag:10].frame = datePickerTargetFrame;
+    [self.view viewWithTag:11].frame = toolbarTargetFrame;
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(removeViews:)];
+    [UIView commitAnimations];
+}
+
 
 
 
