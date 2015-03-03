@@ -145,6 +145,7 @@
     NSLog(@"Reconfigured video input: %@", videoInputError);
 }
 
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
