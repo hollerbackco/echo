@@ -32,6 +32,16 @@ UIDatePicker *datePicker;
 - (IBAction)didPressWeek:(id)sender;
 - (IBAction)didPressDay:(id)sender;
 - (IBAction)didPressHour:(id)sender;
+- (IBAction)didPressCustomTime:(id)sender;
+
+//ibOutlets so button's can show / hide 
+@property (weak, nonatomic) IBOutlet UIButton *hourButton;
+@property (weak, nonatomic) IBOutlet UIButton *dayButton;
+@property (weak, nonatomic) IBOutlet UIButton *weekButton;
+@property (weak, nonatomic) IBOutlet UIButton *monthButton;
+@property (weak, nonatomic) IBOutlet UIButton *customTimeButton;
+@property (weak, nonatomic) IBOutlet UIButton *surpriseButton;
+@property (weak, nonatomic) IBOutlet UIButton *customTimeSendButton;
 
 
 

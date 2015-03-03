@@ -82,6 +82,7 @@
     
     // pull up date selector automatically
     [self triggerDatePicker];
+    datePicker.alpha = 0;
     
 
 }
@@ -294,7 +295,7 @@
             }
             else {
             self.addNoteLabel.text = @"";
-            self.addNoteTIcon.alpha = 0;
+            self.addNoteTIcon.alpha = 1;
             }
         }
         else if (buttonIndex == 1) {// 2nd Other Button
@@ -385,240 +386,7 @@
 //    
 //}
 //
-////month from now button
-//- (IBAction)oneMonthButton:(UIButton *)sender {
-//    //sc recorder code
-//    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
-//    
-//    //date adding math
-//    NSDate *today = [[NSDate alloc] init];
-//    NSCalendar *gregorian = [[NSCalendar alloc]
-//                             initWithCalendarIdentifier:NSGregorianCalendar];
-//    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-//    
-//    //WHERE YOU SET THE TIME FROM NOW IN MONTHS
-//    [offsetComponents setMonth:1];
-//    NSDate *aMonthFromNow = [gregorian dateByAddingComponents:offsetComponents
-//                                                      toDate:today options:0];
-//    
-//    //converting image file
-//    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
-//    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
-//    
-//    
-//    //uploading PFObject
-//    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
-//    timerImage[@"image"] = imageFile;
-//    timerImage[@"comebacktime"] = aMonthFromNow;
-//    timerImage[@"delayType"] = @"One Month";
-//    if (addNoteText.length != 0) {
-//        timerImage[@"firstNote"] = addNoteText;
-//    }
-//    
-//    //uploading user info to photo
-//    PFUser *currentUser = [PFUser currentUser];
-//    timerImage[@"user"] = currentUser;
-//    timerImage[@"username"] = currentUser.username;
-//    NSLog(@"currentUser = %@", currentUser);
-//    
-//    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (succeeded) {
-//            // The object has been saved.
-//        } else {
-//            // There was a problem, check error.description
-//        }
-//    }];
-//    
-//    //set local notification
-//    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-//    localNotification.fireDate = aMonthFromNow;
-//    localNotification.alertBody = @"You have a new photo from 1 month ago";
-//    localNotification.timeZone = [NSTimeZone defaultTimeZone];
-//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-//    
-//    //save to photo album and trigger alert
-//    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingMonthWithError:contextInfo:), nil);
-//    
-//    //clear note
-//    NSLog(@"before month note clear: %@", addNoteText);
-//    addNoteText = @"";
-//    NSLog(@"after month note clear: %@", addNoteText);
-//
-//}
-//
-////week from now button
-//- (IBAction)oneWeekButton:(UIButton *)sender {
-//    //sc recorder code
-//    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
-//    
-//    //date adding math
-//    NSDate *today = [[NSDate alloc] init];
-//    NSCalendar *gregorian = [[NSCalendar alloc]
-//                             initWithCalendarIdentifier:NSGregorianCalendar];
-//    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-//    
-//    //WHERE YOU SET THE TIME FROM NOW IN MONTHS
-//    [offsetComponents setDay:7];
-//    NSDate *aWeekFromNow = [gregorian dateByAddingComponents:offsetComponents
-//                                                       toDate:today options:0];
-//    
-//    //converting image file
-//    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
-//    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
-//    
-//    
-//    //uploading PFObject
-//    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
-//    timerImage[@"image"] = imageFile;
-//    timerImage[@"comebacktime"] = aWeekFromNow;
-//    timerImage[@"delayType"] = @"One Week";
-//    if (addNoteText.length != 0) {
-//        timerImage[@"firstNote"] = addNoteText;
-//    }
-//    
-//    //uploading user info to photo
-//    PFUser *currentUser = [PFUser currentUser];
-//    timerImage[@"user"] = currentUser;
-//    timerImage[@"username"] = currentUser.username;
-//    NSLog(@"currentUser = %@", currentUser);
-//    
-//    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (succeeded) {
-//            // The object has been saved.
-//        } else {
-//            // There was a problem, check error.description
-//        }
-//    }];
-//    
-//    //set local notification
-//    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-//    localNotification.fireDate = aWeekFromNow;
-//    localNotification.alertBody = @"You have a new photo from 1 week ago";
-//    localNotification.timeZone = [NSTimeZone defaultTimeZone];
-//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-//    
-//    //save to photo album and trigger alert
-//    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWeekWithError:contextInfo:), nil);
-//    
-//    //clear note
-//    NSLog(@"before week note clear: %@", addNoteText);
-//    addNoteText = @"";
-//    NSLog(@"after week note clear: %@", addNoteText);
-//}
-//
-////day from now button
-//- (IBAction)oneDayButton:(UIButton *)sender {
-//    //sc recorder code
-//    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
-//    
-//    //date adding math
-//    NSDate *today = [[NSDate alloc] init];
-//    NSCalendar *gregorian = [[NSCalendar alloc]
-//                             initWithCalendarIdentifier:NSGregorianCalendar];
-//    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-//    
-//    //WHERE YOU SET THE TIME FROM NOW IN MONTHS
-//    [offsetComponents setDay:1];
-//    NSDate *aDayFromNow = [gregorian dateByAddingComponents:offsetComponents
-//                                                      toDate:today options:0];
-//    
-//    //converting image file
-//    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
-//    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
-//    
-//    
-//    //uploading PFObject
-//    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
-//    timerImage[@"image"] = imageFile;
-//    timerImage[@"comebacktime"] = aDayFromNow;
-//    timerImage[@"delayType"] = @"One Day";
-//    if (addNoteText.length != 0) {
-//        timerImage[@"firstNote"] = addNoteText;
-//    }
-//    
-//    //uploading user info to photo
-//    PFUser *currentUser = [PFUser currentUser];
-//    timerImage[@"user"] = currentUser;
-//    timerImage[@"username"] = currentUser.username;
-//    NSLog(@"currentUser = %@", currentUser);
-//    
-//    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (succeeded) {
-//            // The object has been saved.
-//        } else {
-//            // There was a problem, check error.description
-//        }
-//    }];
-//    
-//    //set local notification
-//    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-//    localNotification.fireDate = aDayFromNow;
-//    localNotification.alertBody = @"You have a new photo from 1 day ago";
-//    localNotification.timeZone = [NSTimeZone defaultTimeZone];
-//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-//    
-//    //save to photo album and trigger alert
-//    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingDayWithError:contextInfo:), nil);
-//    
-//    //clear note
-//    NSLog(@"before day note clear: %@", addNoteText);
-//    addNoteText = @"";
-//    NSLog(@"after day note clear: %@", addNoteText);
-//}
-//
-////hour button
-//- (IBAction)oneHourButton:(UIButton *)sender {
-//    //sc recorder code
-//    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
-//    
-//    //date adding math
-//    NSDate *today = [[NSDate alloc] init];
-//    NSCalendar *gregorian = [[NSCalendar alloc]
-//                             initWithCalendarIdentifier:NSGregorianCalendar];
-//    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-//    
-//    //WHERE YOU SET THE TIME FROM NOW IN MONTHS
-//    [offsetComponents setHour:1];
-//    NSDate *anHourFromNow = [gregorian dateByAddingComponents:offsetComponents
-//                                                     toDate:today options:0];
-//    
-//    //converting image file
-//    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
-//    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
-//    
-//    
-//    //uploading PFObject
-//    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
-//    timerImage[@"image"] = imageFile;
-//    timerImage[@"comebacktime"] = anHourFromNow;
-//    timerImage[@"delayType"] = @"One Hour";
-//    if (addNoteText.length != 0) {
-//        timerImage[@"firstNote"] = addNoteText;
-//    }
-//    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (succeeded) {
-//            // The object has been saved.
-//        } else {
-//            // There was a problem, check error.description
-//        }
-//    }];
-//    
-//    //set local notification
-//    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-//    localNotification.fireDate = anHourFromNow;
-//    localNotification.alertBody = @"You have a new photo from 1 hour ago";
-//    localNotification.timeZone = [NSTimeZone defaultTimeZone];
-//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-//    
-//    //save to photo album and trigger alert
-//    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingHourWithError:contextInfo:), nil);
-//    
-//    //clear note
-//    NSLog(@"before hour note clear: %@", addNoteText);
-//    addNoteText = @"";
-//    NSLog(@"after hour note clear: %@", addNoteText);
-//    
-//}
+
 
 
 
@@ -705,8 +473,8 @@
     if ([self.view viewWithTag:9]) {
         return;
     }
-    CGRect toolbarTargetFrame = CGRectMake(0, self.view.bounds.size.height-216-44-50, 320, 44);
-    CGRect datePickerTargetFrame = CGRectMake(0, self.view.bounds.size.height-216-50, 320, 216);
+    CGRect toolbarTargetFrame = CGRectMake(0, self.view.bounds.size.height-216-44-30, 320, 44);
+    CGRect datePickerTargetFrame = CGRectMake(0, self.view.bounds.size.height-216-30, 320, 216);
     
     UIView *darkView = [[UIView alloc] initWithFrame:self.view.bounds];
     darkView.alpha = 0;
@@ -754,6 +522,18 @@
     [invocation invokeWithTarget:datePicker];
     
 
+}
+
+- (void)dismissDatePicker:(id)sender {
+    _hourButton.alpha = 1;
+    _weekButton.alpha = 1;
+    _dayButton.alpha = 1;
+    _monthButton.alpha = 1;
+    _surpriseButton.alpha = 1;
+    _customTimeButton.alpha = 1;
+    _customTimeSendButton.alpha = 0;
+    datePicker.alpha = 0;
+    
 }
 
 
@@ -804,6 +584,8 @@
     [alert show];
 }
 
+
+//custom send pressed
 - (IBAction)didPressSendToFutureButton:(id)sender {
     //Do something
     NSLog(@"pressed select with date: %@", datePicked);
@@ -878,6 +660,12 @@
 
 
 - (IBAction)didPressSurprise:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Surprise!"
+                                                    message:@"Coming soon :)"
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 - (IBAction)didPressMonth:(id)sender {
@@ -896,6 +684,52 @@
     NSLog(@"a month from now: %@", aMonthFromNow);
     
 
+        //sc recorder code
+        UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
+        //converting image file
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
+        PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
+    
+    
+        //uploading PFObject
+        PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
+        timerImage[@"image"] = imageFile;
+        timerImage[@"comebacktime"] = aMonthFromNow;
+        timerImage[@"delayType"] = @"One Month";
+        if (addNoteText.length != 0) {
+            timerImage[@"firstNote"] = addNoteText;
+        }
+    
+        //uploading user info to photo
+        PFUser *currentUser = [PFUser currentUser];
+        timerImage[@"user"] = currentUser;
+        timerImage[@"username"] = currentUser.username;
+        NSLog(@"currentUser = %@", currentUser);
+    
+        [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                // The object has been saved.
+            } else {
+                // There was a problem, check error.description
+            }
+        }];
+    
+        //set local notification
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = aMonthFromNow;
+        localNotification.alertBody = @"You have a new photo from 1 month ago";
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+        //save to photo album and trigger alert
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingMonthWithError:contextInfo:), nil);
+        
+        //clear note
+        NSLog(@"before month note clear: %@", addNoteText);
+        addNoteText = @"";
+        NSLog(@"after month note clear: %@", addNoteText);
+
+
 }
 
 - (IBAction)didPressWeek:(id)sender {
@@ -912,6 +746,57 @@
     
     datePicker.date = aWeekFromNow;
     NSLog(@"a week from now: %@", aWeekFromNow);
+    
+
+        //sc recorder code
+        UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
+    
+    
+        //converting image file
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
+        PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
+    
+    
+        //uploading PFObject
+        PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
+        timerImage[@"image"] = imageFile;
+        timerImage[@"comebacktime"] = aWeekFromNow;
+        timerImage[@"delayType"] = @"One Week";
+        if (addNoteText.length != 0) {
+            timerImage[@"firstNote"] = addNoteText;
+        }
+    
+        //uploading user info to photo
+        PFUser *currentUser = [PFUser currentUser];
+        timerImage[@"user"] = currentUser;
+        timerImage[@"username"] = currentUser.username;
+        NSLog(@"currentUser = %@", currentUser);
+    
+        [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                // The object has been saved.
+            } else {
+                // There was a problem, check error.description
+            }
+        }];
+    
+        //set local notification
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = aWeekFromNow;
+        localNotification.alertBody = @"You have a new photo from 1 week ago";
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+        //save to photo album and trigger alert
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWeekWithError:contextInfo:), nil);
+        
+        //clear note
+        NSLog(@"before week note clear: %@", addNoteText);
+        addNoteText = @"";
+        NSLog(@"after week note clear: %@", addNoteText);
+
+    
+
 }
 
 - (IBAction)didPressDay:(id)sender {
@@ -928,6 +813,54 @@
     
     datePicker.date = aDayFromNow;
     NSLog(@"a day from now: %@", aDayFromNow);
+
+        //sc recorder code
+        UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
+    
+    
+        //converting image file
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
+        PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
+    
+    
+        //uploading PFObject
+        PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
+        timerImage[@"image"] = imageFile;
+        timerImage[@"comebacktime"] = aDayFromNow;
+        timerImage[@"delayType"] = @"One Day";
+        if (addNoteText.length != 0) {
+            timerImage[@"firstNote"] = addNoteText;
+        }
+    
+        //uploading user info to photo
+        PFUser *currentUser = [PFUser currentUser];
+        timerImage[@"user"] = currentUser;
+        timerImage[@"username"] = currentUser.username;
+        NSLog(@"currentUser = %@", currentUser);
+    
+        [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                // The object has been saved.
+            } else {
+                // There was a problem, check error.description
+            }
+        }];
+    
+        //set local notification
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = aDayFromNow;
+        localNotification.alertBody = @"You have a new photo from 1 day ago";
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+        //save to photo album and trigger alert
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingDayWithError:contextInfo:), nil);
+        
+        //clear note
+        NSLog(@"before day note clear: %@", addNoteText);
+        addNoteText = @"";
+        NSLog(@"after day note clear: %@", addNoteText);
+
 }
 
 - (IBAction)didPressHour:(id)sender {
@@ -944,6 +877,61 @@
     
         datePicker.date = anHourFromNow;
     NSLog(@"an hour from now: %@", anHourFromNow);
+    
+    ////hour button
+    //- (IBAction)oneHourButton:(UIButton *)sender {
+        //sc recorder code
+        UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
+    
+        //converting image file
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
+        PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
+    
+    
+        //uploading PFObject
+        PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
+        timerImage[@"image"] = imageFile;
+        timerImage[@"comebacktime"] = anHourFromNow;
+        timerImage[@"delayType"] = @"One Hour";
+        if (addNoteText.length != 0) {
+            timerImage[@"firstNote"] = addNoteText;
+        }
+        [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                // The object has been saved.
+            } else {
+                // There was a problem, check error.description
+            }
+        }];
+    
+        //set local notification
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = anHourFromNow;
+        localNotification.alertBody = @"You have a new photo from 1 hour ago";
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+        //save to photo album and trigger alert
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingHourWithError:contextInfo:), nil);
+        
+        //clear note
+        NSLog(@"before hour note clear: %@", addNoteText);
+        addNoteText = @"";
+        NSLog(@"after hour note clear: %@", addNoteText);
+    //
+    //}
+
+}
+
+- (IBAction)didPressCustomTime:(id)sender {
+    _hourButton.alpha = 0;
+    _weekButton.alpha = 0;
+    _dayButton.alpha = 0;
+    _monthButton.alpha = 0;
+    _surpriseButton.alpha = 0;
+    _customTimeButton.alpha = 0;
+    _customTimeSendButton.alpha = 1;
+    datePicker.alpha = 1;
 }
 
 
