@@ -54,6 +54,7 @@
 		E79973CF1AA2727E009BCA30 /* InboxItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79973CE1AA2727E009BCA30 /* InboxItemViewController.m */; };
 		E7A3D7451AA51A130092505F /* gradient-vert.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A3D7441AA51A130092505F /* gradient-vert.png */; };
 		E7A3D7491AA51A9B0092505F /* gradient-darker-vert.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A3D7481AA51A9B0092505F /* gradient-darker-vert.png */; };
+		E7A3D74C1AA6598D0092505F /* surprise.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A3D74B1AA6598D0092505F /* surprise.png */; };
 		E7E1FD651A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD5F1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m */; };
 		E7E1FD661A9C1EFF00A4B8A6 /* TDDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD611A9C1EFF00A4B8A6 /* TDDatePickerController.m */; };
 		E7E1FD671A9C1EFF00A4B8A6 /* TDDatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E1FD621A9C1EFF00A4B8A6 /* TDDatePickerController.xib */; };
@@ -163,6 +164,7 @@
 		E79973CE1AA2727E009BCA30 /* InboxItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxItemViewController.m; sourceTree = "<group>"; };
 		E7A3D7441AA51A130092505F /* gradient-vert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient-vert.png"; sourceTree = "<group>"; };
 		E7A3D7481AA51A9B0092505F /* gradient-darker-vert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient-darker-vert.png"; sourceTree = "<group>"; };
+		E7A3D74B1AA6598D0092505F /* surprise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surprise.png; sourceTree = "<group>"; };
 		E7E1FD5D1A9C1EFF00A4B8A6 /* TDSemiModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSemiModal.h; sourceTree = "<group>"; };
 		E7E1FD5E1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TDSemiModalExtension.h"; sourceTree = "<group>"; };
 		E7E1FD5F1A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TDSemiModalExtension.m"; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 		E7339D491AA4340C00A63258 /* pngs */ = {
 			isa = PBXGroup;
 			children = (
+				E7A3D74B1AA6598D0092505F /* surprise.png */,
 				E7A3D7441AA51A130092505F /* gradient-vert.png */,
 				E7A3D7481AA51A9B0092505F /* gradient-darker-vert.png */,
 				E7339D401AA4323400A63258 /* ios7-people.png */,
@@ -591,6 +594,7 @@
 				E7A3D7451AA51A130092505F /* gradient-vert.png in Resources */,
 				DC7F376E18FC2B0300D54901 /* Record-Pressed-icon.png in Resources */,
 				E7F2C08F1A99344A00B8CCBF /* focus_ring@2x.png in Resources */,
+				E7A3D74C1AA6598D0092505F /* surprise.png in Resources */,
 				E75258F41AA25EA50022AA9E /* dotdotdot action button.png in Resources */,
 				E75258F81AA25FAA0022AA9E /* dotbuttonsmaller.png in Resources */,
 				E75258EE1AA23A210022AA9E /* addNoteButton.png in Resources */,
