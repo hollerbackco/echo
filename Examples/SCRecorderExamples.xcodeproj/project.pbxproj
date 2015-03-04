@@ -44,7 +44,6 @@
 		E7339D461AA4332400A63258 /* AddFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7339D451AA4332400A63258 /* AddFriendsViewController.m */; };
 		E7339D4D1AA4A6BD00A63258 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7339D4C1AA4A6BD00A63258 /* SignUpViewController.m */; };
 		E74D23A91AA2716C00525FC6 /* InboxItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = E74D23A81AA2716C00525FC6 /* InboxItemView.m */; };
-		E75258EA1AA22FA50022AA9E /* RMDateSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E75258E91AA22FA50022AA9E /* RMDateSelectionViewController.m */; };
 		E75258EE1AA23A210022AA9E /* addNoteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258ED1AA23A210022AA9E /* addNoteButton.png */; };
 		E75258F01AA243A80022AA9E /* addNoteButtonSmaller.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258EF1AA243A80022AA9E /* addNoteButtonSmaller.png */; };
 		E75258F21AA256010022AA9E /* gradient-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258F11AA256010022AA9E /* gradient-bg.png */; };
@@ -154,8 +153,6 @@
 		E7339D4C1AA4A6BD00A63258 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		E74D23A71AA2716C00525FC6 /* InboxItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxItemView.h; sourceTree = "<group>"; };
 		E74D23A81AA2716C00525FC6 /* InboxItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxItemView.m; sourceTree = "<group>"; };
-		E75258E81AA22FA50022AA9E /* RMDateSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDateSelectionViewController.h; sourceTree = "<group>"; };
-		E75258E91AA22FA50022AA9E /* RMDateSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDateSelectionViewController.m; sourceTree = "<group>"; };
 		E75258ED1AA23A210022AA9E /* addNoteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addNoteButton.png; sourceTree = "<group>"; };
 		E75258EF1AA243A80022AA9E /* addNoteButtonSmaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addNoteButtonSmaller.png; sourceTree = "<group>"; };
 		E75258F11AA256010022AA9E /* gradient-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient-bg.png"; sourceTree = "<group>"; };
@@ -401,7 +398,6 @@
 			children = (
 				DC7F374D18FC2AF700D54901 /* SCTouchDetector.m */,
 				DC7F374518FC2AEB00D54901 /* SCTouchDetector.h */,
-				E75258E71AA22FA50022AA9E /* RMDateSelectionViewController */,
 				E7E1FD691A9C1F0B00A4B8A6 /* modal shizz */,
 				DCB69ABA197EE89100AF667A /* AudioVC */,
 				DC34A7D9199D6E6D0001BD08 /* Utils */,
@@ -455,15 +451,6 @@
 				DC7F371918FC2A0D00D54901 /* SCRecorderExamples-Prefix.pch */,
 			);
 			name = misc;
-			sourceTree = "<group>";
-		};
-		E75258E71AA22FA50022AA9E /* RMDateSelectionViewController */ = {
-			isa = PBXGroup;
-			children = (
-				E75258E81AA22FA50022AA9E /* RMDateSelectionViewController.h */,
-				E75258E91AA22FA50022AA9E /* RMDateSelectionViewController.m */,
-			);
-			path = RMDateSelectionViewController;
 			sourceTree = "<group>";
 		};
 		E78A0BA91AA2A766008A64C0 /* card inbox */ = {
@@ -678,7 +665,6 @@
 				E7E1FD651A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m in Sources */,
 				DC7F375718FC2AF700D54901 /* SCRecorderViewController.m in Sources */,
 				E74D23A91AA2716C00525FC6 /* InboxItemView.m in Sources */,
-				E75258EA1AA22FA50022AA9E /* RMDateSelectionViewController.m in Sources */,
 				DC34A7D2199D66FA0001BD08 /* SCSessionListViewController.m in Sources */,
 				DCB69AB5197EE31300AF667A /* SCEditVideoViewController.m in Sources */,
 				DC7F375418FC2AF700D54901 /* SCImageDisplayerViewController.m in Sources */,

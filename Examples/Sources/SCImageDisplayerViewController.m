@@ -8,14 +8,11 @@
 
 #import <Parse/Parse.h>
 #import "SCImageDisplayerViewController.h"
-#import "RMDateSelectionViewController.h"
 
-@interface SCImageDisplayerViewController () <RMDateSelectionViewControllerDelegate> {
-    
-
+@interface SCImageDisplayerViewController () {
 }
 
-@property (nonatomic, weak) IBOutlet UISwitch *blackSwitch;
+
 
 @end
 
@@ -37,14 +34,12 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
     [self.filterSwitcherView setNeedsDisplay];
 }
 
 
 - (void)viewDidLoad
 {
-    
 
     [super viewDidLoad];
        NSLog(@"photo view");
@@ -56,18 +51,18 @@
     [[UIApplication sharedApplication] setStatusBarHidden:YES
                                             withAnimation:UIStatusBarAnimationFade];
 
-
-    
+//
+//    
     self.filterSwitcherView.contentMode = UIViewContentModeScaleAspectFill;
     
-    self.filterSwitcherView.filterGroups = @[
-                                             [NSNull null],
-                                             [SCFilterGroup filterGroupWithFilter:[SCFilter filterWithName:@"CIPhotoEffectNoir"]],
-                                             [SCFilterGroup filterGroupWithFilter:[SCFilter filterWithName:@"CIPhotoEffectChrome"]],
-                                             [SCFilterGroup filterGroupWithFilter:[SCFilter filterWithName:@"CIPhotoEffectInstant"]],
-                                             [SCFilterGroup filterGroupWithFilter:[SCFilter filterWithName:@"CIPhotoEffectTonal"]],
-                                             [SCFilterGroup filterGroupWithFilter:[SCFilter filterWithName:@"CIPhotoEffectFade"]]
-                                             ];
+//    self.filterSwitcherView.filterGroups = @[
+//                                             [NSNull null],
+//                                             [SCFilterGroup filterGroupWithFilter:[SCFilter filterWithName:@"CIPhotoEffectNoir"]],
+//                                             [SCFilterGroup filterGroupWithFilter:[SCFilter filterWithName:@"CIPhotoEffectChrome"]],
+//                                             [SCFilterGroup filterGroupWithFilter:[SCFilter filterWithName:@"CIPhotoEffectInstant"]],
+//                                             [SCFilterGroup filterGroupWithFilter:[SCFilter filterWithName:@"CIPhotoEffectTonal"]],
+//                                             [SCFilterGroup filterGroupWithFilter:[SCFilter filterWithName:@"CIPhotoEffectFade"]]
+//                                             ];
 
 	// Do any additional setup after loading the view.
     
@@ -83,7 +78,7 @@
     // pull up date selector automatically
     [self triggerDatePicker];
     datePicker.alpha = 0;
-    
+
 
 }
 
@@ -94,35 +89,6 @@
 
 //ALERTS
 
-//camera save alert
-- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
-    if (error == nil) {
-        [[[UIAlertView alloc] initWithTitle:@"Done!" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-    } else {
-        [[[UIAlertView alloc] initWithTitle:@"Failed :(" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-    }
-    
-}
-
-//year alert
-- (void)image:(UIImage *)image didFinishSavingYearWithError:(NSError *)error contextInfo:(void *)contextInfo {
-    if (error == nil) {
-        // Create Alert and set the delegate to listen events
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nice!"
-                                                        message:@"We'll return this in a year from now :)"
-                                                       delegate:self
-                                              cancelButtonTitle:nil
-                                              otherButtonTitles:@"OK", nil];
-        // Set the tag to alert unique among the other alerts.
-        // So that you can find out later, which alert we are handling
-        alert.tag = 100;
-        [alert show];
-        
-    } else {
-        [[[UIAlertView alloc] initWithTitle:@"Failed :(" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-    }
-    
-}
 
 //month alert
 - (void)image:(UIImage *)image didFinishSavingMonthWithError:(NSError *)error contextInfo:(void *)contextInfo {
@@ -262,12 +228,10 @@
             
             //go back to camera
             [self.navigationController popViewControllerAnimated:YES];
-            
         }
         else if (buttonIndex == 1) {// 2nd Other Button
-            
+    
         }
-        
     }
     
     else if (alertView.tag == 200) {
@@ -318,152 +282,8 @@
 }
 
 
-//// TIME FROM NOW BUTTONS
-//
-//
-////year from now button
-//- (IBAction)oneYearButton:(UIButton *)sender {
-//    
-//    //sc recorder code
-//    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
-//
-//    //date adding math
-//    NSDate *today = [[NSDate alloc] init];
-//    NSCalendar *gregorian = [[NSCalendar alloc]
-//                             initWithCalendarIdentifier:NSGregorianCalendar];
-//    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-//    
-//    //WHERE YOU SET THE TIME FROM NOW IN HOURS
-//    [offsetComponents setHour:8760];
-//    NSDate *aYearFromNow = [gregorian dateByAddingComponents:offsetComponents
-//                                                       toDate:today options:0];
-//    
-//    //converting image file
-//    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
-//    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
-//    
-//    //trying to grab text
-//    NSLog(@"Entered: %@", addNoteText);
-//    
-//    
-//    //uploading PFObject
-//    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
-//    timerImage[@"image"] = imageFile;
-//    timerImage[@"comebacktime"] = aYearFromNow;
-//    timerImage[@"delayType"] = @"One Year";
-//    if (addNoteText.length != 0) {
-//        timerImage[@"firstNote"] = addNoteText;
-//    }
-//    
-//    //uploading user info to photo
-//    PFUser *currentUser = [PFUser currentUser];
-//    timerImage[@"user"] = currentUser;
-//    timerImage[@"username"] = currentUser.username;
-//    NSLog(@"currentUser = %@", currentUser);
-//    
-//    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (succeeded) {
-//            // The object has been saved.
-//        } else {
-//            // There was a problem, check error.description
-//        }
-//    }];
-//    
-//    //set local notification
-//    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-//    localNotification.fireDate = aYearFromNow;
-//    localNotification.alertBody = @"You have a new photo from 1 year ago";
-//    localNotification.timeZone = [NSTimeZone defaultTimeZone];
-//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-//    
-//    //save to photo album and trigger alert
-//    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingYearWithError:contextInfo:), nil);
-//    
-//    //clear note
-//    NSLog(@"before year note clear: %@", addNoteText);
-//    addNoteText = @"";
-//    NSLog(@"after year note clear: %@", addNoteText);
-//    
-//}
-//
 
 
-
-
-//surprise button
-//- (IBAction)surpriseMeButton:(UIButton *)sender {
-//    //sc recorder code
-//    UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
-//    
-//    //date adding math
-//    NSDate *today = [[NSDate alloc] init];
-//    NSCalendar *gregorian = [[NSCalendar alloc]
-//                             initWithCalendarIdentifier:NSGregorianCalendar];
-//    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-//    
-//    //WHERE YOU SET THE TIME FROM NOW IN MONTHS
-//    [offsetComponents setMinute:1];
-//    NSDate *aSurpriseTime = [gregorian dateByAddingComponents:offsetComponents
-//                                                     toDate:today options:0];
-//    
-//    //converting image file
-//    NSData *imageData = UIImageJPEGRepresentation(image, 0.9f);
-//    PFFile *imageFile = [PFFile fileWithName:@"comebackimage.png" data:imageData];
-//    
-//    
-//    //uploading PFObject
-//    
-//    PFObject *timerImage = [PFObject objectWithClassName:@"TimerImage"];
-//    timerImage[@"image"] = imageFile;
-//    timerImage[@"comebacktime"] = aSurpriseTime;
-//    timerImage[@"delayType"] = @"Surprise / 1 minute";
-//    if (addNoteText.length != 0) {
-//    timerImage[@"firstNote"] = addNoteText;
-//    }
-//    
-//    //uploading user info to photo
-//    PFUser *currentUser = [PFUser currentUser];
-//    timerImage[@"user"] = currentUser;
-//    timerImage[@"username"] = currentUser.username;
-//    NSLog(@"currentUser = %@", currentUser);
-//    
-//    [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (succeeded) {
-//            // The object has been saved.
-//        } else {
-//            // There was a problem, check error.description
-//        }
-//    }];
-//    
-//    //set local notification
-//    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-//    localNotification.fireDate = aSurpriseTime;
-//    localNotification.alertBody = @"SURPRISE!! You have a new photo from 1 minute ago.";
-//    localNotification.timeZone = [NSTimeZone defaultTimeZone];
-//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-//    
-//    //save to photo album and trigger alert
-//    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingSurpriseWithError:contextInfo:), nil);
-//    
-//    //clear note
-//    NSLog(@"before surprise note clear: %@", addNoteText);
-//    addNoteText = @"";
-//    NSLog(@"after surprise note clear: %@", addNoteText);
-//
-//}
-
-
-//CUSTOM DATE PICKER
-
-//upload function after date has been set
-
-#pragma mark - RMDateSelectionViewController Delegates
-
-
-- (void)dateSelectionViewControllerDidCancel:(RMDateSelectionViewController *)vc {
-    //Do something else
-        NSLog(@"pressed cancel");
-}
 
 //CUSTOM DATE PICKER
 

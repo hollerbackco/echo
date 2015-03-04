@@ -20,6 +20,8 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 
 #define kVideoPreset AVCaptureSessionPresetHigh
+#define TICK   NSDate *startTime = [NSDate date]
+#define TOCK   NSLog(@"Time from TICK to TOCK: %f", -[startTime timeIntervalSinceNow])
 
 ////////////////////////////////////////////////////////////
 // PRIVATE DEFINITION
@@ -216,8 +218,11 @@
 }
 
 - (void)showPhoto:(UIImage *)photo {
+
     _photo = photo;
     [self performSegueWithIdentifier:@"Photo" sender:self];
+
+    NSLog(@"showPhoto");
 }
 
 - (void) handleReverseCameraTapped:(id)sender {
@@ -413,28 +418,30 @@
 
 - (void)handleTouchDetected:(SCTouchDetector*)touchDetector {
     if (touchDetector.state == UIGestureRecognizerStateBegan) {
-        _ghostImageView.hidden = YES;
         [_recorder record];
     } else if (touchDetector.state == UIGestureRecognizerStateEnded) {
         [_recorder pause];
-//        [self updateGhostImage];
     }
 }
 
 - (IBAction)capturePhoto:(id)sender {
+
+    //clear note
+    NSLog(@"before photo take note clear: %@", addNoteText);
+    addNoteText = @"";
+    NSLog(@"after photo take note clear: %@", addNoteText);
+        TICK;
     [_recorder capturePhoto:^(NSError *error, UIImage *image) {
-        
-        //clear note
-        NSLog(@"before photo take note clear: %@", addNoteText);
-        addNoteText = @"";
-        NSLog(@"after photo take note clear: %@", addNoteText);
         if (image != nil) {
             [self showPhoto:image];
+            TOCK;
         } else {
             [self showAlertViewWithTitle:@"Failed to capture photo" message:error.localizedDescription];
         }
+        
     }];
-
+    
+    
 }
 
 
