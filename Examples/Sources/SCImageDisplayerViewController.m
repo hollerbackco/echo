@@ -878,8 +878,7 @@
         datePicker.date = anHourFromNow;
     NSLog(@"an hour from now: %@", anHourFromNow);
     
-    ////hour button
-    //- (IBAction)oneHourButton:(UIButton *)sender {
+
         //sc recorder code
         UIImage *image = [self.filterSwitcherView currentlyDisplayedImageWithScale:self.photo.scale orientation:self.photo.imageOrientation];
     
@@ -896,6 +895,13 @@
         if (addNoteText.length != 0) {
             timerImage[@"firstNote"] = addNoteText;
         }
+    
+        //uploading user info to photo
+        PFUser *currentUser = [PFUser currentUser];
+        timerImage[@"user"] = currentUser;
+        timerImage[@"username"] = currentUser.username;
+        NSLog(@"currentUser = %@", currentUser);
+    
         [timerImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 // The object has been saved.
@@ -918,8 +924,6 @@
         NSLog(@"before hour note clear: %@", addNoteText);
         addNoteText = @"";
         NSLog(@"after hour note clear: %@", addNoteText);
-    //
-    //}
 
 }
 
