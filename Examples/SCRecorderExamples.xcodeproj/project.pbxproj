@@ -51,6 +51,14 @@
 		E75258F61AA25F030022AA9E /* dotdotdotbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258F51AA25F030022AA9E /* dotdotdotbutton.png */; };
 		E75258F81AA25FAA0022AA9E /* dotbuttonsmaller.png in Resources */ = {isa = PBXBuildFile; fileRef = E75258F71AA25FAA0022AA9E /* dotbuttonsmaller.png */; };
 		E79973CF1AA2727E009BCA30 /* InboxItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79973CE1AA2727E009BCA30 /* InboxItemViewController.m */; };
+		E79E733F1AA7C68B0088934D /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E733C1AA7C68B0088934D /* UIImage+FixOrientation.m */; };
+		E79E73401AA7C68B0088934D /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E733E1AA7C68B0088934D /* LLSimpleCamera.m */; };
+		E79E73481AA7C6B70088934D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E73451AA7C6B70088934D /* HomeViewController.m */; };
+		E79E73491AA7C6B70088934D /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E73471AA7C6B70088934D /* ImageViewController.m */; };
+		E79E73511AA7C6CA0088934D /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E734C1AA7C6CA0088934D /* ViewUtils.m */; };
+		E79E73521AA7C6CA0088934D /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E734E1AA7C6CA0088934D /* UIImage+Crop.m */; };
+		E79E73531AA7C6CA0088934D /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E73501AA7C6CA0088934D /* UIImage+Resize.m */; };
+		E79E73571AA7C6ED0088934D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79E73561AA7C6ED0088934D /* AppDelegate.m */; };
 		E7A3D7451AA51A130092505F /* gradient-vert.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A3D7441AA51A130092505F /* gradient-vert.png */; };
 		E7A3D7491AA51A9B0092505F /* gradient-darker-vert.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A3D7481AA51A9B0092505F /* gradient-darker-vert.png */; };
 		E7A3D74C1AA6598D0092505F /* surprise.png in Resources */ = {isa = PBXBuildFile; fileRef = E7A3D74B1AA6598D0092505F /* surprise.png */; };
@@ -60,6 +68,12 @@
 		E7E1FD661A9C1EFF00A4B8A6 /* TDDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD611A9C1EFF00A4B8A6 /* TDDatePickerController.m */; };
 		E7E1FD671A9C1EFF00A4B8A6 /* TDDatePickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7E1FD621A9C1EFF00A4B8A6 /* TDDatePickerController.xib */; };
 		E7E1FD681A9C1EFF00A4B8A6 /* TDSemiModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E1FD641A9C1EFF00A4B8A6 /* TDSemiModalViewController.m */; };
+		E7E70D961AA7E121003A0021 /* camera-switch.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E70D901AA7E121003A0021 /* camera-switch.png */; };
+		E7E70D971AA7E121003A0021 /* camera-switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E70D911AA7E121003A0021 /* camera-switch@2x.png */; };
+		E7E70D981AA7E121003A0021 /* camera-flash-off.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E70D921AA7E121003A0021 /* camera-flash-off.png */; };
+		E7E70D991AA7E121003A0021 /* camera-flash-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E70D931AA7E121003A0021 /* camera-flash-off@2x.png */; };
+		E7E70D9A1AA7E121003A0021 /* camera-flash-on.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E70D941AA7E121003A0021 /* camera-flash-on.png */; };
+		E7E70D9B1AA7E121003A0021 /* camera-flash-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E70D951AA7E121003A0021 /* camera-flash-on@2x.png */; };
 		E7EFC2DC1AA2AD8B00B1E999 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7EFC2DB1AA2AD8B00B1E999 /* close@2x.png */; };
 		E7F2C0731A99058A00B8CCBF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F2C0711A99058A00B8CCBF /* Parse.framework */; };
 		E7F2C0741A99058A00B8CCBF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F2C0721A99058A00B8CCBF /* Bolts.framework */; };
@@ -161,6 +175,22 @@
 		E75258F71AA25FAA0022AA9E /* dotbuttonsmaller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dotbuttonsmaller.png; sourceTree = "<group>"; };
 		E79973CD1AA2727E009BCA30 /* InboxItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxItemViewController.h; sourceTree = "<group>"; };
 		E79973CE1AA2727E009BCA30 /* InboxItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxItemViewController.m; sourceTree = "<group>"; };
+		E79E733B1AA7C68B0088934D /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		E79E733C1AA7C68B0088934D /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		E79E733D1AA7C68B0088934D /* LLSimpleCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSimpleCamera.h; sourceTree = "<group>"; };
+		E79E733E1AA7C68B0088934D /* LLSimpleCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSimpleCamera.m; sourceTree = "<group>"; };
+		E79E73441AA7C6B70088934D /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		E79E73451AA7C6B70088934D /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		E79E73461AA7C6B70088934D /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		E79E73471AA7C6B70088934D /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		E79E734B1AA7C6CA0088934D /* ViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
+		E79E734C1AA7C6CA0088934D /* ViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtils.m; sourceTree = "<group>"; };
+		E79E734D1AA7C6CA0088934D /* UIImage+Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Crop.h"; sourceTree = "<group>"; };
+		E79E734E1AA7C6CA0088934D /* UIImage+Crop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Crop.m"; sourceTree = "<group>"; };
+		E79E734F1AA7C6CA0088934D /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		E79E73501AA7C6CA0088934D /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		E79E73551AA7C6ED0088934D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E79E73561AA7C6ED0088934D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E7A3D7441AA51A130092505F /* gradient-vert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient-vert.png"; sourceTree = "<group>"; };
 		E7A3D7481AA51A9B0092505F /* gradient-darker-vert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient-darker-vert.png"; sourceTree = "<group>"; };
 		E7A3D74B1AA6598D0092505F /* surprise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = surprise.png; sourceTree = "<group>"; };
@@ -174,6 +204,12 @@
 		E7E1FD621A9C1EFF00A4B8A6 /* TDDatePickerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDDatePickerController.xib; sourceTree = "<group>"; };
 		E7E1FD631A9C1EFF00A4B8A6 /* TDSemiModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDSemiModalViewController.h; sourceTree = "<group>"; };
 		E7E1FD641A9C1EFF00A4B8A6 /* TDSemiModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDSemiModalViewController.m; sourceTree = "<group>"; };
+		E7E70D901AA7E121003A0021 /* camera-switch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-switch.png"; sourceTree = "<group>"; };
+		E7E70D911AA7E121003A0021 /* camera-switch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-switch@2x.png"; sourceTree = "<group>"; };
+		E7E70D921AA7E121003A0021 /* camera-flash-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash-off.png"; sourceTree = "<group>"; };
+		E7E70D931AA7E121003A0021 /* camera-flash-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash-off@2x.png"; sourceTree = "<group>"; };
+		E7E70D941AA7E121003A0021 /* camera-flash-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash-on.png"; sourceTree = "<group>"; };
+		E7E70D951AA7E121003A0021 /* camera-flash-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash-on@2x.png"; sourceTree = "<group>"; };
 		E7EFC2DB1AA2AD8B00B1E999 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
 		E7F2C0711A99058A00B8CCBF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		E7F2C0721A99058A00B8CCBF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -305,6 +341,7 @@
 		DC7F371118FC2A0D00D54901 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E79E73431AA7C68F0088934D /* LLSimpleCamera */,
 				E7339D481AA433DD00A63258 /* Other */,
 				DCB69ABD197EE8D900AF667A /* Timer */,
 				E7F2C0A71A99489000B8CCBF /* Inbox */,
@@ -340,6 +377,8 @@
 		DCB69AB9197EE88300AF667A /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				E79E73541AA7C6CF0088934D /* Utils */,
+				E79E734A1AA7C6C00088934D /* Controllers */,
 				DC7F374F18FC2AF700D54901 /* SCRecorderViewController.m */,
 				DC7F374718FC2AEB00D54901 /* SCRecorderViewController.h */,
 			);
@@ -411,6 +450,12 @@
 		E7339D491AA4340C00A63258 /* pngs */ = {
 			isa = PBXGroup;
 			children = (
+				E7E70D901AA7E121003A0021 /* camera-switch.png */,
+				E7E70D911AA7E121003A0021 /* camera-switch@2x.png */,
+				E7E70D921AA7E121003A0021 /* camera-flash-off.png */,
+				E7E70D931AA7E121003A0021 /* camera-flash-off@2x.png */,
+				E7E70D941AA7E121003A0021 /* camera-flash-on.png */,
+				E7E70D951AA7E121003A0021 /* camera-flash-on@2x.png */,
 				E7A3D74F1AA6616B0092505F /* rectangle button.png */,
 				E7A3D74B1AA6598D0092505F /* surprise.png */,
 				E7A3D7511AA66B440092505F /* rectangle button bigger.png */,
@@ -464,6 +509,41 @@
 			name = "card inbox";
 			sourceTree = "<group>";
 		};
+		E79E73431AA7C68F0088934D /* LLSimpleCamera */ = {
+			isa = PBXGroup;
+			children = (
+				E79E733B1AA7C68B0088934D /* UIImage+FixOrientation.h */,
+				E79E733C1AA7C68B0088934D /* UIImage+FixOrientation.m */,
+				E79E733D1AA7C68B0088934D /* LLSimpleCamera.h */,
+				E79E733E1AA7C68B0088934D /* LLSimpleCamera.m */,
+			);
+			name = LLSimpleCamera;
+			sourceTree = "<group>";
+		};
+		E79E734A1AA7C6C00088934D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E7E70D8C1AA7DB32003A0021 /* Home */,
+				E79E73461AA7C6B70088934D /* ImageViewController.h */,
+				E79E73471AA7C6B70088934D /* ImageViewController.m */,
+				E7E70D8F1AA7DC10003A0021 /* Delegate */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E79E73541AA7C6CF0088934D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E79E734B1AA7C6CA0088934D /* ViewUtils.h */,
+				E79E734C1AA7C6CA0088934D /* ViewUtils.m */,
+				E79E734D1AA7C6CA0088934D /* UIImage+Crop.h */,
+				E79E734E1AA7C6CA0088934D /* UIImage+Crop.m */,
+				E79E734F1AA7C6CA0088934D /* UIImage+Resize.h */,
+				E79E73501AA7C6CA0088934D /* UIImage+Resize.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		E7E1FD691A9C1F0B00A4B8A6 /* modal shizz */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,6 +557,24 @@
 				E7E1FD641A9C1EFF00A4B8A6 /* TDSemiModalViewController.m */,
 			);
 			name = "modal shizz";
+			sourceTree = "<group>";
+		};
+		E7E70D8C1AA7DB32003A0021 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E79E73441AA7C6B70088934D /* HomeViewController.h */,
+				E79E73451AA7C6B70088934D /* HomeViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		E7E70D8F1AA7DC10003A0021 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				E79E73551AA7C6ED0088934D /* AppDelegate.h */,
+				E79E73561AA7C6ED0088934D /* AppDelegate.m */,
+			);
+			name = Delegate;
 			sourceTree = "<group>";
 		};
 		E7F2C0A71A99489000B8CCBF /* Inbox */ = {
@@ -587,6 +685,8 @@
 				E7E1FD671A9C1EFF00A4B8A6 /* TDDatePickerController.xib in Resources */,
 				E7A3D7451AA51A130092505F /* gradient-vert.png in Resources */,
 				DC7F376E18FC2B0300D54901 /* Record-Pressed-icon.png in Resources */,
+				E7E70D961AA7E121003A0021 /* camera-switch.png in Resources */,
+				E7E70D971AA7E121003A0021 /* camera-switch@2x.png in Resources */,
 				E7F2C08F1A99344A00B8CCBF /* focus_ring@2x.png in Resources */,
 				E7A3D74C1AA6598D0092505F /* surprise.png in Resources */,
 				E75258F41AA25EA50022AA9E /* dotdotdot action button.png in Resources */,
@@ -596,10 +696,14 @@
 				DC1C8E9F18FD24C9005A342D /* Main.storyboard in Resources */,
 				DC7F376418FC2B0300D54901 /* capture_flip@2x.png in Resources */,
 				DC7F372418FC2A0D00D54901 /* Images.xcassets in Resources */,
+				E7E70D9B1AA7E121003A0021 /* camera-flash-on@2x.png in Resources */,
 				DC7F376818FC2B0300D54901 /* Default.png in Resources */,
 				DC7F376D18FC2B0300D54901 /* Record-Normal-icon.png in Resources */,
 				E7A3D7501AA6616B0092505F /* rectangle button.png in Resources */,
+				E7E70D991AA7E121003A0021 /* camera-flash-off@2x.png in Resources */,
 				E7A3D7491AA51A9B0092505F /* gradient-darker-vert.png in Resources */,
+				E7E70D9A1AA7E121003A0021 /* camera-flash-on.png in Resources */,
+				E7E70D981AA7E121003A0021 /* camera-flash-off.png in Resources */,
 				DC7F376B18FC2B0300D54901 /* Play-Normal-icon.png in Resources */,
 				DC7F371618FC2A0D00D54901 /* InfoPlist.strings in Resources */,
 				DC7F376718FC2B0300D54901 /* Default-568h@2x.png in Resources */,
@@ -650,20 +754,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC7F375018FC2AF700D54901 /* SCAppDelegate.m in Sources */,
+				E79E73521AA7C6CA0088934D /* UIImage+Crop.m in Sources */,
 				DC7F375618FC2AF700D54901 /* SCVideoPlayerViewController.m in Sources */,
 				DC7F375118FC2AF700D54901 /* SCAudioRecordViewController.m in Sources */,
 				E7F2C0A61A99453400B8CCBF /* SCInboxViewController.m in Sources */,
+				E79E73531AA7C6CA0088934D /* UIImage+Resize.m in Sources */,
 				DC7F375518FC2AF700D54901 /* SCTouchDetector.m in Sources */,
 				E7339D4D1AA4A6BD00A63258 /* SignUpViewController.m in Sources */,
+				E79E73511AA7C6CA0088934D /* ViewUtils.m in Sources */,
 				DC34A7D8199D695F0001BD08 /* SCRecordSessionManager.m in Sources */,
 				E7F2C0AD1A9962EE00B8CCBF /* DismissSegue.m in Sources */,
 				E7E1FD661A9C1EFF00A4B8A6 /* TDDatePickerController.m in Sources */,
+				E79E73481AA7C6B70088934D /* HomeViewController.m in Sources */,
 				E7339D461AA4332400A63258 /* AddFriendsViewController.m in Sources */,
+				E79E73401AA7C68B0088934D /* LLSimpleCamera.m in Sources */,
+				E79E733F1AA7C68B0088934D /* UIImage+FixOrientation.m in Sources */,
 				E7E1FD681A9C1EFF00A4B8A6 /* TDSemiModalViewController.m in Sources */,
 				E79973CF1AA2727E009BCA30 /* InboxItemViewController.m in Sources */,
 				DC34A7D5199D67C80001BD08 /* SCSessionTableViewCell.m in Sources */,
 				E7E1FD651A9C1EFF00A4B8A6 /* UIViewController+TDSemiModalExtension.m in Sources */,
+				E79E73571AA7C6ED0088934D /* AppDelegate.m in Sources */,
 				DC7F375718FC2AF700D54901 /* SCRecorderViewController.m in Sources */,
+				E79E73491AA7C6B70088934D /* ImageViewController.m in Sources */,
 				E74D23A91AA2716C00525FC6 /* InboxItemView.m in Sources */,
 				DC34A7D2199D66FA0001BD08 /* SCSessionListViewController.m in Sources */,
 				DCB69AB5197EE31300AF667A /* SCEditVideoViewController.m in Sources */,

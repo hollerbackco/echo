@@ -10,6 +10,7 @@
 #import "SCAppDelegate.h"
 #import "SCFilterGroup.h"
 #import "SCVideoPlayerView.h"
+#import "HomeViewController.h"
 
 
 @implementation SCAppDelegate
@@ -46,6 +47,16 @@
     
     //anonymous users
     [PFUser enableAutomaticUser];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.homeVC = [[HomeViewController alloc] initWithNibName:nil bundle:nil];
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:self.homeVC];
+    
+    self.window.rootViewController = navVC;
+    
+    [self.window makeKeyAndVisible];
+    return YES;
     
     
     return YES;
